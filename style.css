@@ -1,0 +1,15 @@
+.not-arrow .dropdown-toggle::after {
+    display:none
+}
+
+.notif .dropdown-item:hover{
+	background-color: transparent;
+}
+
+.white {
+	color: white
+}
+
+.white .nav-link{
+	color: white
+}
