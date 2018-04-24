@@ -9,10 +9,195 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="open-iconic/font/css/open-iconic-bootstrap.css" rel="stylesheet">
-    <title>Hello, world!</title>
+    <title>SI HMTC</title>
+    <script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+    </script>
   </head>
   <body>
+    <!-- modal -->
+    <div class="modal fade" id="tambahAnggota" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Tambah Anggota</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form class="needs-validation" novalidate>
+              <div class="form-group">
+                <label for="NRP">NRP</label>
+                <input type="text" class="form-control" id="NRP" aria-describedby="NRPHelp" placeholder="Masukkan NRP" required>
+                <div class="invalid-feedback">
+                  NRP Tidak boleh kosong!
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="Nama">Nama</label>
+                <input type="text" class="form-control" id="Nama" aria-describedby="NamaHelp" placeholder="Masukkan Nama" required>
+                <div class="invalid-feedback">
+                  Nama Tidak boleh kosong!
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="NRP">Angkatan</label>
+                <input type="text" class="form-control" id="Angkatan" aria-describedby="AngkatanHelp" placeholder="Masukkan Angkatan" required>
+                <div class="invalid-feedback">
+                  Angkatan Tidak boleh kosong!
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="NRP">No. HP</label>
+                <input type="text" class="form-control" id="noHP" aria-describedby="noHPHelp" placeholder="Masukkan No. HP" required>
+                <div class="invalid-feedback">
+                  No. HP Tidak boleh kosong!
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="NRP">ID Line</label>
+                <input type="text" class="form-control" id="IDLine" aria-describedby="IDLineHelp" placeholder="Masukkan ID Line" required>
+                <div class="invalid-feedback">
+                  ID Line Tidak boleh kosong!
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="NRP">Alamat</label>
+                <input type="text" class="form-control" id="Alamat" aria-describedby="AlamatHelp" placeholder="Masukkan Alamat" required>
+                <div class="invalid-feedback">
+                  Alamat Tidak boleh kosong!
+                </div>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
 
+    <div class="modal fade" id="editAnggota" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Edit Anggota</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form class="needs-validation" novalidate>
+              <div class="form-group">
+                <label for="NRP">NRP</label>
+                <input value="05111540000109" type="text" class="form-control" id="NRP" aria-describedby="NRPHelp" placeholder="Masukkan NRP" required>
+                <div class="invalid-feedback">
+                  NRP Tidak boleh kosong!
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="Nama">Nama</label>
+                <input value="Rezky Alamsyah" type="text" class="form-control" id="Nama" aria-describedby="NamaHelp" placeholder="Masukkan Nama"required>
+                <div class="invalid-feedback">
+                  Nama Tidak boleh kosong!
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="Angkatan">Angkatan</label>
+                <input value="2015" type="text" class="form-control" id="Angkatan" aria-describedby="AngkatanHelp" placeholder="Masukkan Angkatan" required>
+                <div class="invalid-feedback">
+                  Angkatan Tidak boleh kosong!
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="No.HP">No. HP</label>
+                <input value="085718246369" type="text" class="form-control" id="noHP" aria-describedby="noHPHelp" placeholder="Masukkan No. HP" required>
+                <div class="invalid-feedback">
+                  No. HP Tidak boleh kosong!
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="IDLine">ID Line</label>
+                <input value="rezkyal97" type="text" class="form-control" id="IDLine" aria-describedby="IDLineHelp" placeholder="Masukkan ID Line" required>
+                <div class="invalid-feedback">
+                  ID Line Tidak boleh kosong!
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="Alamat">Alamat</label>
+                <input value="Jl. Sumber Rejo 1 RT 35 No. 06" type="text" class="form-control" id="Alamat" aria-describedby="AlamatHelp" placeholder="Masukkan Alamat" required>
+                <div class="invalid-feedback">
+                  Alamat Tidak boleh kosong!
+                </div>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="deleteAnggota" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Hapus data Anggota</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Hapus data milik <strong>Rezky Alamsyah (05111540000109)?</strong>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-danger">Hapus</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="resetAnggota" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Reset password</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Reset password milik <strong>Rezky Alamsyah (05111540000109)?</strong>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-warning white">Reset</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- Header -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
       <a class="navbar-brand" href="index.html">SI HMTC</a>
@@ -23,7 +208,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" href="anggota.html">Anggota <span class="sr-only">(current)</span></a>
+            <a class="nav-link active" href="anggota.html">Anggota <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="barang.html">Barang</a>
@@ -122,12 +307,12 @@
       </div>
     </div>
     <!-- End Search Bar -->
-    <div class="container my-1 py-1 px-4">
+    <div class="container mt-lg-5 my-1 py-1 px-4">
       <div class="row justify-content-end">
-        <button class=" btn btn-info my-2 my-sm-0" type="submit">Tambah</button>
+        <button class=" btn btn-info my-2 my-sm-0" data-toggle="modal" data-target="#tambahAnggota">Tambah</button>
       </div>
     </div>
-    <div class="container mt-lg-5 py-2 px-4 bg-light">
+    <div class="container mt-lg-2 py-2 px-4 bg-light">
       <div class="row">
         <div class="container col align-items-center">
           <div class="row align-items-center my-lg-3">
@@ -137,9 +322,9 @@
               No.HP : 085718246369<br/>
             </div>
             <div class="col-lg-2 justify-content-center align-items-center">
-              <button class=" btn btn-info my-2" type="submit"><span class="oi oi-pencil"></span></button>
-              <button class=" btn btn-danger my-2" type="submit"><span class="oi oi-trash"></span></button>
-              <button class="white btn btn-warning my-2" type="submit">Reset</button>
+              <button class=" btn btn-info my-2" data-toggle="modal" data-target="#editAnggota"><span class="oi oi-pencil"></span></button>
+              <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteAnggota"><span class="oi oi-trash"></span></button>
+              <button class="white btn btn-warning my-2" data-toggle="modal" data-target="#resetAnggota">Reset</button>
             </div>
           </div>
         </div>  
@@ -154,9 +339,9 @@
               No.HP : 085718246369<br/>
             </div>
             <div class="col-lg-2 justify-content-center align-items-center">
-              <button class=" btn btn-info my-2" type="submit"><span class="oi oi-pencil"></span></button>
-              <button class=" btn btn-danger my-2" type="submit"><span class="oi oi-trash"></span></button>
-              <button class="white btn btn-warning my-2" type="submit">Reset</button>
+              <button class=" btn btn-info my-2" data-toggle="modal" data-target="#editAnggota"><span class="oi oi-pencil"></span></button>
+              <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteAnggota"><span class="oi oi-trash"></span></button>
+              <button class="white btn btn-warning my-2" data-toggle="modal" data-target="#resetAnggota">Reset</button>
             </div>
           </div>
         </div>  
@@ -171,47 +356,14 @@
               No.HP : 085718246369<br/>
             </div>
             <div class="col-lg-2 justify-content-center align-items-center">
-              <button class=" btn btn-info my-2" type="submit"><span class="oi oi-pencil"></span></button>
-              <button class=" btn btn-danger my-2" type="submit"><span class="oi oi-trash"></span></button>
-              <button class="white btn btn-warning my-2" type="submit">Reset</button>
+              <button class=" btn btn-info my-2" data-toggle="modal" data-target="#editAnggota"><span class="oi oi-pencil"></span></button>
+              <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteAnggota"><span class="oi oi-trash"></span></button>
+              <button class="white btn btn-warning my-2" data-toggle="modal" data-target="#resetAnggota">Reset</button>
             </div>
           </div>
         </div>  
       </div>
       <hr class="hr-small">
-      <div class="row">
-        <div class="container col align-items-center">
-          <div class="row align-items-center my-lg-3">
-            <div class=" white col-lg-10 bg-secondary">
-              Nama  : Rezky Alamsyah<br/>
-              NRP   : 05111540000109<br/>
-              No.HP : 085718246369<br/>
-            </div>
-            <div class="col-lg-2 justify-content-center align-items-center">
-              <button class=" btn btn-info my-2" type="submit"><span class="oi oi-pencil"></span></button>
-              <button class=" btn btn-danger my-2" type="submit"><span class="oi oi-trash"></span></button>
-              <button class="white btn btn-warning my-2" type="submit">Reset</button>
-            </div>
-          </div>
-        </div>  
-      </div>
-      <hr class="hr-small">
-      <div class="row">
-        <div class="container col align-items-center">
-          <div class="row align-items-center my-lg-3">
-            <div class=" white col-lg-10 bg-secondary">
-              Nama  : Rezky Alamsyah<br/>
-              NRP   : 05111540000109<br/>
-              No.HP : 085718246369<br/>
-            </div>
-            <div class="col-lg-2 justify-content-center align-items-center">
-              <button class=" btn btn-info my-2" type="submit"><span class="oi oi-pencil"></span></button>
-              <button class=" btn btn-danger my-2" type="submit"><span class="oi oi-trash"></span></button>
-              <button class="white btn btn-warning my-2" type="submit">Reset</button>
-            </div>
-          </div>
-        </div>  
-      </div>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
