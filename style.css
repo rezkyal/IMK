@@ -19,10 +19,27 @@
 	margin-bottom: 0.2rem;
 }
 
-@media only screen and (min-width: 576px) {
+.imagestandart {
+	height: auto; 
+	width: 60%;
+}
+
+.barangs{
+	font-size: 55px;
+	text-align: center;
+}
+
+@media only screen and (max-width: 576px) {
 	.hr-small {
 		margin-top: 0.5rem;
 		margin-bottom: 0.5rem;
+	}
+	.imageresponse{
+		height: auto;
+		width: 30%;
+	}
+	.barangskecil{
+		font-size: 15px;
 	}
 }
 
@@ -31,6 +48,11 @@ body {
   background-color:#fff;
   -webkit-font-smoothing: antialiased;
   font: normal 14px Roboto,arial,sans-serif;
+  height: 100%;
+}
+
+html{
+	height: 100%;
 }
 
 .container_login {
@@ -70,7 +92,16 @@ h4 {
 
 .rectangle{
 	border-radius: 10px;
-	height: 10vh;
+	height: 16vh;
 	padding-top: 10px;
 	padding-left: 30px; 
 }
+
+.rectange-button{
+	border-radius: 40px;
+}
+
+.nama-barang{
+	size:"50";
+}
+
