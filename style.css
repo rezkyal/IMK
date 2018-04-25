@@ -29,17 +29,38 @@
 	text-align: center;
 }
 
-@media only screen and (max-width: 576px) {
+
+@media only screen and (min-width: 100px) {
 	.hr-small {
 		margin-top: 0.5rem;
 		margin-bottom: 0.5rem;
 	}
 	.imageresponse{
 		height: auto;
-		width: 30%;
+		width: 15%;
 	}
 	.barangskecil{
 		font-size: 15px;
+	}
+	.mid-sm{
+		text-align: center;
+	}
+	.image-sm{
+		text-align: center;
+	}
+}
+
+@media only screen and (min-width: 1360px){
+	.imageresponse{
+		height: auto;
+		width: 50%;
+	}
+	.mid-sm{
+		text-align: left;
+		vertical-align: middle;
+	}
+	.image-sm{
+		padding-left: 10%;
 	}
 }
 
