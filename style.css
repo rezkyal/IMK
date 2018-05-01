@@ -7,11 +7,11 @@
 }
 
 .white {
-	color: white
+	color: white;
 }
 
 .white .nav-link{
-	color: white
+	color: white;
 }
 
 .hr-small {
@@ -31,6 +31,7 @@
 
 body{
 	background-image: url("Picture/Perpustakaan.jpg"); 
+	opacity: 0.98;
 }
 
 @media only screen and (min-width: 100px) {
