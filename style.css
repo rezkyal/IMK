@@ -2,6 +2,7 @@
     display:none
 }
 
+
 .notif .dropdown-item:hover{
 	background-color: transparent;
 }
@@ -12,6 +13,10 @@
 
 .white .nav-link{
 	color: white;
+}
+
+.lato{
+	font-family: 'Lato', sans-serif;
 }
 
 .hr-small {
@@ -29,9 +34,53 @@
 	text-align: center;
 }
 
+.searchBg{
+	background-image: url("Picture/bgsearch.jpg");
+}
+
 body{
-	background-image: url("Picture/Perpustakaan.jpg"); 
-	opacity: 0.98;
+/*	background-image: url("Picture/Perpustakaan.jpg"); */
+/*	opacity: 0.98;*/
+}
+
+.color1{
+	color: #213159;
+}
+
+.color2{
+	color: #3d6089;
+}
+
+.color3{
+	color: #f0464c;
+}
+
+.color4{
+	color: #e7e7e7;
+}
+
+.bgcolor1{
+	background-color: #213159;
+}
+
+.bgcolor2{
+	background-color: #3d6089;
+}
+
+.bgcolor3{
+	background-color: #f0464c;
+}
+
+.bgcolor4{
+	background-color: #e7e7e7;
+}
+
+.bgwhite{
+	background-color: white;
+}
+
+.full{
+	width: 100%;
 }
 
 @media only screen and (min-width: 100px) {
