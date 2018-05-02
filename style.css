@@ -7,11 +7,11 @@
 }
 
 .white {
-	color: white
+	color: white;
 }
 
 .white .nav-link{
-	color: white
+	color: white;
 }
 
 .hr-small {
@@ -29,6 +29,10 @@
 	text-align: center;
 }
 
+body{
+	background-image: url("Picture/Perpustakaan.jpg"); 
+	opacity: 0.98;
+}
 
 @media only screen and (min-width: 100px) {
 	.hr-small {
@@ -116,6 +120,8 @@ h4 {
 	height: 16vh;
 	padding-top: 10px;
 	padding-left: 30px; 
+	font: normal 24px Roboto,arial,sans-serif;
+	opacity: 0.8;
 }
 
 .rectange-button{
