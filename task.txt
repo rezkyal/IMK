@@ -1,0 +1,4 @@
+tambahin petunjuk
+sort buat anggota
+soft delete buat anggota
+histori buat peminjaman barang
