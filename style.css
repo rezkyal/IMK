@@ -43,6 +43,11 @@ body{
 /*	opacity: 0.98;*/
 }
 
+pre{
+	margin-bottom: 4px;
+	font-size: 28px;
+}
+
 .color1{
 	color: #213159;
 }
