@@ -318,7 +318,7 @@
       <div class="container pt-lg-5 my-2 py-1 px-4">
         <div class="row">
           <div class="container align-items-center">
-            <h4 class="white lato">Daftar Anggota</h4>
+            <h4 class="white lato">Tabel Transaksi</h4>
           </div>
         </div>
         <div class="row">
@@ -336,75 +336,174 @@
     </div>
     </div>
     <!-- End Search Bar -->
-    <div class="container mt-lg-5 my-1 py-1 px-4">
-      <div class="row justify-content-end rectangle-button">
-        <button class=" btn btn-info my-2 my-sm-0" data-toggle="modal" data-target="#tambahBarang">+</button>
-      </div>
-    </div>
     <div class="container mt-lg-2 py-2 px-4 bg-light">
-      <div class="row">
-        <div class="container col align-items-center">
-          <div class="row align-items-center my-lg-3">
-            <div class=" white col-lg-10 bg-dark rectangle">
-              <div class=" white col-lg-3 bg-dark" style="align-content: center;float: left;">
-                <div class="image-sm">
-                  <img src="Picture/infocus.jpg" class="imageresponse imagestandart imageresponseif">  
-                </div>
-              </div>
-              <div class="mid-sm">
-                <font class="barangs barangskecil">TERSEDIA</font>
-              </div>
-            </div>
-            <div class="col-lg-2 justify-content-center align-items-center">
-              <button class=" btn btn-info my-2" data-toggle="modal" data-target="#editBarang"><span class="oi oi-pencil"></span></button>
-              <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteAnggota"><span class="oi oi-circle-x"></span></button>
-            </div>
-          </div>
-        </div>  
-      </div>
-      <hr class="hr-small">
-      <div class="row">
-        <div class="container col align-items-center">
-          <div class="row align-items-center my-lg-3">
-            <div class=" white col-lg-10 bg-dark rectangle">
-              <div class="white col-lg-3 bg-dark" style="align-content:center; float: left;">
-                <div style="padding-left: 10%">
-                  <img src="Picture/infocus.jpg" style="height: 85px; width: 90%;">
-                </div>
-              </div>
-              <div>
-                <font size="60">TERSEDIA</font>
-              </div>
-            </div>
-            <div class="col-lg-2 justify-content-center align-items-center">
-              <button class=" btn btn-info my-2" data-toggle="modal" data-target="#editBarang"><span class="oi oi-pencil"></span></button>
-              <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteAnggota"><span class="oi oi-circle-x"></span></button>
-            </div>
-          </div>
-        </div>  
-      </div>
-      <hr class="hr-small">
-           <div class="row">
-        <div class="container col align-items-center">
-          <div class="row align-items-center my-lg-3">
-            <div class=" white col-lg-10 bg-danger rectangle">
-              <div class="white col-lg-3 bg-danger" style="align-content:center; float: left;">
-                <div style="padding-left: 10%">
-                  <img src="Picture/infocus.jpg" style="height: 85px; width: 90%;">
-                </div>
-              </div>
-              <div>
-                <font size="60">TIDAK TERSEDIA</font>
-              </div>
-            </div>
-            <div class="col-lg-2 justify-content-center align-items-center">
-              <button class=" btn btn-info my-2" data-toggle="modal" data-target="#editBarang"><span class="oi oi-pencil"></span></button>
-              <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteAnggota"><span class="oi oi-circle-x"></span></button>
-            </div>
-          </div>
-        </div>  
-      </div>
-      <hr class="hr-small">
+    <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Nama Peminjam</th>
+        <th scope="col">Nama Barang</th>
+        <th scope="col">Tanggal Pinjam</th>
+        <th scope="col">Tanggal Kembalikan</th>
+        <th scope="col">Kondisi Barang</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="table-success">Rezky Alamsyah</td>
+        <td class="table-success">Infocus</td>
+        <td class="table-success">17/04/2018</td>
+        <td class="table-success">21/02/2018</td>
+        <td class="table-success" style="color: green">Sangat Baik</td>
+      </tr>
+      <tr>
+        <td class="table-success">Rezky Alamsyah</td>
+        <td class="table-success">Infocus</td>
+        <td class="table-success">17/04/2018</td>
+        <td class="table-success">21/02/2018</td>
+        <td class="table-success" style="color: green">Sangat Baik</td>
+      </tr>
+      <tr>
+        <td class="table-warning">Rezky Alamsyah</td>
+        <td class="table-warning">Infocus</td>
+        <td class="table-warning">17/04/2018</td>
+        <td class="table-warning">21/02/2018</td>
+        <td class="table-warning" >Kurang Baik</td>
+      </tr>
+      <tr>
+        <td class="table-danger">Rezky Alamsyah</td>
+        <td class="table-danger">Infocus</td>
+        <td class="table-danger">17/04/2018</td>
+        <td class="table-danger">21/02/2018</td>
+        <td class="table-danger" style="color: red">Rusak</td>
+      </tr>
+      <tr>
+        <td class="table-danger">Rezky Alamsyah</td>
+        <td class="table-danger">Infocus</td>
+        <td class="table-danger">17/04/2018</td>
+        <td class="table-danger">21/02/2018</td>
+        <td class="table-danger" style="color: red">Rusak</td>
+      </tr>
+      <tr>
+        <td class="table-danger">Rezky Alamsyah</td>
+        <td class="table-danger">Infocus</td>
+        <td class="table-danger">17/04/2018</td>
+        <td class="table-danger">21/02/2018</td>
+        <td class="table-danger" style="color: red">Rusak</td>
+      </tr>
+      <tr>
+        <td class="table-danger">Rezky Alamsyah</td>
+        <td class="table-danger">Infocus</td>
+        <td class="table-danger">17/04/2018</td>
+        <td class="table-danger">21/02/2018</td>
+        <td class="table-danger" style="color: red">Rusak</td>
+      </tr>
+      <tr>
+        <td class="table-danger">Rezky Alamsyah</td>
+        <td class="table-danger">Infocus</td>
+        <td class="table-danger">17/04/2018</td>
+        <td class="table-danger">21/02/2018</td>
+        <td class="table-danger" style="color: red">Rusak</td>
+      </tr>
+      <tr>
+        <td class="table-danger">Rezky Alamsyah</td>
+        <td class="table-danger">Infocus</td>
+        <td class="table-danger">17/04/2018</td>
+        <td class="table-danger">21/02/2018</td>
+        <td class="table-danger" style="color: red">Rusak</td>
+      </tr>
+      <tr>
+        <td class="table-danger">Rezky Alamsyah</td>
+        <td class="table-danger">Infocus</td>
+        <td class="table-danger">17/04/2018</td>
+        <td class="table-danger">21/02/2018</td>
+        <td class="table-danger" style="color: red">Rusak</td>
+      </tr>
+      <tr>
+        <td class="table-danger">Rezky Alamsyah</td>
+        <td class="table-danger">Infocus</td>
+        <td class="table-danger">17/04/2018</td>
+        <td class="table-danger">21/02/2018</td>
+        <td class="table-danger" style="color: red">Rusak</td>
+      </tr>
+      <tr>
+        <td class="table-danger">Rezky Alamsyah</td>
+        <td class="table-danger">Infocus</td>
+        <td class="table-danger">17/04/2018</td>
+        <td class="table-danger">21/02/2018</td>
+        <td class="table-danger" style="color: red">Rusak</td>
+      </tr>
+      <tr>
+        <td class="table-danger">Rezky Alamsyah</td>
+        <td class="table-danger">Infocus</td>
+        <td class="table-danger">17/04/2018</td>
+        <td class="table-danger">21/02/2018</td>
+        <td class="table-danger" style="color: red">Rusak</td>
+      </tr>
+      <tr>
+        <td class="table-danger">Rezky Alamsyah</td>
+        <td class="table-danger">Infocus</td>
+        <td class="table-danger">17/04/2018</td>
+        <td class="table-danger">21/02/2018</td>
+        <td class="table-danger" style="color: red">Rusak</td>
+      </tr>
+      <tr>
+        <td class="table-danger">Rezky Alamsyah</td>
+        <td class="table-danger">Infocus</td>
+        <td class="table-danger">17/04/2018</td>
+        <td class="table-danger">21/02/2018</td>
+        <td class="table-danger" style="color: red">Rusak</td>
+      </tr>
+      <tr>
+        <td class="table-danger">Rezky Alamsyah</td>
+        <td class="table-danger">Infocus</td>
+        <td class="table-danger">17/04/2018</td>
+        <td class="table-danger">21/02/2018</td>
+        <td class="table-danger" style="color: red">Rusak</td>
+      </tr>
+      <tr>
+        <td class="table-danger">Rezky Alamsyah</td>
+        <td class="table-danger">Infocus</td>
+        <td class="table-danger">17/04/2018</td>
+        <td class="table-danger">21/02/2018</td>
+        <td class="table-danger" style="color: red">Rusak</td>
+      </tr>
+      <tr>
+        <td class="table-danger">Rezky Alamsyah</td>
+        <td class="table-danger">Infocus</td>
+        <td class="table-danger">17/04/2018</td>
+        <td class="table-danger">21/02/2018</td>
+        <td class="table-danger" style="color: red">Rusak</td>
+      </tr>
+      <tr>
+        <td class="table-danger">Rezky Alamsyah</td>
+        <td class="table-danger">Infocus</td>
+        <td class="table-danger">17/04/2018</td>
+        <td class="table-danger">21/02/2018</td>
+        <td class="table-danger" style="color: red">Rusak</td>
+      </tr>
+      <tr>
+        <td class="table-danger">Rezky Alamsyah</td>
+        <td class="table-danger">Infocus</td>
+        <td class="table-danger">17/04/2018</td>
+        <td class="table-danger">21/02/2018</td>
+        <td class="table-danger" style="color: red">Rusak</td>
+      </tr>
+      <tr>
+        <td class="table-danger">Rezky Alamsyah</td>
+        <td class="table-danger">Infocus</td>
+        <td class="table-danger">17/04/2018</td>
+        <td class="table-danger">21/02/2018</td>
+        <td class="table-danger" style="color: red">Rusak</td>
+      </tr>
+      <tr>
+        <td class="table-danger">Rezky Alamsyah</td>
+        <td class="table-danger">Infocus</td>
+        <td class="table-danger">17/04/2018</td>
+        <td class="table-danger">21/02/2018</td>
+        <td class="table-danger" style="color: red">Rusak</td>
+      </tr>
+    </tbody>
+    </table>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
