@@ -38,6 +38,7 @@
     </script>
   </head>
   <body class="body_login">
+     <script type="text/javascript" src="script.js"></script>
      <div class="modal fade" id="gantipass" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -73,6 +74,7 @@
       <div class="row">
          <div class="col-md-4"></div>
          <div class="col-md-offset-4 col-md-4">
+            <form>
              <div class="form-login">
                 <h4>SI Peminjaman Inventaris HMTC</h4>
                 <input type="text" id="userName" class="form-control input-sm chat-input" placeholder="username" required />
@@ -84,12 +86,14 @@
                     <a href="#" data-toggle="tooltip" data-placement="bottom" title="             Silahkan menghubungi sekertaris umum untuk mendapatkan username dan password">Tidak punya akun?</a>
                   </div>
                   <div style="text-align: end">
-                  <span class="group-btn">     
-                    <a href="#" class="btn btn-primary btn-md" data-toggle="modal" data-target="#gantipass">login <i class="fa fa-sign-in"></i></a>
+                  <span class="group-btn">   
+
+                    <button onclick="validateLogin()" id="execbutton" class="btn btn-primary btn-md">login <i class="fa fa-sign-in"></i></button>
                   </span>
                   </div>
                 </div>
              </div>
+            </form>
          </div>
          <div class="col-md-4"></div>
       </div>
