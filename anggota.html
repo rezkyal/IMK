@@ -12,26 +12,6 @@
     <link href="ionicons-2.0.1/css/ionicons.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <title>SI HMTC</title>
-    <script>
-    // Example starter JavaScript for disabling form submissions if there are invalid fields
-    (function() {
-      'use strict';
-      window.addEventListener('load', function() {
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        var forms = document.getElementsByClassName('needs-validation');
-        // Loop over them and prevent submission
-        var validation = Array.prototype.filter.call(forms, function(form) {
-          form.addEventListener('submit', function(event) {
-            if (form.checkValidity() === false) {
-              event.preventDefault();
-              event.stopPropagation();
-            }
-            form.classList.add('was-validated');
-          }, false);
-        });
-      }, false);
-    })();
-    </script>
   </head>
   <body>
     <!-- modal -->
@@ -45,10 +25,10 @@
             </button>
           </div>
           <div class="modal-body">
-            <form class="needs-validation" novalidate>
+            <form class="needs-validation">
               <div class="form-group">
                 <label for="NRP">NRP</label>
-                <input type="text" class="form-control" id="NRP" aria-describedby="NRPHelp" placeholder="Masukkan NRP" required>
+                <input type="text" class="form-control NRP" id="NRP1" aria-describedby="NRPHelp" placeholder="Masukkan NRP" required pattern="\d*">
                 <div class="invalid-feedback">
                   NRP Tidak boleh kosong!
                 </div>
@@ -69,7 +49,7 @@
               </div>
               <div class="form-group">
                 <label for="NRP">No. HP</label>
-                <input type="text" class="form-control" id="noHP" aria-describedby="noHPHelp" placeholder="Masukkan No. HP" required>
+                <input type="text" class="form-control" id="nohp1" aria-describedby="noHPHelp" placeholder="Masukkan No. HP" required pattern="\d*">
                 <div class="invalid-feedback">
                   No. HP Tidak boleh kosong!
                 </div>
@@ -111,7 +91,7 @@
           <div class="modal-body">
             <form class="needs-validation" novalidate>
               <div class="form-group">
-                <input type="password" class="form-control" id="NRP" aria-describedby="NRPHelp" placeholder="Masukan Password Lama" required>
+                <input type="password" class="form-control" aria-describedby="NRPHelp" placeholder="Masukan Password Lama" required>
                 <div class="invalid-feedback">
                  Form Password Lama tidak boleh kosong!
                 </div>
@@ -148,10 +128,10 @@
             </button>
           </div>
           <div class="modal-body">
-            <form class="needs-validation" novalidate>
+            <form>
               <div class="form-group">
                 <label for="NRP">NRP</label>
-                <input value="05111540000109" type="text" class="form-control" id="NRP" aria-describedby="NRPHelp" placeholder="Masukkan NRP" required>
+                <input value="05111540000109" type="text" class="form-control" id="NRP2" aria-describedby="NRPHelp" placeholder="Masukkan NRP" required pattern="\d*">
                 <div class="invalid-feedback">
                   NRP Tidak boleh kosong!
                 </div>
@@ -172,7 +152,7 @@
               </div>
               <div class="form-group">
                 <label for="No.HP">No. HP</label>
-                <input value="085718246369" type="text" class="form-control" id="noHP" aria-describedby="noHPHelp" placeholder="Masukkan No. HP" required>
+                <input value="085718246369" type="text" class="form-control" id="nohp2" aria-describedby="noHPHelp" placeholder="Masukkan No. HP" required pattern="\d*">
                 <div class="invalid-feedback">
                   No. HP Tidak boleh kosong!
                 </div>
@@ -273,8 +253,8 @@
                 Jaminan      : KTM
               </div>
               <div>
-                <button type="button" class="btn btn-primary">Terima</button>
-                <button type="button" class="btn btn-secondary">Tolak</button>
+                <button type="button" class="btn btn-primary" onclick="accept(this)">Terima</button>
+                <button type="button" class="btn btn-secondary" >Tolak</button>
               </div>
             </div>
             <div class="dropdown-divider"></div>
@@ -371,6 +351,11 @@
         </div>
       </div>
       </div>
+      <div id="notfound" class="row hidden">
+        <div class="container jumbotron">
+          <h3 style="text-align: center">Data tidak ditemukan</h3>
+        </div>
+      </div>
       <div class="row dataAnggota" nama="Rezky Alamsyah" NRP="05111540000109">
         <div class="container col align-items-center">
           <div class="row align-items-center my-lg-3">
@@ -386,8 +371,8 @@
               <button class="white btn btn-info my-2" data-toggle="modal" data-target="#resetAnggota"><span class="oi oi-lock-locked"></span></button>
             </div>
           </div>
-        </div>
-        <hr class="hr-small">  
+          <hr class="hr-small">
+        </div>  
       </div>
       <div class="row dataAnggota" nama="Prana Cahya" NRP="05111540000103">
         <div class="container col align-items-center">
@@ -404,9 +389,9 @@
               <button class="white btn btn-info my-2" data-toggle="modal" data-target="#resetAnggota"><span class="oi oi-lock-locked"></span></button>
             </div>
           </div>
+          <hr class="hr-small">
         </div>  
       </div>
-      <hr class="hr-small">
       <div class="row dataAnggota" nama="Iqbal Mabruri" NRP="05111540000120">
         <div class="container col align-items-center">
           <div class="row align-items-center my-lg-3">
@@ -422,9 +407,9 @@
               <button class="white btn btn-info my-2" data-toggle="modal" data-target="#resetAnggota"><span class="oi oi-lock-locked"></span></button>
             </div>
           </div>
+          <hr class="hr-small">
         </div>  
-      </div>
-      <hr class="hr-small">
+      </div>    
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
