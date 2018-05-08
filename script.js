@@ -1,49 +1,16 @@
-var nrp1 = document.getElementById('NRP1');
-nrp1.addEventListener("input",function(event){
-  if(nrp1.validity.patternMismatch){
-    nrp1.setCustomValidity('NRP harus angka');
-  }else{
-    nrp1.setCustomValidity('');
-  }
-},false);
-var nrp2 = document.getElementById('NRP2');
-nrp2.addEventListener("input",function(event){
-  if(nrp2.validity.patternMismatch){
-    nrp2.setCustomValidity('NRP harus angka');
-  }else{
-    nrp2.setCustomValidity('');
-  }
-},false);
-var nohp1 = document.getElementById('nohp1');
-nohp1.addEventListener("input",function(event){
-  if(nohp1.validity.patternMismatch){
-    nohp1.setCustomValidity('No.HP harus angka');
-  }else{
-    nohp1.setCustomValidity('');
-  }
-},false);
-var nohp2 = document.getElementById('nohp2');
-nohp2.addEventListener("input",function(event){
-  if(nohp2.validity.patternMismatch){
-    nohp2.setCustomValidity('No.HP harus angka');
-  }else{
-    nohp2.setCustomValidity('');
-  }
-},false);
-
-var semua = document.getElementsByTagName("input");
-for (var i=0;i<semua.length-1;i++){
-	semua[i].setCustomValidity('Field tidak boleh kosong');
-}
-
 function mySearch(){
 	var total=0;
 	var param=document.getElementById('search').value;
+	var base=document.getElementById('selectFilter').value;
 	var notFound=document.getElementById('notfound');
 	param=param.toLowerCase();
 	var dataAnggota=document.getElementsByClassName('dataAnggota');
 	for(var i=0;i<dataAnggota.length;i++){
-		var nama=dataAnggota[i].getAttribute('nama');
+		if(base=='nama'){
+			var nama=dataAnggota[i].getAttribute('nama');
+		}else if(base=='nrp'){
+			var nama=dataAnggota[i].getAttribute('NRP');
+		}
 		nama=nama.toLowerCase();
 		var n=nama.search(param);
 		console.log(n);
@@ -60,6 +27,78 @@ function mySearch(){
 		notFound.classList.add("hidden");
 	}
 	return false;
+}
+
+function barangSearch(){
+	var total=0;
+	var param=document.getElementById('search').value;
+	var notFound=document.getElementById('notfound');
+	var tables=document.getElementById('tables');
+	var base=document.getElementById('selectFilter').value;
+	param=param.toLowerCase();
+	var dataBarang=document.getElementsByClassName('databarang');
+	console.log(dataBarang.length);
+	for(var i=0;i<dataBarang.length;i++){
+		if(base=='namap'){
+			var nama=dataBarang[i].getAttribute('nama');
+		}else if(base=='namab'){
+			var nama=dataBarang[i].getAttribute('barang');
+		}else if(base=='kondisi'){
+			var nama=dataBarang[i].getAttribute('kondisi');
+		}
+		nama=nama.toLowerCase();
+		var n=nama.search(param);
+		if(n==-1){
+			dataBarang[i].classList.add("hidden");
+		}else{
+			total+=1;
+			dataBarang[i].classList.remove("hidden");
+		}
+
+	}
+	if(total==0){
+		notFound.classList.remove("hidden");
+		tables.classList.add("hidden");
+	}else{
+		notFound.classList.add("hidden");
+		tables.classList.remove("hidden");
+	}
+	return false;	
+}
+
+function sortTable() {
+  var table, rows, switching, i, x, y, shouldSwitch;
+  table = document.getElementById("tables");
+  switching = true;
+  /* Make a loop that will continue until
+  no switching has been done: */
+  while (switching) {
+    // Start by saying: no switching is done:
+    switching = false;
+    rows = table.getElementsByTagName("TR");
+    /* Loop through all table rows (except the
+    first, which contains table headers): */
+    for (i = 1; i < (rows.length - 1); i++) {
+      // Start by saying there should be no switching:
+      shouldSwitch = false;
+      /* Get the two elements you want to compare,
+      one from current row and one from the next: */
+      x = rows[i].getElementsByTagName("TD")[0];
+      y = rows[i + 1].getElementsByTagName("TD")[0];
+      // Check if the two rows should switch place:
+      if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+        // I so, mark as a switch and break the loop:
+        shouldSwitch= true;
+        break;
+      }
+    }
+    if (shouldSwitch) {
+      /* If a switch has been marked, make the switch
+      and mark that a switch has been done: */
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+    }
+  }
 }
 
 function validateLogin(){
