@@ -69,6 +69,7 @@ function barangSearch(){
 function sortTable() {
   var table, rows, switching, i, x, y, shouldSwitch;
   table = document.getElementById("tables");
+  sort = document.getElementById("sortFilter").value;
   switching = true;
   /* Make a loop that will continue until
   no switching has been done: */
@@ -83,13 +84,121 @@ function sortTable() {
       shouldSwitch = false;
       /* Get the two elements you want to compare,
       one from current row and one from the next: */
-      x = rows[i].getElementsByTagName("TD")[0];
-      y = rows[i + 1].getElementsByTagName("TD")[0];
       // Check if the two rows should switch place:
-      if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-        // I so, mark as a switch and break the loop:
-        shouldSwitch= true;
-        break;
+      if(sort=="namap"){
+      	x = rows[i].getElementsByTagName("TD")[0];
+      	y = rows[i + 1].getElementsByTagName("TD")[0];
+      	if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+      	  // I so, mark as a switch and break the loop:
+      	  shouldSwitch= true;
+      	  break;
+      	}
+      }else if(sort=="namab"){
+      	x = rows[i].getElementsByTagName("TD")[1];
+      	y = rows[i + 1].getElementsByTagName("TD")[1];
+      	if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+      	  // I so, mark as a switch and break the loop:
+      	  shouldSwitch= true;
+      	  break;
+      	}
+      }else if(sort=="tanggalpb"){
+      	x = rows[i].getElementsByTagName("TD")[2];
+      	y = rows[i + 1].getElementsByTagName("TD")[2];
+      	xs=x.innerHTML.split("/");
+      	ys=y.innerHTML.split("/");
+      	if(xs[2]==ys[2]){
+      		if(xs[1]==ys[1]){
+      			if(xs[0]<ys[0]){
+      				shouldSwitch= true;
+      				break;
+      			}
+      		}else if(xs[1]<ys[1]){
+      			shouldSwitch= true;
+      			break;
+      		}
+      	}else if(xs[2]<ys[2]){
+      		shouldSwitch=true;
+      		break;
+      	}
+      }else if(sort=="tanggalpl"){
+      	x = rows[i].getElementsByTagName("TD")[2];
+      	y = rows[i + 1].getElementsByTagName("TD")[2];
+      	xs=x.innerHTML.split("/");
+      	ys=y.innerHTML.split("/");
+      	if(xs[2]==ys[2]){
+      		if(xs[1]==ys[1]){
+      			if(xs[0]>ys[0]){
+      				shouldSwitch= true;
+      				break;
+      			}
+      		}else if(xs[1]>ys[1]){
+      			shouldSwitch= true;
+      			break;
+      		}
+      	}else if(xs[2]>ys[2]){
+      		shouldSwitch=true;
+      		break;
+      	}
+      }else if(sort=="tanggalkb"){
+      	x = rows[i].getElementsByTagName("TD")[3];
+      	y = rows[i + 1].getElementsByTagName("TD")[3];
+      	xs=x.innerHTML.split("/");
+      	ys=y.innerHTML.split("/");
+      	if(xs[2]==ys[2]){
+      		if(xs[1]==ys[1]){
+      			if(xs[0]<ys[0]){
+      				shouldSwitch= true;
+      				break;
+      			}
+      		}else if(xs[1]<ys[1]){
+      			shouldSwitch= true;
+      			break;
+      		}
+      	}else if(xs[2]<ys[2]){
+      		shouldSwitch=true;
+      		break;
+      	}
+      }else if(sort=="tanggalpl"){
+      	x = rows[i].getElementsByTagName("TD")[3];
+      	y = rows[i + 1].getElementsByTagName("TD")[3];
+      	xs=x.innerHTML.split("/");
+      	ys=y.innerHTML.split("/");
+      	if(xs[2]==ys[2]){
+      		if(xs[1]==ys[1]){
+      			if(xs[0]>ys[0]){
+      				shouldSwitch= true;
+      				break;
+      			}
+      		}else if(xs[1]>ys[1]){
+      			shouldSwitch= true;
+      			break;
+      		}
+      	}else if(xs[2]>ys[2]){
+      		shouldSwitch=true;
+      		break;
+      	}
+      }else if(sort=="kondisi"){
+      	x = rows[i].getElementsByTagName("TD")[4];
+      	y = rows[i + 1].getElementsByTagName("TD")[4];
+      	if(x.innerHTML=='Sangat Baik'){
+      		var x1=1;
+      	}else if(x.innerHTML=='Kurang Baik'){
+      		var x1=2;
+      	}else{
+      		var x1=3;
+      	}
+      	if(y.innerHTML=='Sangat Baik'){
+      		var y1=1;
+      	}else if(y.innerHTML=='Kurang Baik'){
+      		var y1=2;
+      	}else{
+      		var y1=3;
+      	}
+      	if (x1 > y1) {
+      	  // I so, mark as a switch and break the loop:
+      	  shouldSwitch= true;
+      	  break;
+      	}
       }
     }
     if (shouldSwitch) {
