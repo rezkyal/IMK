@@ -25,12 +25,11 @@
 }
 
 .imagestandart {
-	height: auto; 
-	width: 60%;
+	height: 100%; 
+	width: 100%;
 }
 
 .barangs{
-	font-size: 55px;
 	text-align: center;
 }
 
@@ -44,8 +43,9 @@ body{
 }
 
 pre{
-	margin-bottom: 4px;
-	font-size: 28px;
+	margin-bottom: 2px;
+	font-size: 20px;
+	color: white;
 }
 
 .color1{
@@ -98,7 +98,8 @@ pre{
 		width: 15%;
 	}
 	.barangskecil{
-		font-size: 15px;
+		font-size: 30px;
+		text-align: center;
 	}
 	.mid-sm{
 		text-align: center;
@@ -110,15 +111,15 @@ pre{
 
 @media only screen and (min-width: 1360px){
 	.imageresponse{
-		height: auto;
-		width: 50%;
+		height: 130px;
+		width: 150px;
 	}
 	.mid-sm{
 		text-align: left;
 		vertical-align: middle;
 	}
 	.image-sm{
-		padding-left: 10%;
+	
 	}
 }
 
@@ -177,7 +178,6 @@ h4 {
 	font: normal 24px Roboto,arial,sans-serif;
 	opacity: 0.8;
 }
-
 .rectange-button{
 	border-radius: 40px;
 }
@@ -190,4 +190,150 @@ h4 {
     background-color: #cccccc;
     background-image: linear-gradient(blue, white);
 }
+
+.column {
+    float: left;
+    width: 25%;
+    padding: 10px;
+}
+
+/* Style the images inside the grid */
+.column img {
+    opacity: 0.8; 
+    cursor: pointer; 
+}
+
+.column img:hover {
+    opacity: 1;
+}
+
+img {
+    border: 3px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
+    border-color: rgb(0,0,0);
+    transition: transform .2s;
+}
+
+img:hover{
+    transform: scale(1.5);
+    opacity: 1; 
+}
+
+#page2{
+	display: none;
+}
+
+#peminjam1{
+	margin-left: 250px;
+	padding: 10px;
+	opacity: 0;
+	z-index: 10;
+	position: absolute;
+	height: 200px;
+	width: 550px;
+	border-radius: 10px;
+}
+
+#peminjam2{
+	margin-left: 250px;
+	padding: 10px;
+	opacity: 0;
+	z-index: 10;
+	position: absolute;
+	height: 200px;
+	width: 550px;
+	border-radius: 10px;
+}
+
+#peminjam3{
+	margin-left: 250px;
+	padding: 10px;
+	opacity: 0;
+	z-index: 10;
+	position: absolute;
+	height: 200px;
+	width: 550px;
+	border-radius: 10px;
+}
+
+#peminjam4{
+	margin-left: 250px;
+	padding: 10px;
+	opacity: 0;
+	z-index: 10;
+	position: absolute;
+	height: 200px;
+	width: 550px;
+	border-radius: 10px;
+}
+
+#peminjam5{
+	margin-left: 250px;
+	padding: 10px;
+	opacity: 0;
+	z-index: 10;
+	position: absolute;
+	height: 200px;
+	width: 550px;
+	border-radius: 10px;
+}
+
+p{
+	text-align: center;
+	font-weight: bold;
+	font-size: 14px;
+}
+td, th, tr{
+	border: 1px solid black;
+	text-align: center;
+	overflow-y:auto;
+}
+
+.scroll{
+    overflow-y:scroll;
+    height:100px;
+    width: 200px; 
+}
+
+#table-barang{
+	height: 120px;
+	padding-top: 8px; 
+	padding-bottom: 16px; 
+	width: 100%;
+	vertical-align:top;
+	border: 1px solid black;
+}
+
+#table-peminjam{
+	height: 10px;
+}
+
+
+.ion-android-arrow-dropleft-circle{
+	color: black;
+}
+
+.ion-android-arrow-dropright-circle{
+	color: black;
+}
+
+#newpage{
+	height: 150px;
+	width: 200px;
+	z-index: 3;
+	position: absolute;
+	padding-top: 50px;
+	opacity: 0;
+}
+
+.unreal{
+	visibility: collapse;
+}
+span{
+	cursor: pointer;
+}
+
+
 

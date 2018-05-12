@@ -11,26 +11,7 @@
     <link href="open-iconic/font/css/open-iconic-bootstrap.css" rel="stylesheet">
     <link href="ionicons-2.0.1/css/ionicons.css" rel="stylesheet">
     <title>SI HMTC</title>
-    <script>
-    // Example starter JavaScript for disabling form submissions if there are invalid fields
-    (function() {
-      'use strict';
-      window.addEventListener('load', function() {
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        var forms = document.getElementsByClassName('needs-validation');
-        // Loop over them and prevent submission
-        var validation = Array.prototype.filter.call(forms, function(form) {
-          form.addEventListener('submit', function(event) {
-            if (form.checkValidity() === false) {
-              event.preventDefault();
-              event.stopPropagation();
-            }
-            form.classList.add('was-validated');
-          }, false);
-        });
-      }, false);
-    })();
-    </script>
+    <script src="script.js"></script> 
   </head>
   <body>
     <!-- modal -->
@@ -71,7 +52,7 @@
                 </div>
                 <div style="margin-top: 20px">
                   <form action="upload.php" method="post" enctype="multipart/form-data">
-                      Pilih gambar barang untuk diupload:
+                      Pilih gambar barang
                       <input type="file" name="fileToUpload" id="fileToUpload">
                   </form>
                 </div>
@@ -125,7 +106,7 @@
         </div>
       </div>
     </div>
-
+     <!---Modal Edit Barang-->
     <div class="modal fade" id="editBarang" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -139,14 +120,14 @@
             <form class="needs-validation" novalidate>
               <div class="form-group">
                 <label for="Nama-Barang">Nama Barang</label>
-                <input value="Infocus" type="text" class="form-control" id="Nama-Barang" aria-describedby="Nama-BarangHelp" placeholder="Masukkan Nama Barang" required>
+                <input value="Infocus IN222" type="text" class="form-control" id="Nama-Barang" aria-describedby="Nama-BarangHelp" placeholder="Masukkan Nama Barang" required>
                 <div class="invalid-feedback">
                   Form Nama Barang Tidak boleh kosong!
                 </div>
               </div>
               <div class="form-group">
                 <label for="Jumlah-Stok">Jumlah-Stok</label>
-                <input value="10" type="text" class="form-control" id="Jumlah-Stok" aria-describedby="Jumlah-StokHelp" placeholder="Masukkan Jumlah-Stok"required>
+                <input value="1" type="text" class="form-control" id="Jumlah-Stok" aria-describedby="Jumlah-StokHelp" placeholder="Masukkan Jumlah-Stok"required>
                 <div class="invalid-feedback">
                   Form Jumlah Stok Tidak boleh kosong!
                 </div>
@@ -155,10 +136,10 @@
                 <label for="Kondisi">Kondisi Barang</label>
                 <div class="dropdown">
                   <select id="mySelect">
-                    <option value="apple">Sangat Baik</option>
-                    <option value="orange">Baik</option>
-                    <option value="pineapple">Tidak Baik</option>
-                    <option value="banana">Rusak</option>
+                    <option value="Sangat Baik">Sangat Baik</option>
+                    <option value="Baik">Baik</option>
+                    <option value="Tidak Baik">Tidak Baik</option>
+                    <option value="Rusak">Rusak</option>
                   </select>
                 </div>
                 <div style="margin-top: 20px">
@@ -171,7 +152,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary" onclick="editalert()" data-dismiss="modal">Submit</button>
           </div>
           </form>
         </div>
@@ -192,7 +173,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-danger">Hapus</button>
+            <button type="submit" class="btn btn-danger" onclick="hapusalert()" data-dismiss="modal">Hapus</button>
           </div>
         </div>
       </div>
@@ -318,7 +299,7 @@
       <div class="container pt-lg-5 my-2 py-1 px-4">
         <div class="row">
           <div class="container align-items-center">
-            <h4 class="white lato">Daftar Anggota</h4>
+            <h4 class="white lato">Daftar Barang Tersedia</h4>
           </div>
         </div>
         <div class="row">
@@ -336,83 +317,273 @@
     </div>
     </div>
     <!-- End Search Bar -->
-      <div class="container mt-lg-2 my-1 py-1 px-4 bg-light">
-      <div class="container mt-lg-2 my-1 py-1 px-4">
+      <div class="container py-1 px-4 bg-light">
+      <div class="container mt-lg-2 py-1 px-4">
         <div class="row justify-content-between">
         <div>
-         <button class=" btn btn-info my-2 my-sm-0" data-toggle="modal" data-target="#tambahAnggota"><span class="ion-android-person-add"></span></button>
+         <button class=" btn btn-info my-2 my-sm-0" data-toggle="modal" data-target="#tambahBarang"><span class="ion-ios-plus-empty"></span></button>
         </div>
       </div>
     </div>
     <div class="container mt-lg-2 py-2 px-4 bg-light">
-      <div class="row">
-        <div class="container col align-items-center">
-          <div class="row align-items-center my-lg-3">
-            <div class=" white col-lg-10 bg-dark rectangle">
-              <div class=" white col-lg-3 bg-dark" style="align-content: center;float: left;">
-                <div class="image-sm">
-                  <img src="Picture/infocus.jpg" class="imageresponse imagestandart imageresponseif">  
-                </div>
-              </div>
-              <div class="mid-sm">
-                <font class="barangs barangskecil">TERSEDIA</font>
-              </div>
+      <div class="container container-barang col align-items-center">
+         <div class="row align-items-center my-lg-3">
+          <div class=" white col-lg-10 bg-dark rectangle">
+            <div class=" white col-lg-3 bg-dark" style="align-content: center;float: left;">
+              <img src="Picture/infocus.jpg" class="imageresponse imagestandart imageresponseif" id="gambar1" onmouseover="mouseover1()" onmouseout="mouseout1()">
             </div>
-            <div class="col-lg-2 justify-content-center align-items-center">
-              <button class=" btn btn-info my-2" data-toggle="modal" data-target="#editBarang"><span class="oi oi-pencil"></span></button>
-              <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteAnggota"><span class="oi oi-circle-x"></span></button>
+            <div class="mid-sm">
+              <font class="barangs barangskecil"><pre><b>NAMA</b>         : Infocus IN222</font><br><br></pre>
+              <font class="barangs barangskecil"><pre><b>SISA STOCK</b>   : 0/1</font></pre>
             </div>
-          </div>
-        </div>  
-      </div>
+           </div>
+           <div class="mid-sm" id="peminjam1">
+            <p>Daftar Barang Terpinjam</p>
+              <table id="table-barang">  
+              <thead>
+                <tr>
+                  <th>Nomor</th>
+                  <th>Peminjam</th>
+                  <th>Jaminan</th>
+                  <th>Kondisi Barang</th>
+                  <th>Tanggal Kembali</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                 <td>1</td>
+                 <td>Iqbal Mabruri</td>
+                 <td>KTM</td>
+                 <td>Sangat Baik</td>
+                 <td>21-05-2018</td>
+               </tr>
+             </tbody>
+            </table>
+            </div>
+           <div class="col-lg-2 justify-content-center align-items-center">
+             <button class=" btn btn-info my-2" data-toggle="modal" data-target="#editBarang"><span class="oi oi-pencil"></span></button>
+             <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteAnggota"><span class="oi oi-circle-x"></span></button>
+           </div>
+         </div>
+       </div>  
+     </div>
       <hr class="hr-small">
-      <div class="row">
-        <div class="container col align-items-center">
-          <div class="row align-items-center my-lg-3">
-            <div class=" white col-lg-10 bg-dark rectangle">
-              <div class="white col-lg-3 bg-dark" style="align-content:center; float: left;">
-                <div style="padding-left: 10%">
-                  <img src="Picture/infocus.jpg" style="height: 85px; width: 90%;">
-                </div>
-              </div>
-              <div>
-                <font size="60">TERSEDIA</font>
-              </div>
+      <div class="container mt-lg-2 py-2 px-4 bg-light">
+        <div class="container container-barang col align-items-center">
+         <div class="row align-items-center my-lg-3">
+          <div class=" white col-lg-10 bg-dark rectangle">
+            <div class=" white col-lg-3 bg-dark" style="align-content: center;float: left;">
+              <img src="Picture/Voly.jpg" class="imageresponse imagestandart imageresponseif" id="gambar2" onmouseover="mouseover2()" onmouseout="mouseout2()">  
             </div>
-            <div class="col-lg-2 justify-content-center align-items-center">
-              <button class=" btn btn-info my-2" data-toggle="modal" data-target="#editBarang"><span class="oi oi-pencil"></span></button>
-              <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteAnggota"><span class="oi oi-circle-x"></span></button>
+            <div class="mid-sm">
+              <font class="barangs barangskecil"><pre><b>NAMA</b>         : Bola Voly</font><br><br></pre>
+              <font class="barangs barangskecil"><pre><b>SISA STOCK</b>   : 3/6</font></pre>
             </div>
-          </div>
-        </div>  
-      </div>
+           </div>
+            <div class="mid-sm" id="peminjam2">
+              <p>Daftar Barang Terpinjam</p>
+                <table id=table-barang>  
+                  <thead>
+                    <tr>
+                      <th>Nomor</th>
+                      <th>Peminjam</th>
+                      <th>Jaminan</th>
+                      <th>Kondisi Barang</th>
+                      <th>Tanggal Kembali</th>
+                    </tr>
+                  </thead>
+                  <tbody id="barang-peminjam">
+                    <tr>
+                     <td>1</td>
+                     <td>Rezky Alamsyah</td>
+                     <td>KTM</td>
+                     <td>Sangat Baik</td>
+                     <td>21-05-2018</td>
+                   </tr>
+                    <tr>
+                     <td>2</td>
+                     <td>Rezky Alamsyah</td>
+                     <td>KTM</td>
+                     <td>Sangat Baik</td>
+                     <td>21-05-2018</td>
+                   </tr>
+                    <tr>
+                     <td>3</td>
+                     <td>Rezky Alamsyah</td>
+                     <td>KTM</td>
+                     <td>Sangat Baik</td>
+                     <td>21-05-2018</td>
+                   </tr>
+                 </tbody>
+                </table>
+              </div>
+           <div class="col-lg-2 justify-content-center align-items-center">
+             <button class=" btn btn-info my-2" data-toggle="modal" data-target="#editBarang"><span class="oi oi-pencil"></span></button>
+             <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteAnggota"><span class="oi oi-circle-x"></span></button>
+           </div>
+         </div>
+       </div>  
+     </div>
       <hr class="hr-small">
-           <div class="row">
-        <div class="container col align-items-center">
-          <div class="row align-items-center my-lg-3">
-            <div class=" white col-lg-10 bg-danger rectangle">
-              <div class="white col-lg-3 bg-danger" style="align-content:center; float: left;">
-                <div style="padding-left: 10%">
-                  <img src="Picture/infocus.jpg" style="height: 85px; width: 90%;">
-                </div>
+     <div class="container mt-lg-2 py-2 px-4 bg-light">
+        <div class="container container-barang col align-items-center">
+         <div class="row align-items-center my-lg-3">
+          <div class=" white col-lg-10 bg-dark rectangle">
+            <div class=" white col-lg-3 bg-dark kotak" style="align-content: center;float: left;" onmouseover="mouseover3()" onmouseout="mouseout3()">
+              <div id="newpage" style="padding-top: 70px">
+                <span class="ion-android-arrow-dropleft-circle" onclick="display()" cursor="pointer" style="z-index: 11;" ></span>
+                <span class="ion-android-arrow-dropright-circle" onclick="display2()" cursor="pointer" style="z-index: 11; margin-left: 100px"></span>
               </div>
-              <div>
-                <font size="60">TIDAK TERSEDIA</font>
-              </div>
+              <img src="Picture/spidol.jpg" class="imageresponse imagestandart imageresponseif" id="gambar3">
             </div>
+            <div class="mid-sm">
+              <font class="barangs barangskecil"><pre><b>NAMA</b>         : Spidol</font><br><br></pre>
+              <font class="barangs barangskecil"><pre><b>SISA STOCK</b>   : 2/8</font></pre>
+            </div>
+           </div>
+            <div class="mid-sm" id="peminjam3">
+              <p>Daftar Barang Terpinjam</p>
+                <table id="table-barang">  
+                  <thead>
+                   <tr>
+                    <th>Nomor</th>
+                    <th>Peminjam</th>
+                    <th>Jaminan</th>
+                    <th>Kondisi Barang</th>
+                    <th>Tanggal Kembali</th>
+                  </tr>
+                  </thead>
+                  <tbody class="scroll">
+                    <tr class="real">
+                     <td>1</td>
+                     <td>Rezky Alamsyah</td>
+                     <td>KTM</td>
+                     <td>Sangat Baik</td>
+                     <td>21-05-2018</td>
+                   </tr>
+                    <tr class="real">
+                     <td>2</td>
+                     <td>Faturochman</td>
+                     <td>KTM</td>
+                     <td>Sangat Baik</td>
+                     <td>24-05-2018</td>
+                   </tr>
+                    <tr class="real">
+                     <td>3</td>
+                     <td>Iqbal</td>
+                     <td>KTM</td>
+                     <td>Sangat Baik</td>
+                     <td>26-05-2018</td>
+                   </tr>
+                    <tr class="real">
+                     <td>4</td>
+                     <td>Mabruri</td>
+                     <td>KTM</td>
+                     <td>Sangat Baik</td>
+                     <td>26-05-2018</td>
+                   </tr>
+                   <tr class="unreal">
+                     <td>5</td>
+                     <td>Mabruri</td>
+                     <td>KTM</td>
+                     <td>Sangat Baik</td>
+                     <td>26-05-2018</td>
+                   </tr>
+                   <tr class="unreal">
+                     <td>6</td>
+                     <td>Mabruri</td>
+                     <td>KTM</td>
+                     <td>Sangat Baik</td>
+                     <td>26-05-2018</td>
+                   </tr>
+                </table>
+              </div>
             <div class="col-lg-2 justify-content-center align-items-center">
-              <button class=" btn btn-info my-2" data-toggle="modal" data-target="#editBarang"><span class="oi oi-pencil"></span></button>
-              <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteAnggota"><span class="oi oi-circle-x"></span></button>
-            </div>
-          </div>
-        </div>  
-      </div>
+             <button class=" btn btn-info my-2" data-toggle="modal" data-target="#editBarang"><span class="oi oi-pencil"></span></button>
+             <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteAnggota"><span class="oi oi-circle-x"></span></button>
+           </div>
+         </div>
+       </div>  
+     </div>
       <hr class="hr-small">
+       <div class="container mt-lg-2 py-2 px-4 bg-light">
+        <div class="container container-barang col align-items-center">
+         <div class="row align-items-center my-lg-3">
+          <div class=" white col-lg-10 bg-danger rectangle">
+            <div class=" white col-lg-3 bg-danger" style="align-content: center;float: left;">
+              <img src="Picture/papantulis.jpg" class="imageresponse imagestandart imageresponseif" id="gambar4" onmouseover="mouseover4()" onmouseout="mouseout4()">  
+            </div>
+            <div class="mid-sm">
+              <font class="barangs barangskecil"><pre><b>NAMA</b>         : Papan tulis</font><br><br></pre>
+              <font class="barangs barangskecil"><pre><b>SISA STOCK</b>   : 1/3</font></pre>
+            </div>
+           </div>
+            <div class="mid-sm" id="peminjam4">
+              <p>Daftar Barang Terpinjam</p>
+                <table id="table-barang">  
+                  <thead>
+                    <tr>
+                      <th>Nomor</th>
+                      <th>Peminjam</th>
+                      <th>Jaminan</th>
+                      <th>Kondisi Barang</th>
+                      <th>Tanggal Kembali</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                     <td class="table-danger">1</td>
+                     <td class="table-danger">Faturochman Pranacahya</td>
+                     <td class="table-danger">KTM</td>
+                     <td class="table-danger">Sangat Baik</td>
+                     <td class="table-danger">29-03-2018</td>
+                   </tr>
+                   <tr>
+                     <td>2</td>
+                     <td>Andrianto</td>
+                     <td>KTM</td>
+                     <td>Sangat Baik</td>
+                     <td>18-05-2018</td>
+                   </tr>
+                </tbody>
+                </table>
+              </div>
+            <div class="col-lg-2 justify-content-center align-items-center">
+             <button class=" btn btn-info my-2" data-toggle="modal" data-target="#editBarang"><span class="oi oi-pencil"></span></button>
+             <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteAnggota"><span class="oi oi-circle-x"></span></button>
+           </div>
+         </div>
+       </div>  
+     </div>
+      <hr class="hr-small">
+      <div class="container mt-lg-2 py-2 px-4 bg-light">
+        <div class="container container-barang col align-items-center">
+         <div class="row align-items-center my-lg-3">
+          <div class=" white col-lg-10 bg-dark rectangle">
+            <div class=" white col-lg-3 bg-dark" style="align-content: center;float: left;">
+              <img src="Picture/penghapus.jpg" class="imageresponse imagestandart imageresponseif" id="gambar5" onmouseover="mouseover5()" onmouseout="mouseout5()">  
+            </div>
+            <div class="mid-sm">
+              <font class="barangs barangskecil"><pre><b>NAMA</b>         : Penghapus Papan Tulis</font><br><br></pre>
+              <font class="barangs barangskecil"><pre><b>SISA STOCK</b>   : 3/3</font></pre>
+            </div>
+           </div>
+            <div class="mid-sm" id="peminjam5">
+              <p>Daftar Barang Terpinjam</p>
+              <p style="font-size: 30px; color: green; transform: rotate(18deg); padding-top: 40px">BARANG SEDANG TIDAK DIPINJAM</p>
+              </div>
+            <div class="col-lg-2 justify-content-center align-items-center">
+             <button class=" btn btn-info my-2" data-toggle="modal" data-target="#editBarang"><span class="oi oi-pencil"></span></button>
+             <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteAnggota"><span class="oi oi-circle-x"></span></button>
+           </div>
+         </div>
+       </div>  
+     </div>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" language="JavaScript" type="text/javascript" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"  language="JavaScript" type="text/javascript" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"  language="JavaScript" type="text/javascript" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
   </body>
 </html>

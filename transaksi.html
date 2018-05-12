@@ -337,9 +337,22 @@
     </div>
     <!-- End Search Bar -->
     <div class="container mt-lg-2 py-2 px-4 bg-light">
+     <select class="col-lg-3 col-sm-8 form-control" id="sortFilter"> 
+      <option value="namap">Nama Peminjam</option> 
+      <option value="namab">Nama Barang</option> 
+      <option value="tanggalpb">Tanggal Pinjam berdasarkan terbaru</option> 
+      <option value="tanggalpl">Tanggal Pinjam berdasarkan terlama</option> 
+      <option value="tanggalkb">Tanggal Kembalikan berdasarkan terbaru</option> 
+      <option value="tanggalkl">Tanggal Kembalikan berdasarkan terbaru</option> 
+      <option value="kondisi">Kondisi Barang</option> 
+    </select> 
+    <button onclick="sortTable()">Sort</button> 
+    </div>
+    <div class="container mt-lg-2 py-2 px-4 bg-light">
     <table class="table">
     <thead>
       <tr>
+        <th scope="col">Nomor</th>
         <th scope="col">Nama Peminjam</th>
         <th scope="col">Nama Barang</th>
         <th scope="col">Tanggal Pinjam</th>
@@ -349,20 +362,23 @@
     </thead>
     <tbody>
       <tr>
+        <td scope="tabble-success">1</td>
         <td class="table-success">Rezky Alamsyah</td>
         <td class="table-success">Infocus</td>
         <td class="table-success">17/04/2018</td>
-        <td class="table-success">21/02/2018</td>
+        <td class="table-success">21/04/2018</td>
         <td class="table-success" style="color: green">Sangat Baik</td>
       </tr>
       <tr>
+        <td scope="tabble-success">2</td>
         <td class="table-success">Rezky Alamsyah</td>
         <td class="table-success">Infocus</td>
-        <td class="table-success">17/04/2018</td>
-        <td class="table-success">21/02/2018</td>
+        <td class="table-success">25/04/2018</td>
+        <td class="table-success">27/04/2018</td>
         <td class="table-success" style="color: green">Sangat Baik</td>
       </tr>
       <tr>
+        <td scope="table-warning">3</td>
         <td class="table-warning">Rezky Alamsyah</td>
         <td class="table-warning">Infocus</td>
         <td class="table-warning">17/04/2018</td>
@@ -370,6 +386,7 @@
         <td class="table-warning" >Kurang Baik</td>
       </tr>
       <tr>
+        <td scope="table-danger">4</td>
         <td class="table-danger">Rezky Alamsyah</td>
         <td class="table-danger">Infocus</td>
         <td class="table-danger">17/04/2018</td>
@@ -377,6 +394,7 @@
         <td class="table-danger" style="color: red">Rusak</td>
       </tr>
       <tr>
+        <td scope="table-danger">5</td>
         <td class="table-danger">Rezky Alamsyah</td>
         <td class="table-danger">Infocus</td>
         <td class="table-danger">17/04/2018</td>
@@ -384,6 +402,7 @@
         <td class="table-danger" style="color: red">Rusak</td>
       </tr>
       <tr>
+        <td scope="table-danger">6</td>
         <td class="table-danger">Rezky Alamsyah</td>
         <td class="table-danger">Infocus</td>
         <td class="table-danger">17/04/2018</td>
@@ -391,6 +410,7 @@
         <td class="table-danger" style="color: red">Rusak</td>
       </tr>
       <tr>
+        <td scope="table-danger">7</td>
         <td class="table-danger">Rezky Alamsyah</td>
         <td class="table-danger">Infocus</td>
         <td class="table-danger">17/04/2018</td>
@@ -398,6 +418,7 @@
         <td class="table-danger" style="color: red">Rusak</td>
       </tr>
       <tr>
+        <td scope="table-danger">8</td>
         <td class="table-danger">Rezky Alamsyah</td>
         <td class="table-danger">Infocus</td>
         <td class="table-danger">17/04/2018</td>
@@ -405,6 +426,7 @@
         <td class="table-danger" style="color: red">Rusak</td>
       </tr>
       <tr>
+        <td scope="table-danger">9</td>
         <td class="table-danger">Rezky Alamsyah</td>
         <td class="table-danger">Infocus</td>
         <td class="table-danger">17/04/2018</td>
@@ -412,6 +434,7 @@
         <td class="table-danger" style="color: red">Rusak</td>
       </tr>
       <tr>
+        <td scope="table-danger">10</td>
         <td class="table-danger">Rezky Alamsyah</td>
         <td class="table-danger">Infocus</td>
         <td class="table-danger">17/04/2018</td>
@@ -419,6 +442,7 @@
         <td class="table-danger" style="color: red">Rusak</td>
       </tr>
       <tr>
+        <td scope="table-danger">11</td>
         <td class="table-danger">Rezky Alamsyah</td>
         <td class="table-danger">Infocus</td>
         <td class="table-danger">17/04/2018</td>
@@ -426,6 +450,7 @@
         <td class="table-danger" style="color: red">Rusak</td>
       </tr>
       <tr>
+        <td scope="table-danger">12</td>
         <td class="table-danger">Rezky Alamsyah</td>
         <td class="table-danger">Infocus</td>
         <td class="table-danger">17/04/2018</td>
@@ -433,6 +458,7 @@
         <td class="table-danger" style="color: red">Rusak</td>
       </tr>
       <tr>
+        <td scope="table-danger">13</td>
         <td class="table-danger">Rezky Alamsyah</td>
         <td class="table-danger">Infocus</td>
         <td class="table-danger">17/04/2018</td>
@@ -440,6 +466,7 @@
         <td class="table-danger" style="color: red">Rusak</td>
       </tr>
       <tr>
+        <td scope="table-danger">14</td>
         <td class="table-danger">Rezky Alamsyah</td>
         <td class="table-danger">Infocus</td>
         <td class="table-danger">17/04/2018</td>
@@ -447,55 +474,23 @@
         <td class="table-danger" style="color: red">Rusak</td>
       </tr>
       <tr>
+        <td scope="table-danger">15</td>
         <td class="table-danger">Rezky Alamsyah</td>
         <td class="table-danger">Infocus</td>
         <td class="table-danger">17/04/2018</td>
         <td class="table-danger">21/02/2018</td>
         <td class="table-danger" style="color: red">Rusak</td>
       </tr>
-      <tr>
+      <tr id="table2">
+        <td scope="table-danger">16</td>
         <td class="table-danger">Rezky Alamsyah</td>
         <td class="table-danger">Infocus</td>
         <td class="table-danger">17/04/2018</td>
         <td class="table-danger">21/02/2018</td>
         <td class="table-danger" style="color: red">Rusak</td>
       </tr>
-      <tr>
-        <td class="table-danger">Rezky Alamsyah</td>
-        <td class="table-danger">Infocus</td>
-        <td class="table-danger">17/04/2018</td>
-        <td class="table-danger">21/02/2018</td>
-        <td class="table-danger" style="color: red">Rusak</td>
-      </tr>
-      <tr>
-        <td class="table-danger">Rezky Alamsyah</td>
-        <td class="table-danger">Infocus</td>
-        <td class="table-danger">17/04/2018</td>
-        <td class="table-danger">21/02/2018</td>
-        <td class="table-danger" style="color: red">Rusak</td>
-      </tr>
-      <tr>
-        <td class="table-danger">Rezky Alamsyah</td>
-        <td class="table-danger">Infocus</td>
-        <td class="table-danger">17/04/2018</td>
-        <td class="table-danger">21/02/2018</td>
-        <td class="table-danger" style="color: red">Rusak</td>
-      </tr>
-      <tr>
-        <td class="table-danger">Rezky Alamsyah</td>
-        <td class="table-danger">Infocus</td>
-        <td class="table-danger">17/04/2018</td>
-        <td class="table-danger">21/02/2018</td>
-        <td class="table-danger" style="color: red">Rusak</td>
-      </tr>
-      <tr>
-        <td class="table-danger">Rezky Alamsyah</td>
-        <td class="table-danger">Infocus</td>
-        <td class="table-danger">17/04/2018</td>
-        <td class="table-danger">21/02/2018</td>
-        <td class="table-danger" style="color: red">Rusak</td>
-      </tr>
-      <tr>
+      <tr id="table2">
+        <td scope="table-danger">17</td>
         <td class="table-danger">Rezky Alamsyah</td>
         <td class="table-danger">Infocus</td>
         <td class="table-danger">17/04/2018</td>
