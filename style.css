@@ -167,7 +167,8 @@ h4 {
 }
 
 .body_login{
-	height: 100%;
+	height: auto;
+	background-image: url("Picture/bgsearch.jpg");
 }
 
 .rectangle{

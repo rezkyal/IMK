@@ -12,26 +12,6 @@
     <link href="ionicons-2.0.1/css/ionicons.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <title>SI HMTC</title>
-    <script>
-    // Example starter JavaScript for disabling form submissions if there are invalid fields
-    (function() {
-      'use strict';
-      window.addEventListener('load', function() {
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        var forms = document.getElementsByClassName('needs-validation');
-        // Loop over them and prevent submission
-        var validation = Array.prototype.filter.call(forms, function(form) {
-          form.addEventListener('submit', function(event) {
-            if (form.checkValidity() === false) {
-              event.preventDefault();
-              event.stopPropagation();
-            }
-            form.classList.add('was-validated');
-          }, false);
-        });
-      }, false);
-    })();
-    </script>
   </head>
   <body>
     <!-- modal -->
@@ -45,10 +25,10 @@
             </button>
           </div>
           <div class="modal-body">
-            <form class="needs-validation" novalidate>
+            <form class="needs-validation">
               <div class="form-group">
                 <label for="NRP">NRP</label>
-                <input type="text" class="form-control" id="NRP" aria-describedby="NRPHelp" placeholder="Masukkan NRP" required>
+                <input type="text" class="form-control NRP" id="NRP1" aria-describedby="NRPHelp" placeholder="Masukkan NRP" required pattern="\d*">
                 <div class="invalid-feedback">
                   NRP Tidak boleh kosong!
                 </div>
@@ -69,7 +49,7 @@
               </div>
               <div class="form-group">
                 <label for="NRP">No. HP</label>
-                <input type="text" class="form-control" id="noHP" aria-describedby="noHPHelp" placeholder="Masukkan No. HP" required>
+                <input type="text" class="form-control" id="nohp1" aria-describedby="noHPHelp" placeholder="Masukkan No. HP" required pattern="\d*">
                 <div class="invalid-feedback">
                   No. HP Tidak boleh kosong!
                 </div>
@@ -111,7 +91,7 @@
           <div class="modal-body">
             <form class="needs-validation" novalidate>
               <div class="form-group">
-                <input type="password" class="form-control" id="NRP" aria-describedby="NRPHelp" placeholder="Masukan Password Lama" required>
+                <input type="password" class="form-control" aria-describedby="NRPHelp" placeholder="Masukan Password Lama" required>
                 <div class="invalid-feedback">
                  Form Password Lama tidak boleh kosong!
                 </div>
@@ -148,10 +128,10 @@
             </button>
           </div>
           <div class="modal-body">
-            <form class="needs-validation" novalidate>
+            <form>
               <div class="form-group">
                 <label for="NRP">NRP</label>
-                <input value="05111540000109" type="text" class="form-control" id="NRP" aria-describedby="NRPHelp" placeholder="Masukkan NRP" required>
+                <input value="05111540000109" type="text" class="form-control" id="NRP2" aria-describedby="NRPHelp" placeholder="Masukkan NRP" required pattern="\d*">
                 <div class="invalid-feedback">
                   NRP Tidak boleh kosong!
                 </div>
@@ -172,7 +152,7 @@
               </div>
               <div class="form-group">
                 <label for="No.HP">No. HP</label>
-                <input value="085718246369" type="text" class="form-control" id="noHP" aria-describedby="noHPHelp" placeholder="Masukkan No. HP" required>
+                <input value="085718246369" type="text" class="form-control" id="nohp2" aria-describedby="noHPHelp" placeholder="Masukkan No. HP" required pattern="\d*">
                 <div class="invalid-feedback">
                   No. HP Tidak boleh kosong!
                 </div>
@@ -273,8 +253,8 @@
                 Jaminan      : KTM
               </div>
               <div>
-                <button type="button" class="btn btn-primary">Terima</button>
-                <button type="button" class="btn btn-secondary">Tolak</button>
+                <button type="button" class="btn btn-primary" onclick="accept(this)">Terima</button>
+                <button type="button" class="btn btn-secondary" >Tolak</button>
               </div>
             </div>
             <div class="dropdown-divider"></div>
@@ -350,10 +330,14 @@
         </div>
         <div class="row">
           <div class="container col align-items-center">
-            <form class="row form-inline my-2 my-lg-0 mx-1">
-              <input class="col-lg-10 col-sm-10 form-control pr-xl-2" type="search" placeholder="Search" aria-label="Search">
+            <form class="row form-inline my-2 my-lg-0 mx-1 justify-content-around">
+              <input class="col-lg-10 col-sm-10 form-control pr-xl-2" id="search" type="search" placeholder="Search" aria-label="Search">
+              <select class="col-lg-1 form-control" id="selectFilter">
+                <option value="nama">Nama</option>
+                <option value="nrp">NRP</option>
+              </select>
               <div class="col-lg-1">
-                <button class="btn color1 my-2 my-sm-0" type="submit">Search</button>  
+                <button onclick="return mySearch()" class="btn color1 my-2 my-sm-0">Search</button>  
               </div>
             </form>
           </div>  
@@ -371,7 +355,12 @@
         </div>
       </div>
       </div>
-      <div class="row">
+      <div id="notfound" class="row hidden">
+        <div class="container jumbotron">
+          <h3 style="text-align: center">Data tidak ditemukan</h3>
+        </div>
+      </div>
+      <div class="row dataAnggota" nama="Rezky Alamsyah" NRP="05111540000109">
         <div class="container col align-items-center">
           <div class="row align-items-center my-lg-3">
             <div class=" white col-lg-10 bg-secondary rectangle">
@@ -386,15 +375,15 @@
               <button class="white btn btn-info my-2" data-toggle="modal" data-target="#resetAnggota"><span class="oi oi-lock-locked"></span></button>
             </div>
           </div>
+          <hr class="hr-small">
         </div>  
       </div>
-      <hr class="hr-small">
-      <div class="row">
+      <div class="row dataAnggota" nama="Prana Cahya" NRP="05111540000103">
         <div class="container col align-items-center">
           <div class="row align-items-center my-lg-3">
             <div class=" white col-lg-10 bg-secondary rectangle">
-              <pre> Nama  : Rezky Alamsyah<br/></pre>
-              <pre> NRP   : 05111540000109<br/></pre>
+              <pre> Nama  : Prana Cahya<br/></pre>
+              <pre> NRP   : 05111540000103<br/></pre>
               <pre> No.HP : 085718246369<br/></pre>
             </div>
             <div class="col-lg-2 justify-content-center align-items-center">
@@ -404,15 +393,15 @@
               <button class="white btn btn-info my-2" data-toggle="modal" data-target="#resetAnggota"><span class="oi oi-lock-locked"></span></button>
             </div>
           </div>
+          <hr class="hr-small">
         </div>  
       </div>
-      <hr class="hr-small">
-      <div class="row">
+      <div class="row dataAnggota" nama="Iqbal Mabruri" NRP="05111540000120">
         <div class="container col align-items-center">
           <div class="row align-items-center my-lg-3">
             <div class=" white col-lg-10 bg-secondary rectangle">
-              <pre> Nama  : Rezky Alamsyah<br/></pre>
-              <pre> NRP   : 05111540000109<br/></pre>
+              <pre> Nama  : Iqbal Mabruri<br/></pre>
+              <pre> NRP   : 05111540000120<br/></pre>
               <pre> No.HP : 085718246369<br/></pre>
             </div>
             <div class="col-lg-2 justify-content-center align-items-center">
@@ -422,14 +411,16 @@
               <button class="white btn btn-info my-2" data-toggle="modal" data-target="#resetAnggota"><span class="oi oi-lock-locked"></span></button>
             </div>
           </div>
+          <hr class="hr-small">
         </div>  
-      </div>
-      <hr class="hr-small">
+      </div>    
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="anggotascript.js"></script>
   </body>
 </html>

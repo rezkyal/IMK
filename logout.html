@@ -10,6 +10,11 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="open-iconic/font/css/open-iconic-bootstrap.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+      });
+    </script>
     <title>SI HMTC</title>
     <script>
     // Example starter JavaScript for disabling form submissions if there are invalid fields
@@ -32,23 +37,7 @@
     })();
     </script>
   </head>
-  <body class="searchBg">
-     <div class="modal fade" id="tambahAnggota" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-       <div class="modal-dialog" role="document">
-         <div class="modal-content">
-           <div class="modal-header">
-             <h5 class="modal-title" id="exampleModalLabel">Tidak punya akun?</h5>
-           </div>
-           <div class="modal-body">
-             Silahkan menghubungi sekertaris umum untuk mendapatkan username dan password
-           </div>
-           <div class="modal-footer">
-             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-           </div>
-           </form>
-         </div>
-       </div>
-     </div>
+  <body class="body_login">
      <div class="modal fade" id="gantipass" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -84,23 +73,27 @@
       <div class="row">
          <div class="col-md-4"></div>
          <div class="col-md-offset-4 col-md-4">
+            <form>
              <div class="form-login">
                 <h4>SI Peminjaman Inventaris HMTC</h4>
                 <input type="text" id="userName" class="form-control input-sm chat-input" placeholder="username" required />
                 </br>
                 <input type="password" id="userPassword" class="form-control input-sm chat-input" placeholder="password" required />
                 </br>
-                <div>
-                  <div>
-                    <a href="#" data-toggle="modal" data-target="#tambahAnggota">Tidak punya akun?</a>
-                  </div>
-                  <div style="text-align: end">
-                  <span class="group-btn">     
-                    <a href="#" class="btn btn-primary btn-md" data-toggle="modal" data-target="#gantipass">login <i class="fa fa-sign-in"></i></a>
-                  </span>
+                <div class="container">
+                  <div class="row justify-content-between">
+                    <div>
+                      <a href="#" data-toggle="tooltip" data-placement="bottom" title="Silahkan menghubungi sekertaris umum untuk mendapatkan username dan password">Tidak punya akun?</a>
+                      <br>
+                      <a href="#" data-toggle="tooltip" data-placement="bottom" title="Silahkan menghubungi sekertaris umum untuk mereset password">Lupa password?</a> 
+                    </div>
+                    <span class="group-btn">   
+                      <button onclick="return validateLogin()" id="execbutton" class="btn btn-primary btn-md">login <i class="fa fa-sign-in"></i></button>
+                    </span>
                   </div>
                 </div>
              </div>
+            </form>
          </div>
          <div class="col-md-4"></div>
       </div>
@@ -108,5 +101,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="script.js"></script>
   </body>
 </html>

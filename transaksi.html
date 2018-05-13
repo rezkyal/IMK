@@ -324,9 +324,14 @@
         <div class="row">
           <div class="container col align-items-center">
             <form class="row form-inline my-2 my-lg-0 mx-1">
-              <input class="col-lg-10 col-sm-10 form-control pr-xl-2" type="search" placeholder="Search" aria-label="Search">
-              <div class="col-lg-1">
-                <button class="btn color1 my-2 my-sm-0" type="submit">Search</button>  
+              <input class="col-lg-8 col-sm-12 form-control pr-xl-2" id='search' type="search" placeholder="Search" aria-label="Search">
+              <select class="col-lg-3 col-sm-8 form-control" id="selectFilter">
+                <option value="namap">Nama Peminjam</option>
+                <option value="namab">Nama Barang</option>
+                <option value="kondisi">Kondisi Barang</option>
+              </select>
+              <div class="col-lg-1 col-sm-4">
+                <button class="btn color1 my-2 my-sm-0" type="submit" onclick="return barangSearch()">Search</button>  
               </div>
             </form>
           </div>  
@@ -348,162 +353,63 @@
     </select> 
     <button onclick="sortTable()">Sort</button> 
     </div>
-    <div class="container mt-lg-2 py-2 px-4 bg-light">
-    <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Nomor</th>
-        <th scope="col">Nama Peminjam</th>
-        <th scope="col">Nama Barang</th>
-        <th scope="col">Tanggal Pinjam</th>
-        <th scope="col">Tanggal Kembalikan</th>
-        <th scope="col">Kondisi Barang</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td scope="tabble-success">1</td>
-        <td class="table-success">Rezky Alamsyah</td>
-        <td class="table-success">Infocus</td>
-        <td class="table-success">17/04/2018</td>
-        <td class="table-success">21/04/2018</td>
-        <td class="table-success" style="color: green">Sangat Baik</td>
-      </tr>
-      <tr>
-        <td scope="tabble-success">2</td>
-        <td class="table-success">Rezky Alamsyah</td>
-        <td class="table-success">Infocus</td>
-        <td class="table-success">25/04/2018</td>
-        <td class="table-success">27/04/2018</td>
-        <td class="table-success" style="color: green">Sangat Baik</td>
-      </tr>
-      <tr>
-        <td scope="table-warning">3</td>
-        <td class="table-warning">Rezky Alamsyah</td>
-        <td class="table-warning">Infocus</td>
-        <td class="table-warning">17/04/2018</td>
-        <td class="table-warning">21/02/2018</td>
-        <td class="table-warning" >Kurang Baik</td>
-      </tr>
-      <tr>
-        <td scope="table-danger">4</td>
-        <td class="table-danger">Rezky Alamsyah</td>
-        <td class="table-danger">Infocus</td>
-        <td class="table-danger">17/04/2018</td>
-        <td class="table-danger">21/02/2018</td>
-        <td class="table-danger" style="color: red">Rusak</td>
-      </tr>
-      <tr>
-        <td scope="table-danger">5</td>
-        <td class="table-danger">Rezky Alamsyah</td>
-        <td class="table-danger">Infocus</td>
-        <td class="table-danger">17/04/2018</td>
-        <td class="table-danger">21/02/2018</td>
-        <td class="table-danger" style="color: red">Rusak</td>
-      </tr>
-      <tr>
-        <td scope="table-danger">6</td>
-        <td class="table-danger">Rezky Alamsyah</td>
-        <td class="table-danger">Infocus</td>
-        <td class="table-danger">17/04/2018</td>
-        <td class="table-danger">21/02/2018</td>
-        <td class="table-danger" style="color: red">Rusak</td>
-      </tr>
-      <tr>
-        <td scope="table-danger">7</td>
-        <td class="table-danger">Rezky Alamsyah</td>
-        <td class="table-danger">Infocus</td>
-        <td class="table-danger">17/04/2018</td>
-        <td class="table-danger">21/02/2018</td>
-        <td class="table-danger" style="color: red">Rusak</td>
-      </tr>
-      <tr>
-        <td scope="table-danger">8</td>
-        <td class="table-danger">Rezky Alamsyah</td>
-        <td class="table-danger">Infocus</td>
-        <td class="table-danger">17/04/2018</td>
-        <td class="table-danger">21/02/2018</td>
-        <td class="table-danger" style="color: red">Rusak</td>
-      </tr>
-      <tr>
-        <td scope="table-danger">9</td>
-        <td class="table-danger">Rezky Alamsyah</td>
-        <td class="table-danger">Infocus</td>
-        <td class="table-danger">17/04/2018</td>
-        <td class="table-danger">21/02/2018</td>
-        <td class="table-danger" style="color: red">Rusak</td>
-      </tr>
-      <tr>
-        <td scope="table-danger">10</td>
-        <td class="table-danger">Rezky Alamsyah</td>
-        <td class="table-danger">Infocus</td>
-        <td class="table-danger">17/04/2018</td>
-        <td class="table-danger">21/02/2018</td>
-        <td class="table-danger" style="color: red">Rusak</td>
-      </tr>
-      <tr>
-        <td scope="table-danger">11</td>
-        <td class="table-danger">Rezky Alamsyah</td>
-        <td class="table-danger">Infocus</td>
-        <td class="table-danger">17/04/2018</td>
-        <td class="table-danger">21/02/2018</td>
-        <td class="table-danger" style="color: red">Rusak</td>
-      </tr>
-      <tr>
-        <td scope="table-danger">12</td>
-        <td class="table-danger">Rezky Alamsyah</td>
-        <td class="table-danger">Infocus</td>
-        <td class="table-danger">17/04/2018</td>
-        <td class="table-danger">21/02/2018</td>
-        <td class="table-danger" style="color: red">Rusak</td>
-      </tr>
-      <tr>
-        <td scope="table-danger">13</td>
-        <td class="table-danger">Rezky Alamsyah</td>
-        <td class="table-danger">Infocus</td>
-        <td class="table-danger">17/04/2018</td>
-        <td class="table-danger">21/02/2018</td>
-        <td class="table-danger" style="color: red">Rusak</td>
-      </tr>
-      <tr>
-        <td scope="table-danger">14</td>
-        <td class="table-danger">Rezky Alamsyah</td>
-        <td class="table-danger">Infocus</td>
-        <td class="table-danger">17/04/2018</td>
-        <td class="table-danger">21/02/2018</td>
-        <td class="table-danger" style="color: red">Rusak</td>
-      </tr>
-      <tr>
-        <td scope="table-danger">15</td>
-        <td class="table-danger">Rezky Alamsyah</td>
-        <td class="table-danger">Infocus</td>
-        <td class="table-danger">17/04/2018</td>
-        <td class="table-danger">21/02/2018</td>
-        <td class="table-danger" style="color: red">Rusak</td>
-      </tr>
-      <tr id="table2">
-        <td scope="table-danger">16</td>
-        <td class="table-danger">Rezky Alamsyah</td>
-        <td class="table-danger">Infocus</td>
-        <td class="table-danger">17/04/2018</td>
-        <td class="table-danger">21/02/2018</td>
-        <td class="table-danger" style="color: red">Rusak</td>
-      </tr>
-      <tr id="table2">
-        <td scope="table-danger">17</td>
-        <td class="table-danger">Rezky Alamsyah</td>
-        <td class="table-danger">Infocus</td>
-        <td class="table-danger">17/04/2018</td>
-        <td class="table-danger">21/02/2018</td>
-        <td class="table-danger" style="color: red">Rusak</td>
-      </tr>
-    </tbody>
-    </table>
+    <div class="container mt-lg-2 py-2 px-4 bg-light" style="overflow: auto;">
+      <table class="table" id="tables" >
+      <thead>
+        <tr>
+          <th scope="col">Nama Peminjam</th>
+          <th scope="col">Nama Barang</th>
+          <th scope="col">Tanggal Pinjam</th>
+          <th scope="col">Tanggal Kembalikan</th>
+          <th scope="col">Kondisi Barang</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="databarang" nama="Rezky Alamsyah" barang="Infocus" tanggalp="21/02/2018" tanggalb="28/02/2018" kondisi="Sangat Baik">
+          <td class="table-success">Rezky Alamsyah</td>
+          <td class="table-success">Infocus</td>
+          <td class="table-success">21/02/2018</td>
+          <td class="table-success">17/04/2018</td>
+          <td class="table-success" style="color: green">Sangat Baik</td>
+        </tr>
+        <tr class="databarang" nama="Iqbal Mabruri" barang="Papan tulis" tanggalp="12/03/2018" tanggalb="18/03/2018" kondisi="Kurang Baik">
+          <td class="table-warning">Iqbal Mabruri</td>
+          <td class="table-warning">Papan tulis</td>
+          <td class="table-warning">12/03/2018</td>
+          <td class="table-warning">18/03/2018</td>
+          <td class="table-warning">Kurang Baik</td>
+        </tr>
+        <tr class="databarang" nama="Prana Cahya" barang="Spidol" tanggalp="19/04/2018" tanggalb="21/06/2018" kondisi="Sangat Baik">
+          <td class="table-success">Prana Cahya</td>
+          <td class="table-success">Spidol</td>
+          <td class="table-success">19/04/2018</td>
+          <td class="table-success">21/06/2018</td>
+          <td class="table-success" style="color: green">Sangat Baik</td>
+        </tr>
+        <tr class="databarang" nama="Naufal PF" barang="Infocus" tanggalp="19/04/2018" tanggalb="01/05/2018"
+        kondisi="Rusak">
+          <td class="table-danger">Naufal PF</td>
+          <td class="table-danger">Infocus</td>
+          <td class="table-danger">19/04/2018</td>
+          <td class="table-danger">01/05/2018</td>
+          <td class="table-danger" style="color: red">Rusak</td>
+        </tr>
+        <tr class="databarang" nama="Rezky Alamsyah" barang="Spidol" tanggalp="19/04/2018" tanggalb="01/05/2018"
+        kondisi="Rusak">
+          <td class="table-danger">Rezky Alamsyah</td>
+          <td class="table-danger">Spidol</td>
+          <td class="table-danger">19/04/2018</td>
+          <td class="table-danger">01/05/2018</td>
+          <td class="table-danger" style="color: red">Rusak</td>
+        </tr>
+      </tbody>
+      </table>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="script.js"></script>
   </body>
 </html>
