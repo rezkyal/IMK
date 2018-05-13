@@ -94,7 +94,7 @@ function mouseout3(){
   
 }
 function mouseover4(){
-  var peminjam = document.gdetElementById('peminjam4');
+  var peminjam = document.getElementById('peminjam4');
   peminjam.style.opacity = "0.95";
   peminjam.style.background = "grey";
   peminjam.style.transition = "all .4s";
