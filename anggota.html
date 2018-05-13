@@ -181,7 +181,27 @@
       </div>
     </div>
 
-    <div class="modal fade" id="deleteAnggota" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="deleteAnggota1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Hapus data Anggota</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Hapus data milik <strong>Prana Cahya (05111540000103)?</strong>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-danger" data-dismiss="modal" onclick="return hapusAnggota('data1')">Hapus</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="deleteAnggota2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -195,7 +215,27 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-danger">Hapus</button>
+            <button type="submit" class="btn btn-danger" onclick="return hapusAnggota('data2')">Hapus</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="deleteAnggota3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Hapus data Anggota</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Hapus data milik <strong>Iqbal Mabruri (05111540000120)?</strong>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" onclick="return hapusAnggota('data3')" class="btn btn-danger">Hapus</button>
           </div>
         </div>
       </div>
@@ -372,14 +412,15 @@
           </div>
           <div class="row">
             <div class="container col align-items-center">
-              <form class="row form-inline my-2 my-lg-0 mx-1 justify-content-around">
-                <input class="col-lg-10 col-sm-10 form-control pr-xl-2" id="search" type="search" placeholder="Search" aria-label="Search">
-                <select class="col-lg-1 form-control" id="selectFilter">
+              <form class="row form-inline my-2 my-lg-0 mx-1 justify-content-between">
+                <input class="col-lg-8 col-sm-12 form-control pr-xl-2" id='search' type="search" placeholder="Search" aria-label="Search">
+                <select class="col-lg-3 col-sm-8 form-control" id="selectFilter">
                   <option value="nama">Nama</option>
                   <option value="nrp">NRP</option>
+                  <option value="nohp">No. HP</option>
                 </select>
-                <div class="col-lg-1">
-                  <button onclick="return mySearch()" class="btn color1 my-2 my-sm-0">Search</button>  
+                <div class="col-lg-1 col-sm-4">
+                  <button class="btn color1 my-2 my-sm-0" type="submit" onclick="return anggotaSearch()">Search</button> 
                 </div>
               </form>
             </div>  
@@ -390,24 +431,27 @@
       </div>
       <!-- End Search Bar -->
       <div class="container mt-lg-2 py-2 px-4  bg-light">
-      <div class="container mt-lg-2 my-1 py-1 px-4">
-        <div class="row justify-content-between">
-          <div>
-           <button class=" btn btn-info my-2 my-sm-0" data-toggle="modal" data-target="#tambahAnggota"><span class="ion-android-person-add"></span></button>
-          </div>
-        </div>
-        </div>
         <div class="container mt-lg-2 py-2 px-4 bg-light">
-         <select class="col-lg-3 col-sm-8 form-control" id="sortFilter"> 
-            <option value="namap">Nama Peminjam</option> 
-            <option value="namab">Nama Barang</option> 
-            <option value="tanggalpb">Tanggal Pinjam berdasarkan terbaru</option> 
-            <option value="tanggalpl">Tanggal Pinjam berdasarkan terlama</option> 
-            <option value="tanggalkb">Tanggal Kembalikan berdasarkan terbaru</option> 
-            <option value="tanggalkl">Tanggal Kembalikan berdasarkan terbaru</option> 
-            <option value="kondisi">Kondisi Barang</option> 
-          </select> 
-          <button onclick="sortTable()">Sort</button> 
+         <div class="container">
+           <div class="row">
+             <select class="col-lg-3 col-sm-8 form-control" id="sortFilter"> 
+                <option value="nrp">NRP</option> 
+                <option value="nama">Nama</option> 
+                <option value="nohp">No.HP</option> 
+                <option value="status">Status</option> 
+              </select> 
+              <button class="btn color1" style="margin-left: 5px;" onclick="sortTableAnggota()">Sort</button>
+           </div> 
+         </div>
+        </div>
+        <div class="container mt-lg-2 my-1 py-1 px-4">
+          <div class="container">
+            <div class="row justify-content-between">
+              <div>
+               <button class=" btn btn-info my-2 my-sm-0" data-toggle="modal" data-target="#tambahAnggota"><span class="ion-android-person-add"></span></button>
+              </div>
+            </div>
+          </div>
         </div>
         <div id="notfound" class="row hidden">
           <div class="container jumbotron">
@@ -426,38 +470,38 @@
             </tr>
           </thead>
           <tbody>
-            <tr class="dataanggota" nama="Prana Cahya" barang="Spidol" tanggalp="19/04/2018" tanggalb="21/06/2018" kondisi="Sangat Baik">
+            <tr class="dataanggota" id="data1" nama="Prana Cahya" nrp="05111540000103" nohp="088888888888" status="Aktif">
               <td class="table-success">05111540000103</td>
               <td class="table-success">Prana Cahya</td>            
-              <td class="table-success">088888888888</td>
+              <td class="table-success">088888887777</td>
               <td class="table-success">Aktif</td>
               <td class="table-success">
                 <button class=" btn btn-info my-2" data-toggle="modal" data-target="#editAnggota"><span class="oi oi-pencil"></span></button>
-                <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteAnggota"><span class="oi oi-circle-x"></span></button>
+                <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteAnggota1"><span class="oi oi-circle-x"></span></button>
                 <button class="white btn btn-warning my-2" data-toggle="modal" data-target="#resetAnggota">Reset</button>
                 <button class="white btn btn-info my-2" data-toggle="modal" data-target="#nonaktifAnggota"><span class="oi oi-lock-locked"></span></button>
               </td>
             </tr>
-            <tr class="dataanggota" nama="Rezky Alamsyah" barang="Infocus" tanggalp="21/02/2018" tanggalb="28/02/2018" kondisi="Sangat Baik">
+            <tr class="dataanggota" id="data2" nama="Rezky Alamsyah" nrp="05111540000109" nohp="085718246369" status="Nonaktif">
               <td class="table-warning">05111540000109</td>
               <td class="table-warning">Rezky Alamsyah</td>
               <td class="table-warning">085718246369</td>
               <td class="table-warning">Nonaktif</td>
               <td class="table-warning">
                 <button class=" btn btn-info my-2" data-toggle="modal" data-target="#editAnggota"><span class="oi oi-pencil"></span></button>
-                <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteAnggota"><span class="oi oi-circle-x"></span></button>
+                <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteAnggota2"><span class="oi oi-circle-x"></span></button>
                 <button class="white btn btn-warning my-2" data-toggle="modal" data-target="#resetAnggota">Reset</button>
                 <button class="white btn btn-info my-2" data-toggle="modal" data-target="#aktifAnggota"><span class="oi oi-lock-unlocked"></span></button>
               </td>
             </tr>
-            <tr class="dataanggota" nama="Iqbal Mabruri" barang="Papan tulis" tanggalp="12/03/2018" tanggalb="18/03/2018" kondisi="Kurang Baik">
+            <tr class="dataanggota" id="data3" nama="Iqbal Mabruri" nrp="05111540000120" nohp="088888888888" status="Aktif">
               <td class="table-success">05111540000120</td>
               <td class="table-success">Iqbal Mabruri</td>            
               <td class="table-success">088888888888</td>
               <td class="table-success">Aktif</td>
               <td class="table-success">
                 <button class=" btn btn-info my-2" data-toggle="modal" data-target="#editAnggota"><span class="oi oi-pencil"></span></button>
-                <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteAnggota"><span class="oi oi-circle-x"></span></button>
+                <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteAnggota3"><span class="oi oi-circle-x"></span></button>
                 <button class="white btn btn-warning my-2" data-toggle="modal" data-target="#resetAnggota">Reset</button>
                 <button class="white btn btn-info my-2" data-toggle="modal" data-target="#aktifAnggota"><span class="oi oi-lock-locked"></span></button>
               </td>

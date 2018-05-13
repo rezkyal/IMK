@@ -152,6 +152,49 @@ function display2(){
   document.getElementsByClassName('unreal')[1].style.visibility = "visible";
 }
 
+function hapusAnggota(nama){
+	var trnya=document.getElementById(nama);
+	trnya.classList.add("hidden");
+	return false;
+}
+
+function anggotaSearch(){
+	var total=0;
+	var param=document.getElementById('search').value;
+	var notFound=document.getElementById('notfound');
+	var tables=document.getElementById('tables');
+	var base=document.getElementById('selectFilter').value;
+	param=param.toLowerCase();
+	var dataBarang=document.getElementsByClassName('dataanggota');
+	console.log(dataBarang.length);
+	for(var i=0;i<dataBarang.length;i++){
+		if(base=='nama'){
+			var nama=dataBarang[i].getAttribute('nama');
+		}else if(base=='nrp'){
+			var nama=dataBarang[i].getAttribute('nrp');
+		}else if(base=='nohp'){
+			var nama=dataBarang[i].getAttribute('nohp');
+		}
+		nama=nama.toLowerCase();
+		var n=nama.search(param);
+		if(n==-1){
+			dataBarang[i].classList.add("hidden");
+		}else{
+			total+=1;
+			dataBarang[i].classList.remove("hidden");
+		}
+
+	}
+	if(total==0){
+		notFound.classList.remove("hidden");
+		tables.classList.add("hidden");
+	}else{
+		notFound.classList.add("hidden");
+		tables.classList.remove("hidden");
+	}
+	return false;	
+}
+
 function barangSearch(){
 	var total=0;
 	var param=document.getElementById('search').value;
@@ -316,6 +359,78 @@ function sortTable() {
       		var y1=2;
       	}else{
       		var y1=3;
+      	}
+      	if (x1 > y1) {
+      	  // I so, mark as a switch and break the loop:
+      	  shouldSwitch= true;
+      	  break;
+      	}
+      }
+    }
+    if (shouldSwitch) {
+      /* If a switch has been marked, make the switch
+      and mark that a switch has been done: */
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+    }
+  }
+}
+
+function sortTableAnggota() {
+  var table, rows, switching, i, x, y, shouldSwitch;
+  table = document.getElementById("tables");
+  sort = document.getElementById("sortFilter").value;
+  switching = true;
+  /* Make a loop that will continue until
+  no switching has been done: */
+  while (switching) {
+    // Start by saying: no switching is done:
+    switching = false;
+    rows = table.getElementsByTagName("TR");
+    /* Loop through all table rows (except the
+    first, which contains table headers): */
+    for (i = 1; i < (rows.length - 1); i++) {
+      // Start by saying there should be no switching:
+      shouldSwitch = false;
+      /* Get the two elements you want to compare,
+      one from current row and one from the next: */
+      // Check if the two rows should switch place:
+      if(sort=="nrp"){
+      	x = rows[i].getElementsByTagName("TD")[0];
+      	y = rows[i + 1].getElementsByTagName("TD")[0];
+      	if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+      	  // I so, mark as a switch and break the loop:
+      	  shouldSwitch= true;
+      	  break;
+      	}
+      }else if(sort=="nama"){
+      	x = rows[i].getElementsByTagName("TD")[1];
+      	y = rows[i + 1].getElementsByTagName("TD")[1];
+      	if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+      	  // I so, mark as a switch and break the loop:
+      	  shouldSwitch= true;
+      	  break;
+      	}
+      }else if(sort=="nohp"){
+      	x = rows[i].getElementsByTagName("TD")[2];
+      	y = rows[i + 1].getElementsByTagName("TD")[2];
+      	if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+      	  // I so, mark as a switch and break the loop:
+      	  shouldSwitch= true;
+      	  break;
+      	}
+      }else if(sort=="status"){
+      	x = rows[i].getElementsByTagName("TD")[3];
+      	y = rows[i + 1].getElementsByTagName("TD")[3];
+      	if(x.innerHTML=='Aktif'){
+      		var x1=1;
+      	}else{
+      		var x1=2;
+      	}
+      	if(y.innerHTML=='Aktif'){
+      		var y1=1;
+      	}else{
+      		var y1=2;
       	}
       	if (x1 > y1) {
       	  // I so, mark as a switch and break the loop:
