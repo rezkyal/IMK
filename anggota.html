@@ -201,6 +201,47 @@
       </div>
     </div>
 
+    <div class="modal fade" id="nonaktifAnggota" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Nonaktikan data Anggota</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Nonaktifkan data milik <strong>Rezky Alamsyah (05111540000109)?</strong>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-danger">Nonaktifkan</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="modal fade" id="aktifAnggota" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Aktifkan data Anggota</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Aktifkan data milik <strong>Rezky Alamsyah (05111540000109)?</strong>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Aktifkan</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="modal fade" id="resetAnggota" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -322,98 +363,163 @@
     <!-- End Header -->
     <!-- Search Bar -->
     <div class="searchBg">
-      <div class="container pt-lg-5 my-2 py-1 px-4">
-        <div class="row">
-          <div class="container align-items-center">
-            <h4 class="white lato">Daftar Anggota</h4>
+      <div>
+        <div class="container pt-lg-5 my-2 py-1 px-4">
+          <div class="row">
+            <div class="container align-items-center">
+              <h4 class="white lato">Daftar Anggota</h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="container col align-items-center">
+              <form class="row form-inline my-2 my-lg-0 mx-1 justify-content-around">
+                <input class="col-lg-10 col-sm-10 form-control pr-xl-2" id="search" type="search" placeholder="Search" aria-label="Search">
+                <select class="col-lg-1 form-control" id="selectFilter">
+                  <option value="nama">Nama</option>
+                  <option value="nrp">NRP</option>
+                </select>
+                <div class="col-lg-1">
+                  <button onclick="return mySearch()" class="btn color1 my-2 my-sm-0">Search</button>  
+                </div>
+              </form>
+            </div>  
+          </div>
+          <div class="container mt-lg-2 my-1 py-1 px-4">
           </div>
         </div>
-        <div class="row">
+      </div>
+      <!-- End Search Bar -->
+      <div class="container mt-lg-2 py-2 px-4  bg-light">
+      <div class="container mt-lg-2 my-1 py-1 px-4">
+        <div class="row justify-content-between">
+          <div>
+           <button class=" btn btn-info my-2 my-sm-0" data-toggle="modal" data-target="#tambahAnggota"><span class="ion-android-person-add"></span></button>
+          </div>
+        </div>
+        </div>
+        <div class="container mt-lg-2 py-2 px-4 bg-light">
+         <select class="col-lg-3 col-sm-8 form-control" id="sortFilter"> 
+            <option value="namap">Nama Peminjam</option> 
+            <option value="namab">Nama Barang</option> 
+            <option value="tanggalpb">Tanggal Pinjam berdasarkan terbaru</option> 
+            <option value="tanggalpl">Tanggal Pinjam berdasarkan terlama</option> 
+            <option value="tanggalkb">Tanggal Kembalikan berdasarkan terbaru</option> 
+            <option value="tanggalkl">Tanggal Kembalikan berdasarkan terbaru</option> 
+            <option value="kondisi">Kondisi Barang</option> 
+          </select> 
+          <button onclick="sortTable()">Sort</button> 
+        </div>
+        <div id="notfound" class="row hidden">
+          <div class="container jumbotron">
+            <h3 style="text-align: center">Data tidak ditemukan</h3>
+          </div>
+        </div>
+        <div class="container mt-lg-2 py-2 px-4 bg-light" style="overflow: auto;">
+          <table class="table" id="tables" >
+          <thead class="thead-cust">
+            <tr>
+              <th scope="col">NRP</th>
+              <th scope="col">Nama</th>
+              <th scope="col">No.HP</th>
+              <th scope="col">Status</th>
+              <th scope="col">Menu</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="dataanggota" nama="Prana Cahya" barang="Spidol" tanggalp="19/04/2018" tanggalb="21/06/2018" kondisi="Sangat Baik">
+              <td class="table-success">05111540000103</td>
+              <td class="table-success">Prana Cahya</td>            
+              <td class="table-success">088888888888</td>
+              <td class="table-success">Aktif</td>
+              <td class="table-success">
+                <button class=" btn btn-info my-2" data-toggle="modal" data-target="#editAnggota"><span class="oi oi-pencil"></span></button>
+                <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteAnggota"><span class="oi oi-circle-x"></span></button>
+                <button class="white btn btn-warning my-2" data-toggle="modal" data-target="#resetAnggota">Reset</button>
+                <button class="white btn btn-info my-2" data-toggle="modal" data-target="#nonaktifAnggota"><span class="oi oi-lock-locked"></span></button>
+              </td>
+            </tr>
+            <tr class="dataanggota" nama="Rezky Alamsyah" barang="Infocus" tanggalp="21/02/2018" tanggalb="28/02/2018" kondisi="Sangat Baik">
+              <td class="table-warning">05111540000109</td>
+              <td class="table-warning">Rezky Alamsyah</td>
+              <td class="table-warning">085718246369</td>
+              <td class="table-warning">Nonaktif</td>
+              <td class="table-warning">
+                <button class=" btn btn-info my-2" data-toggle="modal" data-target="#editAnggota"><span class="oi oi-pencil"></span></button>
+                <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteAnggota"><span class="oi oi-circle-x"></span></button>
+                <button class="white btn btn-warning my-2" data-toggle="modal" data-target="#resetAnggota">Reset</button>
+                <button class="white btn btn-info my-2" data-toggle="modal" data-target="#aktifAnggota"><span class="oi oi-lock-unlocked"></span></button>
+              </td>
+            </tr>
+            <tr class="dataanggota" nama="Iqbal Mabruri" barang="Papan tulis" tanggalp="12/03/2018" tanggalb="18/03/2018" kondisi="Kurang Baik">
+              <td class="table-success">05111540000120</td>
+              <td class="table-success">Iqbal Mabruri</td>            
+              <td class="table-success">088888888888</td>
+              <td class="table-success">Aktif</td>
+              <td class="table-success">
+                <button class=" btn btn-info my-2" data-toggle="modal" data-target="#editAnggota"><span class="oi oi-pencil"></span></button>
+                <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteAnggota"><span class="oi oi-circle-x"></span></button>
+                <button class="white btn btn-warning my-2" data-toggle="modal" data-target="#resetAnggota">Reset</button>
+                <button class="white btn btn-info my-2" data-toggle="modal" data-target="#aktifAnggota"><span class="oi oi-lock-locked"></span></button>
+              </td>
+            </tr>
+          </tbody>
+          </table>
+        </div>
+  <!--       <div class="row dataAnggota" nama="Rezky Alamsyah" NRP="05111540000109">
           <div class="container col align-items-center">
-            <form class="row form-inline my-2 my-lg-0 mx-1 justify-content-around">
-              <input class="col-lg-10 col-sm-10 form-control pr-xl-2" id="search" type="search" placeholder="Search" aria-label="Search">
-              <select class="col-lg-1 form-control" id="selectFilter">
-                <option value="nama">Nama</option>
-                <option value="nrp">NRP</option>
-              </select>
-              <div class="col-lg-1">
-                <button onclick="return mySearch()" class="btn color1 my-2 my-sm-0">Search</button>  
+            <div class="row align-items-center my-lg-3">
+              <div class=" white col-lg-10 bg-secondary rectangle">
+                <pre> Nama  : Rezky Alamsyah<br/></pre>
+                <pre> NRP   : 05111540000109<br/></pre>
+                <pre> No.HP : 085718246369<br/></pre>
               </div>
-            </form>
+              <div class="col-lg-2 justify-content-center align-items-center">
+                <button class=" btn btn-info my-2" data-toggle="modal" data-target="#editAnggota"><span class="oi oi-pencil"></span></button>
+                <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteAnggota"><span class="oi oi-circle-x"></span></button>
+                <button class="white btn btn-warning my-2" data-toggle="modal" data-target="#resetAnggota">Reset</button><br>
+                <button class="white btn btn-info my-2" data-toggle="modal" data-target="#resetAnggota"><span class="oi oi-lock-locked"></span></button>
+              </div>
+            </div>
+            <hr class="hr-small">
           </div>  
         </div>
-        <div class="container mt-lg-2 my-1 py-1 px-4">
+        <div class="row dataAnggota" nama="Prana Cahya" NRP="05111540000103">
+          <div class="container col align-items-center">
+            <div class="row align-items-center my-lg-3">
+              <div class=" white col-lg-10 bg-secondary rectangle">
+                <pre> Nama  : Prana Cahya<br/></pre>
+                <pre> NRP   : 05111540000103<br/></pre>
+                <pre> No.HP : 085718246369<br/></pre>
+              </div>
+              <div class="col-lg-2 justify-content-center align-items-center">
+                <button class=" btn btn-info my-2" data-toggle="modal" data-target="#editAnggota"><span class="oi oi-pencil"></span></button>
+                <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteAnggota"><span class="oi oi-circle-x"></span></button>
+                <button class="white btn btn-warning my-2" data-toggle="modal" data-target="#resetAnggota">Reset</button><br>
+                <button class="white btn btn-info my-2" data-toggle="modal" data-target="#resetAnggota"><span class="oi oi-lock-locked"></span></button>
+              </div>
+            </div>
+            <hr class="hr-small">
+          </div>  
         </div>
-      </div>
-    </div>
-    <!-- End Search Bar -->
-    <div class="container mt-lg-2 py-2 px-4  bg-light">
-    <div class="container mt-lg-2 my-1 py-1 px-4">
-      <div class="row justify-content-between">
-        <div>
-         <button class=" btn btn-info my-2 my-sm-0" data-toggle="modal" data-target="#tambahAnggota"><span class="ion-android-person-add"></span></button>
-        </div>
-      </div>
-      </div>
-      <div id="notfound" class="row hidden">
-        <div class="container jumbotron">
-          <h3 style="text-align: center">Data tidak ditemukan</h3>
-        </div>
-      </div>
-      <div class="row dataAnggota" nama="Rezky Alamsyah" NRP="05111540000109">
-        <div class="container col align-items-center">
-          <div class="row align-items-center my-lg-3">
-            <div class=" white col-lg-10 bg-secondary rectangle">
-              <pre> Nama  : Rezky Alamsyah<br/></pre>
-              <pre> NRP   : 05111540000109<br/></pre>
-              <pre> No.HP : 085718246369<br/></pre>
+        <div class="row dataAnggota" nama="Iqbal Mabruri" NRP="05111540000120">
+          <div class="container col align-items-center">
+            <div class="row align-items-center my-lg-3">
+              <div class=" white col-lg-10 bg-secondary rectangle">
+                <pre> Nama  : Iqbal Mabruri<br/></pre>
+                <pre> NRP   : 05111540000120<br/></pre>
+                <pre> No.HP : 085718246369<br/></pre>
+              </div>
+              <div class="col-lg-2 justify-content-center align-items-center">
+                <button class=" btn btn-info my-2" data-toggle="modal" data-target="#editAnggota"><span class="oi oi-pencil"></span></button>
+                <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteAnggota"><span class="oi oi-circle-x"></span></button>
+                <button class="white btn btn-warning my-2" data-toggle="modal" data-target="#resetAnggota">Reset</button><br>
+                <button class="white btn btn-info my-2" data-toggle="modal" data-target="#resetAnggota"><span class="oi oi-lock-locked"></span></button>
+              </div>
             </div>
-            <div class="col-lg-2 justify-content-center align-items-center">
-              <button class=" btn btn-info my-2" data-toggle="modal" data-target="#editAnggota"><span class="oi oi-pencil"></span></button>
-              <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteAnggota"><span class="oi oi-circle-x"></span></button>
-              <button class="white btn btn-warning my-2" data-toggle="modal" data-target="#resetAnggota">Reset</button><br>
-              <button class="white btn btn-info my-2" data-toggle="modal" data-target="#resetAnggota"><span class="oi oi-lock-locked"></span></button>
-            </div>
-          </div>
-          <hr class="hr-small">
-        </div>  
+            <hr class="hr-small">
+          </div>  
+        </div> -->    
       </div>
-      <div class="row dataAnggota" nama="Prana Cahya" NRP="05111540000103">
-        <div class="container col align-items-center">
-          <div class="row align-items-center my-lg-3">
-            <div class=" white col-lg-10 bg-secondary rectangle">
-              <pre> Nama  : Prana Cahya<br/></pre>
-              <pre> NRP   : 05111540000103<br/></pre>
-              <pre> No.HP : 085718246369<br/></pre>
-            </div>
-            <div class="col-lg-2 justify-content-center align-items-center">
-              <button class=" btn btn-info my-2" data-toggle="modal" data-target="#editAnggota"><span class="oi oi-pencil"></span></button>
-              <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteAnggota"><span class="oi oi-circle-x"></span></button>
-              <button class="white btn btn-warning my-2" data-toggle="modal" data-target="#resetAnggota">Reset</button><br>
-              <button class="white btn btn-info my-2" data-toggle="modal" data-target="#resetAnggota"><span class="oi oi-lock-locked"></span></button>
-            </div>
-          </div>
-          <hr class="hr-small">
-        </div>  
-      </div>
-      <div class="row dataAnggota" nama="Iqbal Mabruri" NRP="05111540000120">
-        <div class="container col align-items-center">
-          <div class="row align-items-center my-lg-3">
-            <div class=" white col-lg-10 bg-secondary rectangle">
-              <pre> Nama  : Iqbal Mabruri<br/></pre>
-              <pre> NRP   : 05111540000120<br/></pre>
-              <pre> No.HP : 085718246369<br/></pre>
-            </div>
-            <div class="col-lg-2 justify-content-center align-items-center">
-              <button class=" btn btn-info my-2" data-toggle="modal" data-target="#editAnggota"><span class="oi oi-pencil"></span></button>
-              <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteAnggota"><span class="oi oi-circle-x"></span></button>
-              <button class="white btn btn-warning my-2" data-toggle="modal" data-target="#resetAnggota">Reset</button><br>
-              <button class="white btn btn-info my-2" data-toggle="modal" data-target="#resetAnggota"><span class="oi oi-lock-locked"></span></button>
-            </div>
-          </div>
-          <hr class="hr-small">
-        </div>  
-      </div>    
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
