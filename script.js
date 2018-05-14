@@ -55,7 +55,7 @@ function dudu(){
 function mouseover1(){
   var peminjam = document.getElementById('peminjam1');
   peminjam.style.opacity = "0.95";
-  peminjam.style.background = "grey";
+  peminjam.style.background = "white";
   peminjam.style.transition = "all .4s";
 }
 
@@ -66,7 +66,7 @@ function mouseout1(){
 function mouseover2(){
   var peminjam = document.getElementById('peminjam2');
   peminjam.style.opacity = "0.95";
-  peminjam.style.background = "grey";
+  peminjam.style.background = "white";
   peminjam.style.transition = "all .4s";
 }
 
@@ -80,7 +80,7 @@ function mouseover3(){
   var img = document.getElementById('gambar3');
   peminjam.style.opacity = "0.95";
   peminjam.style.transition = "all .4s";
-  peminjam.style.background = "grey";
+  peminjam.style.background = "white";
   page.style.opacity ="1";
   img.style.transform = "scale(1.5)";
 }
@@ -94,9 +94,9 @@ function mouseout3(){
   
 }
 function mouseover4(){
-  var peminjam = document.gdetElementById('peminjam4');
+  var peminjam = document.getElementById('peminjam4');
   peminjam.style.opacity = "0.95";
-  peminjam.style.background = "grey";
+  peminjam.style.background = "white";
   peminjam.style.transition = "all .4s";
 }
 
@@ -107,7 +107,7 @@ function mouseout4(){
 function mouseover5(){
   var peminjam = document.getElementById('peminjam5');
   peminjam.style.opacity = "0.95";
-  peminjam.style.background = "grey";
+  peminjam.style.background = "white";
   peminjam.style.transition = "all .4s";
 }
 
@@ -117,6 +117,7 @@ function mouseout5(){
 
 function editalert(){
     alert("Data Sudah di Edit!");
+    return false;
 }
 
 function hapusalert(){
@@ -126,7 +127,7 @@ function hapusalert(){
 function mouseclick4(){
   var peminjam = document.getElementById('peminjam4');
   peminjam.style.opacity = "0.95";
-  peminjam.style.background = "grey";
+  peminjam.style.background = "white";
   peminjam.style.transition = "all .4s";
 }
 
@@ -228,6 +229,35 @@ function barangSearch(){
 	}else{
 		notFound.classList.add("hidden");
 		tables.classList.remove("hidden");
+	}
+	return false;	
+}
+
+function barangLSearch(){
+	var semua = document.getElementsByClassName('barangL');
+	var param=document.getElementById('search').value;
+	var total=0;
+	var notFound=document.getElementById('notfound');
+	var bar=document.getElementById('bar');
+	for(var i=0;i<semua.length;i++){
+		var nama=semua[i].getAttribute('nama');
+		//console.log(nama);
+		nama=nama.toLowerCase();
+		var n=nama.search(param);
+		if(n==-1){
+			semua[i].classList.add("hidden");
+		}else{
+			total+=1;
+			semua[i].classList.remove("hidden");
+		}
+
+	}
+	if(total==0){
+		notFound.classList.remove("hidden");
+		bar.classList.add('hidden');
+	}else{
+		notFound.classList.add("hidden");
+		bar.classList.remove('hidden');
 	}
 	return false;	
 }
@@ -490,3 +520,21 @@ function accept(e){
 	e.classList.add('hidden');
 	return false;
 }
+
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();

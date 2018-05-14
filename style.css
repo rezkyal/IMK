@@ -24,6 +24,31 @@
 	color: white;
 }
 
+.page-cust{
+	position: relative;
+	display: block;
+	padding: .5rem .75rem;
+	margin-left: -1px;
+	line-height: 1.25;
+	color: #213159;
+	background-color: #fff;
+	border: 1px solid #dee2e6;
+}
+
+.page-cust:hover{
+	z-index: 2;
+	color: #213159;
+	text-decoration: none;
+	background-color: #e9ecef;
+	border-color: #dee2e6;
+}
+
+.page-item.active .page-cust {
+    z-index: 1;
+    color: #fff;
+    background-color: #213159;
+    border-color: #213159;
+}
 .lato{
 	font-family: 'Lato', sans-serif;
 }
@@ -107,7 +132,7 @@ pre{
 		width: 15%;
 	}
 	.barangskecil{
-		font-size: 30px;
+		font-size: 10px;
 		text-align: center;
 	}
 	.mid-sm{
@@ -127,8 +152,8 @@ pre{
 		text-align: left;
 		vertical-align: middle;
 	}
-	.image-sm{
-	
+	.barangskecil{
+		font-size: 30px;
 	}
 }
 
