@@ -110,18 +110,21 @@
                 </div>
               </div>
               <div class="form-group">
-                <input type="password" class="form-control" oninput="check(this);" ="" id="Angkatan" aria-describedby="AngkatanHelp" placeholder="Ulangi Password Baru" required>
+                <input type="password" class="form-control" oninput="check(this);" id="passulang" aria-describedby="AngkatanHelp" placeholder="Ulangi Password Baru" required>
                 <div class="invalid-feedback">
                   Form Ulangi password tidak boleh kosong
                 </div>
               </div>
               <script language='javascript' type='text/javascript'>
                   function check(input) {
+                      console.log('run');
                       if (input.value != document.getElementById('passlama').value) {
-                          input.setCustomValidity('Password tidak cocok');
-                      } else {
+                        input.setCustomValidity('Password tidak cocok');
+                      }else if(input.validity.valueMissing){
+                        input.setCustomValidity('Field tidak boleh kosong');  
                           // input is valid -- reset the error message
-                          input.setCustomValidity('');
+                      }else{
+                        input.setCustomValidity('');
                       }
                   }
               </script>
@@ -255,8 +258,8 @@
                 Jaminan      : KTM
               </div>
               <div>
-                <button type="button" class="btn btn-primary">Terima</button>
-                <button type="button" class="btn btn-secondary">Tolak</button>
+                <button type="button" class="btn btn-primary" onclick="confirm('Terima request peminjaman?')">Terima</button>
+                <button type="button" class="btn btn-secondary" onclick="confirm('Tolak request peminjaman?')">Tolak</button>
               </div>
             </div>
             <div class="dropdown-divider"></div>
@@ -267,8 +270,8 @@
                 Jaminan      : KTM
               </div>
               <div>
-                <button type="button" class="btn btn-primary">Terima</button>
-                <button type="button" class="btn btn-secondary">Tolak</button>
+                <button type="button" class="btn btn-primary" onclick="confirm('Terima request peminjaman?')">Terima</button>
+                <button type="button" class="btn btn-secondary" onclick="confirm('Tolak request peminjaman?')">Tolak</button>
               </div>
             </div>
             <div class="dropdown-divider"></div>
@@ -279,8 +282,8 @@
                 Jaminan      : KTM
               </div>
               <div>
-                <button type="button" class="btn btn-primary">Terima</button>
-                <button type="button" class="btn btn-secondary">Tolak</button>
+                <button type="button" class="btn btn-primary" onclick="confirm('Terima request peminjaman?')">Terima</button>
+                <button type="button" class="btn btn-secondary" onclick="confirm('Tolak request peminjaman?')">Tolak</button>
               </div>
             </div>
             <div class="dropdown-divider"></div>
@@ -291,8 +294,8 @@
                 Jaminan      : KTM
               </div>
               <div>
-                <button type="button" class="btn btn-primary">Terima</button>
-                <button type="button" class="btn btn-secondary">Tolak</button>
+                <button type="button" class="btn btn-primary" onclick="confirm('Terima request peminjaman?')">Terima</button>
+                <button type="button" class="btn btn-secondary" onclick="confirm('Tolak request peminjaman?')">Tolak</button>
               </div>
             </div>
             <div class="dropdown-divider"></div>
@@ -303,8 +306,8 @@
                 Jaminan      : KTM
               </div>
               <div>
-                <button type="button" class="btn btn-primary">Terima</button>
-                <button type="button" class="btn btn-secondary">Tolak</button>
+                <button type="button" class="btn btn-primary" onclick="confirm('Terima request peminjaman?')">Terima</button>
+                <button type="button" class="btn btn-secondary" onclick="confirm('Tolak request peminjaman?')">Tolak</button>
               </div>
             </div>
           </div>
@@ -360,7 +363,7 @@
               <option value="tanggalpb">Tanggal Pinjam berdasarkan terbaru</option> 
               <option value="tanggalpl">Tanggal Pinjam berdasarkan terlama</option> 
               <option value="tanggalkb">Tanggal Kembalikan berdasarkan terbaru</option> 
-              <option value="tanggalkl">Tanggal Kembalikan berdasarkan terbaru</option> 
+              <option value="tanggalkl">Tanggal Kembalikan berdasarkan terlama</option> 
               <option value="kondisi">Kondisi Barang</option> 
              </select> 
              <button style="margin-left: 5px;" class="btn color1" onclick="sortTable()">Sort</button>

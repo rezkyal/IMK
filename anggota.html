@@ -103,18 +103,21 @@
                 </div>
               </div>
               <div class="form-group">
-                <input type="password" class="form-control" oninput="check(this);" ="" id="Angkatan" aria-describedby="AngkatanHelp" placeholder="Ulangi Password Baru" required>
+                <input type="password" class="form-control" oninput="check(this);" id="passulang" aria-describedby="AngkatanHelp" placeholder="Ulangi Password Baru" required>
                 <div class="invalid-feedback">
                   Form Ulangi password tidak boleh kosong
                 </div>
               </div>
               <script language='javascript' type='text/javascript'>
                   function check(input) {
+                      console.log('run');
                       if (input.value != document.getElementById('passlama').value) {
-                          input.setCustomValidity('Password tidak cocok');
-                      } else {
+                        input.setCustomValidity('Password tidak cocok');
+                      }else if(input.validity.valueMissing){
+                        input.setCustomValidity('Field tidak boleh kosong');  
                           // input is valid -- reset the error message
-                          input.setCustomValidity('');
+                      }else{
+                        input.setCustomValidity('');
                       }
                   }
               </script>

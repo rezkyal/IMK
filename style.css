@@ -277,6 +277,11 @@ h4 {
     opacity: 1;
 }
 
+.vl {
+    border-left: 2px solid black;
+    height: auto;
+}
+
 img {
     border: 3px solid #ddd;
     border-radius: 4px;
@@ -412,3 +417,8 @@ span{
 	text-align: center;
 }
 
+.gambarnotif1{
+	width: 80px;
+	height: 80px;
+	text-align: center;
+}
