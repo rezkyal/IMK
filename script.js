@@ -608,7 +608,9 @@ function accept(e){
 var semua = document.getElementsByTagName('input');
 if(document.getElementById('passulang')!==null){
   var passulang=document.getElementById('passulang');
-};
+}else {
+  var passulang=null;
+}
 for (var i=0;i<semua.length;i++){
   if(passulang!=semua[i]){
     semua[i].oninvalid = function(e){
