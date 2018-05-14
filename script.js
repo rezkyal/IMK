@@ -479,10 +479,12 @@ function sortTableAnggota() {
 }
 
 function validateLogin(){
-	console.log('run');
 	var userName = document.getElementById('userName');
 	var userPassword = document.getElementById('userPassword');
-	if(userName.value!="" && userPassword.value!=""){
+	if(userName.value=='admin'&&userPassword.value=='admin'){
+			document.location.href='anggota.html';
+			return false;
+	}else if(userName.value!="" && userPassword.value!=""){
 		var execbutton = document.getElementById('execbutton');
 		execbutton.setAttribute('data-toggle','modal');
 		execbutton.setAttribute('data-target','#gantipass');
@@ -538,3 +540,4 @@ function accept(e){
     });
   }, false);
 })();
+
