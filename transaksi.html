@@ -86,7 +86,7 @@
       </div>
     </div>
     <!---Modal Ganti Password-->
-     <div class="modal fade" id="gantipass" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal fade" id="gantipass" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -96,26 +96,35 @@
             </button>
           </div>
           <div class="modal-body">
-            <form class="needs-validation" novalidate>
+            <form onsubmit="window.alert('Password sudah diganti')" class="needs-validation" action="transaksi.html">
               <div class="form-group">
-                <input type="password" class="form-control" id="NRP" aria-describedby="NRPHelp" placeholder="Masukan Password Lama" required>
+                <input type="password" class="form-control" aria-describedby="NRPHelp" placeholder="Masukan Password Lama" required>
                 <div class="invalid-feedback">
                  Form Password Lama tidak boleh kosong!
                 </div>
               </div>
               <div class="form-group">
-                <input type="password" class="form-control" id="Nama" aria-describedby="NamaHelp" placeholder="Masukkan Password Baru" required>
+                <input id="passlama" type="password" class="form-control" id="Nama" aria-describedby="NamaHelp" placeholder="Masukkan Password Baru" required>
                 <div class="invalid-feedback">
                   Form Password Baru tidak boleh kosong!
                 </div>
               </div>
               <div class="form-group">
-                <label for="NRP">Ulangi Password Baru</label>
-                <input type="password" class="form-control" id="Angkatan" aria-describedby="AngkatanHelp" placeholder="Ulangi Password Baru" required>
+                <input type="password" class="form-control" oninput="check(this);" ="" id="Angkatan" aria-describedby="AngkatanHelp" placeholder="Ulangi Password Baru" required>
                 <div class="invalid-feedback">
                   Form Ulangi password tidak boleh kosong
                 </div>
               </div>
+              <script language='javascript' type='text/javascript'>
+                  function check(input) {
+                      if (input.value != document.getElementById('passlama').value) {
+                          input.setCustomValidity('Password tidak cocok');
+                      } else {
+                          // input is valid -- reset the error message
+                          input.setCustomValidity('');
+                      }
+                  }
+              </script>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

@@ -48,19 +48,29 @@
             </button>
           </div>
           <div class="modal-body">
-            <form class="needs-validation" novalidate action="peminjam.html">
+            <form class="needs-validation" action="peminjam.html">
               <div class="form-group">
-                <input type="password" class="form-control" id="Nama" aria-describedby="NamaHelp" placeholder="Masukkan Password Baru" required>
+                <input type="password" class="form-control" id="passlama" aria-describedby="NamaHelp" placeholder="Masukkan Password Baru" required>
                 <div class="invalid-feedback">
                   Form Password Baru tidak boleh kosong!
                 </div>
               </div>
               <div class="form-group">
-                <input type="password" class="form-control" id="Angkatan" aria-describedby="AngkatanHelp" placeholder="Ulangi Password Baru" required>
+                <input type="password" class="form-control" id="passlamal" oninput="check(this)" aria-describedby="AngkatanHelp" placeholder="Ulangi Password Baru" required>
                 <div class="invalid-feedback">
                   Form Ulangi password tidak boleh kosong
                 </div>
               </div>
+              <script language='javascript' type='text/javascript'>
+                  function check(input) {
+                      if (input.value != document.getElementById('passlama').value) {
+                          input.setCustomValidity('Password Must be Matching.');
+                      } else {
+                          // input is valid -- reset the error message
+                          input.setCustomValidity('');
+                      }
+                  }
+              </script>
           </div>
           <div class="modal-footer">
             <button type="submit" class="btn btn-primary">Submit</button>
