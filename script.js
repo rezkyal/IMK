@@ -356,7 +356,7 @@ function sortTable() {
       		shouldSwitch=true;
       		break;
       	}
-      }else if(sort=="tanggalpl"){
+      }else if(sort=="tanggalkl"){
       	x = rows[i].getElementsByTagName("TD")[3];
       	y = rows[i + 1].getElementsByTagName("TD")[3];
       	xs=x.innerHTML.split("/");
@@ -607,11 +607,12 @@ function accept(e){
 
 var semua = document.getElementsByTagName('input');
 for (var i=0;i<semua.length;i++){
-	semua[i].addEventListener("input",function(event){
-	  if(semua[i].validity.valueMissing){
-	    semua[i].setCustomValidity('Field tidak boleh kosong');
-	  }else{
-	    semua[i].setCustomValidity('');
-	  }
-	},false);
+	semua[i].oninvalid = function(e){
+		if(!e.target.validity.valid){
+			e.target.setCustomValidity("Field tidak boleh kosong!");
+		}
+	};
+	semua[i].oninput=function(e){
+		e.target.setCustomValidity('');
+	}
 }
