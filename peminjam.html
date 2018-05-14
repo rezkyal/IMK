@@ -14,8 +14,8 @@
     <script src="script.js"></script> 
   </head>
   <body>
-    <!-- modal -->
-    <div class="modal fade" id="tambahBarang" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- modal pinjam barang -->
+    <div class="modal fade" id="pinjambarang" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -66,134 +66,7 @@
         </div>
       </div>
     </div>
-    <!---Modal Ganti Password-->
-     <div class="modal fade" id="gantipass" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" style="cursor:pointer;" id="exampleModalLabel">Ganti Password</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <form class="needs-validation" novalidate>
-              <div class="form-group">
-                <input type="password" class="form-control" id="NRP" aria-describedby="NRPHelp" placeholder="Masukan Password Lama" required>
-                <div class="invalid-feedback">
-                 Form Password Lama tidak boleh kosong!
-                </div>
-              </div>
-              <div class="form-group">
-                <input type="password" class="form-control" id="Nama" aria-describedby="NamaHelp" placeholder="Masukkan Password Baru" required>
-                <div class="invalid-feedback">
-                  Form Password Baru tidak boleh kosong!
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="NRP">Ulangi Password Baru</label>
-                <input type="password" class="form-control" id="Angkatan" aria-describedby="AngkatanHelp" placeholder="Ulangi Password Baru" required>
-                <div class="invalid-feedback">
-                  Form Ulangi password tidak boleh kosong
-                </div>
-              </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </div>
-          </form>
-        </div>
-      </div>
-    </div>
-     <!---Modal Edit Barang-->
-    <div class="modal fade" id="editBarang" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Edit Barang</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <form class="needs-validation" novalidate>
-              <div class="form-group">
-                <label for="Nama-Barang">Nama Barang</label>
-                <input value="Infocus IN222" type="text" class="form-control" id="Nama-Barang" aria-describedby="Nama-BarangHelp" placeholder="Masukkan Nama Barang" required>
-                <div class="invalid-feedback">
-                  Form Nama Barang Tidak boleh kosong!
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="Jumlah-Stok">Jumlah-Stok</label>
-                <input value="1" type="text" class="form-control" id="Jumlah-Stok" aria-describedby="Jumlah-StokHelp" placeholder="Masukkan Jumlah-Stok"required>
-                <div class="invalid-feedback">
-                  Form Jumlah Stok Tidak boleh kosong!
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="Kondisi">Kondisi Barang</label>
-                <div class="dropdown">
-                  <select id="mySelect">
-                    <option value="Sangat Baik">Sangat Baik</option>
-                    <option value="Baik">Baik</option>
-                    <option value="Tidak Baik">Tidak Baik</option>
-                    <option value="Rusak">Rusak</option>
-                  </select>
-                </div>
-                <div style="margin-top: 20px">
-                  <form action="upload.php" method="post" enctype="multipart/form-data">
-                      Pilih gambar untuk diupload:
-                      <input type="file" name="fileToUpload" id="fileToUpload">
-                  </form>
-                </div>
-              </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary" onclick="editalert()" data-dismiss="modal">Submit</button>
-          </div>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade" id="deleteAnggota" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Hapus data Anggota</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            Hapus data milik <strong>Rezky Alamsyah (05111540000109)?</strong>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-danger" onclick="hapusalert()" data-dismiss="modal">Hapus</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade" id="resetAnggota" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Reset password</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            Reset password milik <strong>Rezky Alamsyah (05111540000109)?</strong>
-          </div>
-        </div>
-      </div>
-    </div>
+    
     <!-- Header -->
     <div class="container pt-lg-1 py-1 px-1">
     <nav class="navbar navbar-expand-lg">
@@ -287,7 +160,7 @@
     </nav>
   </div>
     <!-- End Header -->
-    <!-- Search Bar -->
+    <!-- Banner -->
    <div class="searchBg">
       <div class="container pt-lg-5 my-2 py-1 px-4">
         <div class="row">
@@ -295,275 +168,128 @@
             <h4 class="white lato">Daftar Barang Tersedia</h4>
           </div>
         </div>
-        <div class="row">
-          <div class="container col align-items-center">
-            <form class="row form-inline my-2 my-lg-0 mx-1">
-              <input class="col-lg-10 col-sm-10 form-control pr-xl-2" type="search" placeholder="Search" aria-label="Search">
-              <div class="col-lg-1">
-                <button class="btn color1 my-2 my-sm-0" type="submit">Search</button>  
-              </div>
-            </form>
-          </div>  
-        </div>
+        
        <div class="container mt-lg-2 my-1 py-1 px-4">
       </div>
     </div>
     </div>
-    <!-- End Search Bar -->
-      <div class="container py-1 px-4 bg-light">
-      <div class="container mt-lg-2 py-1 px-4">
-        <div class="row justify-content-between">
-        <div>
-         <button class=" btn btn-info my-2 my-sm-0" data-toggle="modal" data-target="#tambahBarang"><span class="ion-ios-plus-empty"></span></button>
+    <!-- End Banner -->
+    <div class="row">
+      <div class="col-md-1">
+      </div>
+      <div class="col-md-5 justify-content-center">
+        <h5 class="" style="text-align: center;"> Daftar barang tersedia</h5>
+        <div class="box-overflow bg-light">
+            <div class="box-overflow-item bg-dark">
+                <div class="box-overflow-img">
+                    <img src="Picture/infocus.jpg" class="imageresponse imagestandart imageresponsif" id="">
+                </div>
+                <div class="box-overflow-content">
+                    <font class="barangs barangskecil"><pre style="padding-left: 20px"><b>NAMA</b>         : Infocus IN222</font><br><br></pre>
+                    <font class="barangs barangskecil"><pre style="padding-left: 20px"><b>SISA STOCK</b>   : 1/1</font></pre>
+                </div>
+
+                <div class="box-overflow-button">
+                    <button class="btn btn-success white" data-target="#pinjambarang" data-toggle="modal">Pinjam Barang</button>
+                </div>
+            </div>
+            <div class="box-overflow-item bg-dark">
+                <div class="box-overflow-img">
+                    <img src="Picture/papantulis.jpg" class="imageresponse imagestandart imageresponsif" id="">
+                </div>
+                <div class="box-overflow-content">
+                    <font class="barangs barangskecil"><pre style="padding-left: 20px"><b>NAMA</b>         : Papan tulis</font><br><br></pre>
+                    <font class="barangs barangskecil"><pre style="padding-left: 20px"><b>SISA STOCK</b>   : 1/1</font></pre>
+                </div>
+                <div class="box-overflow-button">
+                    <button class="btn btn-success white" data-target="#pinjambarang" data-toggle="modal">Pinjam Barang</button>
+                </div>
+            </div>
+
+            <div class="box-overflow-item bg-dark">
+                <div class="box-overflow-img">
+                    <img src="Picture/spidol.jpg" class="imageresponse imagestandart imageresponsif" id="">
+                </div>
+                <div class="box-overflow-content">
+                    <font class="barangs barangskecil"><pre style="padding-left: 20px"><b>NAMA</b>         : Spidol</font><br><br></pre>
+                    <font class="barangs barangskecil"><pre style="padding-left: 20px"><b>SISA STOCK</b>   : 2/8</font></pre>
+                </div>
+                <div class="box-overflow-button">
+                    <button class="btn btn-success white" data-target="#pinjambarang" data-toggle="modal">Pinjam Barang</button>
+                </div>
+            </div>
+            <div class="box-overflow-item bg-dark">
+                <div class="box-overflow-img">
+                    <img src="Picture/Voly.jpg" class="imageresponse imagestandart imageresponsif" id="">
+                </div>
+                <div class="box-overflow-content">
+                    <font class="barangs barangskecil"><pre style="padding-left: 20px"><b>NAMA</b>         : Bola VOly</font><br><br></pre>
+                    <font class="barangs barangskecil"><pre style="padding-left: 20px"><b>SISA STOCK</b>   : 1/3</font></pre>
+                </div>
+                <div class="box-overflow-button">
+                    <button class="btn btn-success white" data-target="#pinjambarang" data-toggle="modal">Pinjam Barang</button>
+                </div>
+            </div>
         </div>
       </div>
+
+      <div class="col-md-5 justify-content-center">
+        <h5 class="" style="text-align: center;"> Daftar barang terpinjam</h5>
+        <div class="box-overflow bg-light">
+            <div class="box-overflow-item bg-dark">
+                <div class="box-overflow-img">
+                    <img src="Picture/infocus.jpg" class="imageresponse imagestandart imageresponsif" id="">
+                </div>
+                <div class="box-overflow-content">
+                    <font class="barangs barangskecil"><pre style="padding-left: 20px"><b>NAMA</b>         : Infocus IN222</font><br><br></pre>
+                    <font class="barangs barangskecil"><pre style="padding-left: 20px"><b>SISA STOCK</b>   : 0/1</font></pre>
+                </div>
+                <div class="box-overflow-button">
+                    <button disabled class="btn btn-danger white" data-target="#pinjambarang" data-toggle="modal">Pinjam Barang</button>
+                </div>
+            </div>
+            <div class="box-overflow-item bg-dark">
+                <div class="box-overflow-img">
+                    <img src="Picture/papantulis.jpg" class="imageresponse imagestandart imageresponsif" id="">
+                </div>
+                <div class="box-overflow-content">
+                    <font class="barangs barangskecil"><pre style="padding-left: 20px"><b>NAMA</b>         : Papan tulis</font><br><br></pre>
+                    <font class="barangs barangskecil"><pre style="padding-left: 20px"><b>SISA STOCK</b>   : 0/1</font></pre>
+                </div>
+                <div class="box-overflow-button">
+                    <button disabled class="btn btn-danger white" data-target="#pinjambarang" data-toggle="modal">Pinjam Barang</button>
+                </div>
+            </div>
+
+            <div class="box-overflow-item bg-dark">
+                <div class="box-overflow-img">
+                    <img src="Picture/spidol.jpg" class="imageresponse imagestandart imageresponsif" id="">
+                </div>
+                <div class="box-overflow-content">
+                    <font class="barangs barangskecil"><pre style="padding-left: 20px"><b>NAMA</b>         : Spidol</font><br><br></pre>
+                    <font class="barangs barangskecil"><pre style="padding-left: 20px"><b>SISA STOCK</b>   : 0/8</font></pre>
+                </div>
+                <div class="box-overflow-button">
+                    <button disabled class="btn btn-danger white" data-target="#pinjambarang" data-toggle="modal">Pinjam Barang</button>
+                </div>
+            </div>
+            <div class="box-overflow-item bg-dark">
+                <div class="box-overflow-img">
+                    <img src="Picture/Voly.jpg" class="imageresponse imagestandart imageresponsif" id="">
+                </div>
+                <div class="box-overflow-content">
+                    <font class="barangs barangskecil"><pre style="padding-left: 20px"><b>NAMA</b>         : Bola VOly</font><br><br></pre>
+                    <font class="barangs barangskecil"><pre style="padding-left: 20px"><b>SISA STOCK</b>   : 0/3</font></pre>
+                </div>
+                <div class="box-overflow-button">
+                    <button disabled class="btn btn-danger white" data-target="#pinjambarang" data-toggle="modal">Pinjam Barang</button>
+                </div>
+            </div>
+      </div>
+      <div class="col-md-1">
+      </div>
     </div>
-    <div class="container mt-lg-2 py-2 px-4 bg-light">
-      <div class="container container-barang col align-items-center">
-         <div class="row align-items-center my-lg-3">
-          <div class=" white col-lg-10 bg-dark rectangle">
-            <div class=" white col-lg-3 bg-dark" style="align-content: center;float: left;">
-              <img src="Picture/infocus.jpg" class="imageresponse imagestandart imageresponseif" id="gambar1">
-            </div>
-            <div class="mid-sm">
-              <font class="barangs barangskecil"><pre><b>NAMA</b>         : Infocus IN222</font><br><br></pre>
-              <font class="barangs barangskecil"><pre><b>SISA STOCK</b>   : 0/1</font></pre>
-            </div>
-           </div>
-           <div class="mid-sm" id="peminjam1">
-            <p>Daftar Barang Terpinjam</p>
-              <table id="table-barang">  
-              <thead>
-                <tr>
-                  <th>Nomor</th>
-                  <th>Peminjam</th>
-                  <th>Jaminan</th>
-                  <th>Kondisi Barang</th>
-                  <th>Tanggal Kembali</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                 <td>1</td>
-                 <td>Iqbal Mabruri</td>
-                 <td>KTM</td>
-                 <td>Sangat Baik</td>
-                 <td>21-05-2018</td>
-               </tr>
-             </tbody>
-            </table>
-            </div>
-           <div class="col-lg-2 justify-content-center align-items-center">
-              <button type="submit" class="btn btn-success white">Pinjam Barang</button>
-           </div>
-         </div>
-       </div>  
-     </div>
-      <hr class="hr-small">
-      <div class="container mt-lg-2 py-2 px-4 bg-light">
-        <div class="container container-barang col align-items-center">
-         <div class="row align-items-center my-lg-3">
-          <div class=" white col-lg-10 bg-dark rectangle">
-            <div class=" white col-lg-3 bg-dark" style="align-content: center;float: left;">
-              <img src="Picture/Voly.jpg" class="imageresponse imagestandart imageresponseif" id="gambar2">  
-            </div>
-            <div class="mid-sm">
-              <font class="barangs barangskecil"><pre><b>NAMA</b>         : Bola Voly</font><br><br></pre>
-              <font class="barangs barangskecil"><pre><b>SISA STOCK</b>   : 3/6</font></pre>
-            </div>
-           </div>
-            <div class="mid-sm" id="peminjam2">
-              <p>Daftar Barang Terpinjam</p>
-                <table id=table-barang>  
-                  <thead>
-                    <tr>
-                      <th>Nomor</th>
-                      <th>Peminjam</th>
-                      <th>Jaminan</th>
-                      <th>Kondisi Barang</th>
-                      <th>Tanggal Kembali</th>
-                    </tr>
-                  </thead>
-                  <tbody id="barang-peminjam">
-                    <tr>
-                     <td>1</td>
-                     <td>Rezky Alamsyah</td>
-                     <td>KTM</td>
-                     <td>Sangat Baik</td>
-                     <td>21-05-2018</td>
-                   </tr>
-                    <tr>
-                     <td>2</td>
-                     <td>Rezky Alamsyah</td>
-                     <td>KTM</td>
-                     <td>Sangat Baik</td>
-                     <td>21-05-2018</td>
-                   </tr>
-                    <tr>
-                     <td>3</td>
-                     <td>Rezky Alamsyah</td>
-                     <td>KTM</td>
-                     <td>Sangat Baik</td>
-                     <td>21-05-2018</td>
-                   </tr>
-                 </tbody>
-                </table>
-              </div>
-           <div class="col-lg-2 justify-content-center align-items-center">
-              <button type="submit" class="btn btn-success white">Pinjam Barang</button>
-           </div>
-         </div>
-       </div>  
-     </div>
-      <hr class="hr-small">
-     <div class="container mt-lg-2 py-2 px-4 bg-light">
-        <div class="container container-barang col align-items-center">
-         <div class="row align-items-center my-lg-3">
-          <div class=" white col-lg-10 bg-dark rectangle">
-            <div class=" white col-lg-3 bg-dark kotak" style="align-content: center;float: left;">
-              <img src="Picture/spidol.jpg" class="imageresponse imagestandart imageresponseif" id="gambar3">
-            </div>
-            <div class="mid-sm">
-              <font class="barangs barangskecil"><pre><b>NAMA</b>         : Spidol</font><br><br></pre>
-              <font class="barangs barangskecil"><pre><b>SISA STOCK</b>   : 2/8</font></pre>
-            </div>
-           </div>
-            <div class="mid-sm" id="peminjam3">
-              <p>Daftar Barang Terpinjam</p>
-                <table id="table-barang">  
-                  <thead>
-                   <tr>
-                    <th>Nomor</th>
-                    <th>Peminjam</th>
-                    <th>Jaminan</th>
-                    <th>Kondisi Barang</th>
-                    <th>Tanggal Kembali</th>
-                  </tr>
-                  </thead>
-                  <tbody class="scroll">
-                    <tr class="real">
-                     <td>1</td>
-                     <td>Rezky Alamsyah</td>
-                     <td>KTM</td>
-                     <td>Sangat Baik</td>
-                     <td>21-05-2018</td>
-                   </tr>
-                    <tr class="real">
-                     <td>2</td>
-                     <td>Faturochman</td>
-                     <td>KTM</td>
-                     <td>Sangat Baik</td>
-                     <td>24-05-2018</td>
-                   </tr>
-                    <tr class="real">
-                     <td>3</td>
-                     <td>Iqbal</td>
-                     <td>KTM</td>
-                     <td>Sangat Baik</td>
-                     <td>26-05-2018</td>
-                   </tr>
-                    <tr class="real">
-                     <td>4</td>
-                     <td>Mabruri</td>
-                     <td>KTM</td>
-                     <td>Sangat Baik</td>
-                     <td>26-05-2018</td>
-                   </tr>
-                   <tr class="unreal">
-                     <td>5</td>
-                     <td>Mabruri</td>
-                     <td>KTM</td>
-                     <td>Sangat Baik</td>
-                     <td>26-05-2018</td>
-                   </tr>
-                   <tr class="unreal">
-                     <td>6</td>
-                     <td>Mabruri</td>
-                     <td>KTM</td>
-                     <td>Sangat Baik</td>
-                     <td>26-05-2018</td>
-                   </tr>
-                </table>
-              </div>
-            <div class="col-lg-2 justify-content-center align-items-center">
-              <button type="submit" class="btn btn-success white">Pinjam Barang</button>
-           </div>
-         </div>
-       </div>  
-     </div>
-      <hr class="hr-small">
-       <div class="container mt-lg-2 py-2 px-4 bg-light">
-        <div class="container container-barang col align-items-center">
-         <div class="row align-items-center my-lg-3">
-          <div class=" white col-lg-10 bg-danger rectangle">
-            <div class=" white col-lg-3 bg-danger" style="align-content: center;float: left;">
-              <img src="Picture/papantulis.jpg" class="imageresponse imagestandart imageresponseif" id="gambar4">  
-            </div>
-            <div class="mid-sm">
-              <font class="barangs barangskecil"><pre><b>NAMA</b>         : Papan tulis</font><br><br></pre>
-              <font class="barangs barangskecil"><pre><b>SISA STOCK</b>   : 1/3</font></pre>
-            </div>
-           </div>
-            <div class="mid-sm" id="peminjam4">
-              <p>Daftar Barang Terpinjam</p>
-                <table id="table-barang">  
-                  <thead>
-                    <tr>
-                      <th>Nomor</th>
-                      <th>Peminjam</th>
-                      <th>Jaminan</th>
-                      <th>Kondisi Barang</th>
-                      <th>Tanggal Kembali</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                     <td class="table-danger">1</td>
-                     <td class="table-danger">Faturochman Pranacahya</td>
-                     <td class="table-danger">KTM</td>
-                     <td class="table-danger">Sangat Baik</td>
-                     <td class="table-danger">29-03-2018</td>
-                   </tr>
-                   <tr>
-                     <td>2</td>
-                     <td>Andrianto</td>
-                     <td>KTM</td>
-                     <td>Sangat Baik</td>
-                     <td>18-05-2018</td>
-                   </tr>
-                </tbody>
-                </table>
-              </div>
-            <div class="col-lg-2 justify-content-center align-items-center">
-             <button type="submit" class="btn btn-success white">Pinjam Barang</button>
-           </div>
-         </div>
-       </div>  
-     </div>
-      <hr class="hr-small">
-      <div class="container mt-lg-2 py-2 px-4 bg-light">
-        <div class="container container-barang col align-items-center">
-         <div class="row align-items-center my-lg-3">
-          <div class=" white col-lg-10 bg-dark rectangle">
-            <div class=" white col-lg-3 bg-dark" style="align-content: center;float: left;">
-              <img src="Picture/penghapus.jpg" class="imageresponse imagestandart imageresponseif" id="gambar5">  
-            </div>
-            <div class="mid-sm">
-              <font class="barangs barangskecil"><pre><b>NAMA</b>         : Penghapus Papan Tulis</font><br><br></pre>
-              <font class="barangs barangskecil"><pre><b>SISA STOCK</b>   : 3/3</font></pre>
-            </div>
-           </div>
-            <div class="mid-sm" id="peminjam5">
-              <p>Daftar Barang Terpinjam</p>
-              <p style="font-size: 30px; color: green; transform: rotate(18deg); padding-top: 40px">BARANG SEDANG TIDAK DIPINJAM</p>
-              </div>
-            <div class="col-lg-2 justify-content-center align-items-center">
-              <button type="submit" class="btn btn-success white">Pinjam Barang</button>
-           </div>
-         </div>
-       </div>  
-     </div>
-    </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" language="JavaScript" type="text/javascript" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
