@@ -606,13 +606,20 @@ function accept(e){
 // }
 
 var semua = document.getElementsByTagName('input');
+if(document.getElementById('passulang')!==null){
+  var passulang=document.getElementById('passulang');
+};
 for (var i=0;i<semua.length;i++){
-	semua[i].oninvalid = function(e){
-		if(!e.target.validity.valid){
-			e.target.setCustomValidity("Field tidak boleh kosong!");
-		}
-	};
-	semua[i].oninput=function(e){
-		e.target.setCustomValidity('');
-	}
+  if(passulang!=semua[i]){
+    semua[i].oninvalid = function(e){
+      if(e.target.validity.valueMissing){
+        e.target.setCustomValidity("Field tidak boleh kosong");
+      }else{
+        e.target.setCustomValidity('');
+      }
+    };
+    semua[i].oninput = function(e){
+      e.target.setCustomValidity('');
+    }
+  }
 }
