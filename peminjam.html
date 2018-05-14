@@ -67,7 +67,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Tambah Barang</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Pinjam Barang</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -75,34 +75,34 @@
           <div class="modal-body">
             <form class="needs-validation" novalidate>
               <div class="form-group">
-                <label for="Nama-Barang">Nama Barang</label>
-                <input type="text" class="form-control" id="Nama-Barang" aria-describedby="Nama-BarangHelp" placeholder="Masukkan Nama Barang" required>
+                <label for="Nama-Barang">Waktu Pinjam</label>
+                <date-util format="dd/MM/yyyy"></date-util>
+                <input type="text" class="form-control" id="Nama-Barang" aria-describedby="Nama-BarangHelp" placeholder="Masukkan Tanggal Pengembalian" required>
                 <div class="invalid-feedback">
-                  Form Nama Barang Tidak boleh kosong!
+                  Form Waktu Pinjam Tidak boleh kosong!
                 </div>
               </div>
               <div class="form-group">
-                <label for="Jumlah-Stok">Jumlah-Stok</label>
-                <input type="text" class="form-control" id="Jumlah-Stok" aria-describedby="Jumlah-StokHelp" placeholder="Masukkan Jumlah-Stok"required>
+                <label for="Nama-Barang">Total barang yang ingin dipinjam</label> <br>
+                 <select>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                </select>
+                <div class="invalid-feedback">
+                  Form Total peminjaman Tidak boleh kosong!
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="Kondisi">Jaminan</label>
+                <input type="text" class="form-control" id="Jumlah-Stok" aria-describedby="Jumlah-StokHelp" placeholder="Masukkan jenis jaminan yang akan diserahkan"required>
                 <div class="invalid-feedback">
                   Form Jumlah Stok Tidak boleh kosong!
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="Kondisi">Kondisi Barang</label>
-                <div class="dropdown">
-                  <select id="mySelect">
-                    <option value="apple">Sangat Baik</option>
-                    <option value="orange">Baik</option>
-                    <option value="pineapple">Tidak Baik</option>
-                    <option value="banana">Rusak</option>
-                  </select>
-                </div>
-                <div style="margin-top: 20px">
-                  <form action="upload.php" method="post" enctype="multipart/form-data">
-                      Pilih gambar barang
-                      <input type="file" name="fileToUpload" id="fileToUpload">
-                  </form>
                 </div>
               </div>
           </div>
@@ -133,65 +133,33 @@
           <a class="oi oi-folder" href="#" role="button" id="notifDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span class=""></span>
           </a>
+          
           <div class="dropdown-menu dropdown-menu-right notif" aria-labelledby="navbarDropdown">
             <div class="dropdown-item">
-              <div>
-                <strong>Rezky Alamsyah : Infocus</strong> <br/>
-                Waktu pinjam : 24-04-18 s/d 25-04-18 <br/>
-                Jaminan      : KTM
-              </div>
-              <div>
-                <button type="button" class="btn btn-primary">Terima</button>
-                <button type="button" class="btn btn-secondary">Tolak</button>
-              </div>
-            </div>
-            <div class="dropdown-divider"></div>
-            <div class="dropdown-item">
-              <div>
-                <strong>Rezky Alamsyah : Infocus</strong> <br/>
-                Waktu pinjam : 24-04-18 s/d 25-04-18 <br/>
-                Jaminan      : KTM
-              </div>
-              <div>
-                <button type="button" class="btn btn-primary">Terima</button>
-                <button type="button" class="btn btn-secondary">Tolak</button>
-              </div>
-            </div>
-            <div class="dropdown-divider"></div>
-            <div class="dropdown-item">
-              <div>
-                <strong>Rezky Alamsyah : Infocus</strong> <br/>
-                Waktu pinjam : 24-04-18 s/d 25-04-18 <br/>
-                Jaminan      : KTM
-              </div>
-              <div>
-                <button type="button" class="btn btn-primary">Terima</button>
-                <button type="button" class="btn btn-secondary">Tolak</button>
-              </div>
-            </div>
-            <div class="dropdown-divider"></div>
-            <div class="dropdown-item">
-              <div>
-                <strong>Rezky Alamsyah : Infocus</strong> <br/>
-                Waktu pinjam : 24-04-18 s/d 25-04-18 <br/>
-                Jaminan      : KTM
-              </div>
-              <div>
-                <button type="button" class="btn btn-primary">Terima</button>
-                <button type="button" class="btn btn-secondary">Tolak</button>
-              </div>
-            </div>
-            <div class="dropdown-divider"></div>
-            <div class="dropdown-item">
-              <div>
-                <strong>Rezky Alamsyah : Infocus</strong> <br/>
-                Waktu pinjam : 24-04-18 s/d 25-04-18 <br/>
-                Jaminan      : KTM
-              </div>
-              <div>
-                <button type="button" class="btn btn-primary">Terima</button>
-                <button type="button" class="btn btn-secondary">Tolak</button>
-              </div>
+              <div class="row">
+                <div class="col-sm-6 col1" style="text-align: center;">
+                    <label>Sedang dipinjam</label>
+                </div>
+                <div class="col-sm-6 col2"  style="text-align: center;">
+                    <label>Ingin dipinjam</label>
+                </div>
+             </div>
+             <div class="row">
+                <div class="col-sm-6 col1" style="text-align: center;">
+                   <img src="Picture/Voly.jpg" class="gambarnotif"><br>  
+                    Nama Barang             : Voly <br/>
+                    Total Barang dipinjam   : 1 <br/>
+                    Waktu Kembalikan        : 24-04-18<br/>
+                    Jaminan                 : KTM
+                </div>
+                <div class="col-sm-6 col2"  style="text-align: center;">
+                    <img src="Picture/spidol.jpg" class="gambarnotif"> <br>
+                    Nama Barang             : Spidol <br/>
+                    Total Barang dipinjam   : 2 <br/>
+                    Waktu Kembalikan        : 22-05-18<br/>
+                    Jaminan                 : KTM
+                </div>
+             </div>
             </div>
           </div>
         </div>
