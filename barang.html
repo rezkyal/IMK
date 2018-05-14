@@ -43,7 +43,7 @@
               <div class="form-group">
                 <label for="Kondisi">Kondisi Barang</label>
                 <div class="dropdown">
-                  <select id="mySelect">
+                  <select id="mySelect" class="form-control">
                     <option value="apple">Sangat Baik</option>
                     <option value="orange">Baik</option>
                     <option value="pineapple">Tidak Baik</option>
@@ -51,10 +51,11 @@
                   </select>
                 </div>
                 <div style="margin-top: 20px">
-                  <form action="upload.php" method="post" enctype="multipart/form-data">
                       Pilih gambar barang
-                      <input type="file" name="fileToUpload" id="fileToUpload">
-                  </form>
+                      <input type="file" name="fileToUpload" id="fileToUpload" required class="form-control">
+                      <div class="invalid-feedback">
+                        Tidak ada file yang terpilih
+                      </div>
                 </div>
               </div>
           </div>
@@ -135,7 +136,7 @@
               <div class="form-group">
                 <label for="Kondisi">Kondisi Barang</label>
                 <div class="dropdown">
-                  <select id="mySelect">
+                  <select id="mySelect" class="form-control">
                     <option value="Sangat Baik">Sangat Baik</option>
                     <option value="Baik">Baik</option>
                     <option value="Tidak Baik">Tidak Baik</option>
@@ -163,13 +164,13 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Hapus data Anggota</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Hapus data Barang</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            Hapus data milik <strong>Rezky Alamsyah (05111540000109)?</strong>
+            Hapus data barang <strong>Infocus IN222</strong>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -197,7 +198,7 @@
     <!-- Header -->
     <div class="container pt-lg-1 py-1 px-1">
     <nav class="navbar navbar-expand-lg">
-      <a class="navbar-brand color2" href="index.html">SI HMTC</a>
+      <a class="navbar-brand color2" href="anggota.html">SI HMTC</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="ion-navicon-round color2"></span>
       </button>
@@ -295,7 +296,8 @@
   </div>
     <!-- End Header -->
     <!-- Search Bar -->
-   <div class="searchBg">
+  <div class="searchBg">
+   <div>
       <div class="container pt-lg-5 my-2 py-1 px-4">
         <div class="row">
           <div class="container align-items-center">
@@ -304,12 +306,12 @@
         </div>
         <div class="row">
           <div class="container col align-items-center">
-            <form class="row form-inline my-2 my-lg-0 mx-1">
-              <input class="col-lg-10 col-sm-10 form-control pr-xl-2" type="search" placeholder="Search" aria-label="Search">
-              <div class="col-lg-1">
-                <button class="btn color1 my-2 my-sm-0" type="submit">Search</button>  
-              </div>
-            </form>
+            <form class="row form-inline my-2 my-lg-0 mx-1 justify-content-between">
+                <input class="col-lg-11 col-sm-12 form-control pr-xl-2" id='search' type="search" placeholder="Search" aria-label="Search">
+                <div class="col-lg-1 col-sm-4">
+                  <button class="btn color1 my-2 my-sm-0" type="submit" onclick="return barangLSearch()">Search</button> 
+                </div>
+              </form>
           </div>  
         </div>
        <div class="container mt-lg-2 my-1 py-1 px-4">
@@ -317,7 +319,12 @@
     </div>
     </div>
     <!-- End Search Bar -->
-      <div class="container py-1 px-4 bg-light">
+      <div id="notfound" class="row hidden">
+        <div class="container jumbotron">
+          <h3 style="text-align: center">Data tidak ditemukan</h3>
+        </div>
+      </div>
+      <div id="bar" class="container py-1 px-4 bg-light">
       <div class="container mt-lg-2 py-1 px-4">
         <div class="row justify-content-between">
         <div>
@@ -325,10 +332,11 @@
         </div>
       </div>
     </div>
-    <div class="container mt-lg-2 py-2 px-4 bg-light">
+    <div nama="Infocus IN222"  class="container mt-lg-2 py-2 px-4 bg-light barangL">
       <div class="container container-barang col align-items-center">
          <div class="row align-items-center my-lg-3">
-          <div class=" white col-lg-10 bg-dark rectangle">
+          <div class="container white col-lg-10 bg-dark rectangle" style="display: table;">
+
             <div class=" white col-lg-3 bg-dark" style="align-content: center;float: left;">
               <img src="Picture/infocus.jpg" class="imageresponse imagestandart imageresponseif" id="gambar1" onmouseover="mouseover1()" onmouseout="mouseout1()">
             </div>
@@ -339,7 +347,7 @@
            </div>
            <div class="mid-sm" id="peminjam1">
             <p>Daftar Barang Terpinjam</p>
-              <table id="table-barang">  
+              <table id="table-barang" style="overflow: auto;">  
               <thead>
                 <tr>
                   <th>Nomor</th>
@@ -368,11 +376,11 @@
        </div>  
      </div>
       <hr class="hr-small">
-      <div class="container mt-lg-2 py-2 px-4 bg-light">
+      <div nama="Bola Voly" class="container mt-lg-2 py-2 px-4 bg-light barangL">
         <div class="container container-barang col align-items-center">
          <div class="row align-items-center my-lg-3">
-          <div class=" white col-lg-10 bg-dark rectangle">
-            <div class=" white col-lg-3 bg-dark" style="align-content: center;float: left;">
+          <div class=" white col-10 bg-dark rectangle container " style="display: table;">
+            <div class=" white col-3 bg-dark" style="align-content: center;float: left;">
               <img src="Picture/Voly.jpg" class="imageresponse imagestandart imageresponseif" id="gambar2" onmouseover="mouseover2()" onmouseout="mouseout2()">  
             </div>
             <div class="mid-sm">
@@ -425,10 +433,10 @@
        </div>  
      </div>
       <hr class="hr-small">
-     <div class="container mt-lg-2 py-2 px-4 bg-light">
+     <div nama="Spidol" class="container mt-lg-2 py-2 px-4 bg-light barangL">
         <div class="container container-barang col align-items-center">
          <div class="row align-items-center my-lg-3">
-          <div class=" white col-lg-10 bg-dark rectangle">
+          <div class=" white col-lg-10 bg-dark rectangle" style="display: table;">
             <div class=" white col-lg-3 bg-dark kotak" style="align-content: center;float: left;" onmouseover="mouseover3()" onmouseout="mouseout3()">
               <div id="newpage" style="padding-top: 70px">
                 <span class="ion-android-arrow-dropleft-circle" onclick="display()" cursor="pointer" style="z-index: 11;" ></span>
@@ -506,10 +514,10 @@
        </div>  
      </div>
       <hr class="hr-small">
-       <div class="container mt-lg-2 py-2 px-4 bg-light">
+       <div nama="Papan tulis" class="container mt-lg-2 py-2 px-4 bg-light barangL">
         <div class="container container-barang col align-items-center">
          <div class="row align-items-center my-lg-3">
-          <div class=" white col-lg-10 bg-danger rectangle">
+          <div class="white col-lg-10 bg-danger rectangle" style="display: table;">
             <div class=" white col-lg-3 bg-danger" style="align-content: center;float: left;">
               <img src="Picture/papantulis.jpg" class="imageresponse imagestandart imageresponseif" id="gambar4" onmouseover="mouseover4()" onmouseout="mouseout4()">  
             </div>
@@ -556,10 +564,10 @@
        </div>  
      </div>
       <hr class="hr-small">
-      <div class="container mt-lg-2 py-2 px-4 bg-light">
+      <div nama="Penghapus Papan" class="container mt-lg-2 py-2 px-4 bg-light barangL">
         <div class="container container-barang col align-items-center">
          <div class="row align-items-center my-lg-3">
-          <div class=" white col-lg-10 bg-dark rectangle">
+          <div class=" white col-lg-10 bg-dark rectangle" style="display: table;">
             <div class=" white col-lg-3 bg-dark" style="align-content: center;float: left;">
               <img src="Picture/penghapus.jpg" class="imageresponse imagestandart imageresponseif" id="gambar5" onmouseover="mouseover5()" onmouseout="mouseout5()">  
             </div>
@@ -579,6 +587,7 @@
          </div>
        </div>  
      </div>
+    </div>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

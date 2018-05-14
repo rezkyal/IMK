@@ -55,7 +55,7 @@ function dudu(){
 function mouseover1(){
   var peminjam = document.getElementById('peminjam1');
   peminjam.style.opacity = "0.95";
-  peminjam.style.background = "grey";
+  peminjam.style.background = "white";
   peminjam.style.transition = "all .4s";
 }
 
@@ -66,7 +66,7 @@ function mouseout1(){
 function mouseover2(){
   var peminjam = document.getElementById('peminjam2');
   peminjam.style.opacity = "0.95";
-  peminjam.style.background = "grey";
+  peminjam.style.background = "white";
   peminjam.style.transition = "all .4s";
 }
 
@@ -80,7 +80,7 @@ function mouseover3(){
   var img = document.getElementById('gambar3');
   peminjam.style.opacity = "0.95";
   peminjam.style.transition = "all .4s";
-  peminjam.style.background = "grey";
+  peminjam.style.background = "white";
   page.style.opacity ="1";
   img.style.transform = "scale(1.5)";
 }
@@ -94,9 +94,9 @@ function mouseout3(){
   
 }
 function mouseover4(){
-  var peminjam = document.gdetElementById('peminjam4');
+  var peminjam = document.getElementById('peminjam4');
   peminjam.style.opacity = "0.95";
-  peminjam.style.background = "grey";
+  peminjam.style.background = "white";
   peminjam.style.transition = "all .4s";
 }
 
@@ -107,7 +107,7 @@ function mouseout4(){
 function mouseover5(){
   var peminjam = document.getElementById('peminjam5');
   peminjam.style.opacity = "0.95";
-  peminjam.style.background = "grey";
+  peminjam.style.background = "white";
   peminjam.style.transition = "all .4s";
 }
 
@@ -117,6 +117,7 @@ function mouseout5(){
 
 function editalert(){
     alert("Data Sudah di Edit!");
+    return false;
 }
 
 function hapusalert(){
@@ -126,7 +127,7 @@ function hapusalert(){
 function mouseclick4(){
   var peminjam = document.getElementById('peminjam4');
   peminjam.style.opacity = "0.95";
-  peminjam.style.background = "grey";
+  peminjam.style.background = "white";
   peminjam.style.transition = "all .4s";
 }
 
@@ -150,6 +151,49 @@ function display2(){
   document.getElementsByClassName('real')[3].style.whiteSpace = "nowrap";
   document.getElementsByClassName('unreal')[0].style.visibility = "visible";
   document.getElementsByClassName('unreal')[1].style.visibility = "visible";
+}
+
+function hapusAnggota(nama){
+	var trnya=document.getElementById(nama);
+	trnya.classList.add("hidden");
+	return false;
+}
+
+function anggotaSearch(){
+	var total=0;
+	var param=document.getElementById('search').value;
+	var notFound=document.getElementById('notfound');
+	var tables=document.getElementById('tables');
+	var base=document.getElementById('selectFilter').value;
+	param=param.toLowerCase();
+	var dataBarang=document.getElementsByClassName('dataanggota');
+	console.log(dataBarang.length);
+	for(var i=0;i<dataBarang.length;i++){
+		if(base=='nama'){
+			var nama=dataBarang[i].getAttribute('nama');
+		}else if(base=='nrp'){
+			var nama=dataBarang[i].getAttribute('nrp');
+		}else if(base=='nohp'){
+			var nama=dataBarang[i].getAttribute('nohp');
+		}
+		nama=nama.toLowerCase();
+		var n=nama.search(param);
+		if(n==-1){
+			dataBarang[i].classList.add("hidden");
+		}else{
+			total+=1;
+			dataBarang[i].classList.remove("hidden");
+		}
+
+	}
+	if(total==0){
+		notFound.classList.remove("hidden");
+		tables.classList.add("hidden");
+	}else{
+		notFound.classList.add("hidden");
+		tables.classList.remove("hidden");
+	}
+	return false;	
 }
 
 function barangSearch(){
@@ -185,6 +229,35 @@ function barangSearch(){
 	}else{
 		notFound.classList.add("hidden");
 		tables.classList.remove("hidden");
+	}
+	return false;	
+}
+
+function barangLSearch(){
+	var semua = document.getElementsByClassName('barangL');
+	var param=document.getElementById('search').value;
+	var total=0;
+	var notFound=document.getElementById('notfound');
+	var bar=document.getElementById('bar');
+	for(var i=0;i<semua.length;i++){
+		var nama=semua[i].getAttribute('nama');
+		//console.log(nama);
+		nama=nama.toLowerCase();
+		var n=nama.search(param);
+		if(n==-1){
+			semua[i].classList.add("hidden");
+		}else{
+			total+=1;
+			semua[i].classList.remove("hidden");
+		}
+
+	}
+	if(total==0){
+		notFound.classList.remove("hidden");
+		bar.classList.add('hidden');
+	}else{
+		notFound.classList.add("hidden");
+		bar.classList.remove('hidden');
 	}
 	return false;	
 }
@@ -333,11 +406,85 @@ function sortTable() {
   }
 }
 
+function sortTableAnggota() {
+  var table, rows, switching, i, x, y, shouldSwitch;
+  table = document.getElementById("tables");
+  sort = document.getElementById("sortFilter").value;
+  switching = true;
+  /* Make a loop that will continue until
+  no switching has been done: */
+  while (switching) {
+    // Start by saying: no switching is done:
+    switching = false;
+    rows = table.getElementsByTagName("TR");
+    /* Loop through all table rows (except the
+    first, which contains table headers): */
+    for (i = 1; i < (rows.length - 1); i++) {
+      // Start by saying there should be no switching:
+      shouldSwitch = false;
+      /* Get the two elements you want to compare,
+      one from current row and one from the next: */
+      // Check if the two rows should switch place:
+      if(sort=="nrp"){
+      	x = rows[i].getElementsByTagName("TD")[0];
+      	y = rows[i + 1].getElementsByTagName("TD")[0];
+      	if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+      	  // I so, mark as a switch and break the loop:
+      	  shouldSwitch= true;
+      	  break;
+      	}
+      }else if(sort=="nama"){
+      	x = rows[i].getElementsByTagName("TD")[1];
+      	y = rows[i + 1].getElementsByTagName("TD")[1];
+      	if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+      	  // I so, mark as a switch and break the loop:
+      	  shouldSwitch= true;
+      	  break;
+      	}
+      }else if(sort=="nohp"){
+      	x = rows[i].getElementsByTagName("TD")[2];
+      	y = rows[i + 1].getElementsByTagName("TD")[2];
+      	if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+      	  // I so, mark as a switch and break the loop:
+      	  shouldSwitch= true;
+      	  break;
+      	}
+      }else if(sort=="status"){
+      	x = rows[i].getElementsByTagName("TD")[3];
+      	y = rows[i + 1].getElementsByTagName("TD")[3];
+      	if(x.innerHTML=='Aktif'){
+      		var x1=1;
+      	}else{
+      		var x1=2;
+      	}
+      	if(y.innerHTML=='Aktif'){
+      		var y1=1;
+      	}else{
+      		var y1=2;
+      	}
+      	if (x1 > y1) {
+      	  // I so, mark as a switch and break the loop:
+      	  shouldSwitch= true;
+      	  break;
+      	}
+      }
+    }
+    if (shouldSwitch) {
+      /* If a switch has been marked, make the switch
+      and mark that a switch has been done: */
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+    }
+  }
+}
+
 function validateLogin(){
-	console.log('run');
 	var userName = document.getElementById('userName');
 	var userPassword = document.getElementById('userPassword');
-	if(userName.value!="" && userPassword.value!=""){
+	if(userName.value=='admin'&&userPassword.value=='admin'){
+			document.location.href='anggota.html';
+			return false;
+	}else if(userName.value!="" && userPassword.value!=""){
 		var execbutton = document.getElementById('execbutton');
 		execbutton.setAttribute('data-toggle','modal');
 		execbutton.setAttribute('data-target','#gantipass');
@@ -375,3 +522,22 @@ function accept(e){
 	e.classList.add('hidden');
 	return false;
 }
+
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+

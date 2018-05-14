@@ -216,7 +216,7 @@
     <!-- Header -->
     <div class="container pt-lg-1 py-1 px-1">
     <nav class="navbar navbar-expand-lg">
-      <a class="navbar-brand color2" href="index.html">SI HMTC</a>
+      <a class="navbar-brand color2" href="anggota.html">SI HMTC</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="ion-navicon-round color2"></span>
       </button>
@@ -315,95 +315,139 @@
     <!-- End Header -->
     <!-- Search Bar -->
    <div class="searchBg">
-      <div class="container pt-lg-5 my-2 py-1 px-4">
-        <div class="row">
-          <div class="container align-items-center">
-            <h4 class="white lato">Tabel Transaksi</h4>
+     <div>
+        <div class="container pt-lg-5 my-2 py-1 px-4">
+          <div class="row">
+            <div class="container align-items-center">
+              <h4 class="white lato">Tabel Transaksi</h4>
+            </div>
           </div>
+          <div class="row">
+            <div class="container col align-items-center">
+              <form class="row form-inline my-2 my-lg-0 mx-1">
+                <input class="col-lg-8 col-sm-12 form-control pr-xl-2" id='search' type="search" placeholder="Search" aria-label="Search">
+                <select class="col-lg-3 col-sm-8 form-control" id="selectFilter">
+                  <option value="namap">Nama Peminjam</option>
+                  <option value="namab">Nama Barang</option>
+                  <option value="kondisi">Kondisi Barang</option>
+                </select>
+                <div class="col-lg-1 col-sm-4">
+                  <button class="btn color1 my-2 my-sm-0" type="submit" onclick="return barangSearch()">Search</button>
+                </div>
+              </form>
+            </div>  
+          </div>
+         <div class="container mt-lg-2 my-1 py-1 px-4">
         </div>
-        <div class="row">
-          <div class="container col align-items-center">
-            <form class="row form-inline my-2 my-lg-0 mx-1">
-              <input class="col-lg-8 col-sm-12 form-control pr-xl-2" id='search' type="search" placeholder="Search" aria-label="Search">
-              <select class="col-lg-3 col-sm-8 form-control" id="selectFilter">
-                <option value="namap">Nama Peminjam</option>
-                <option value="namab">Nama Barang</option>
-                <option value="kondisi">Kondisi Barang</option>
-              </select>
-              <div class="col-lg-1 col-sm-4">
-                <button class="btn color1 my-2 my-sm-0" type="submit" onclick="return barangSearch()">Search</button>  
-              </div>
-            </form>
-          </div>  
-        </div>
-       <div class="container mt-lg-2 my-1 py-1 px-4">
       </div>
-    </div>
-    </div>
-    <!-- End Search Bar -->
-    <div class="container mt-lg-2 py-2 px-4 bg-light">
-     <select class="col-lg-3 col-sm-8 form-control" id="sortFilter"> 
-      <option value="namap">Nama Peminjam</option> 
-      <option value="namab">Nama Barang</option> 
-      <option value="tanggalpb">Tanggal Pinjam berdasarkan terbaru</option> 
-      <option value="tanggalpl">Tanggal Pinjam berdasarkan terlama</option> 
-      <option value="tanggalkb">Tanggal Kembalikan berdasarkan terbaru</option> 
-      <option value="tanggalkl">Tanggal Kembalikan berdasarkan terbaru</option> 
-      <option value="kondisi">Kondisi Barang</option> 
-    </select> 
-    <button onclick="sortTable()">Sort</button> 
-    </div>
-    <div class="container mt-lg-2 py-2 px-4 bg-light" style="overflow: auto;">
-      <table class="table" id="tables" >
-      <thead>
-        <tr>
-          <th scope="col">Nama Peminjam</th>
-          <th scope="col">Nama Barang</th>
-          <th scope="col">Tanggal Pinjam</th>
-          <th scope="col">Tanggal Kembalikan</th>
-          <th scope="col">Kondisi Barang</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="databarang" nama="Rezky Alamsyah" barang="Infocus" tanggalp="21/02/2018" tanggalb="28/02/2018" kondisi="Sangat Baik">
-          <td class="table-success">Rezky Alamsyah</td>
-          <td class="table-success">Infocus</td>
-          <td class="table-success">21/02/2018</td>
-          <td class="table-success">17/04/2018</td>
-          <td class="table-success" style="color: green">Sangat Baik</td>
-        </tr>
-        <tr class="databarang" nama="Iqbal Mabruri" barang="Papan tulis" tanggalp="12/03/2018" tanggalb="18/03/2018" kondisi="Kurang Baik">
-          <td class="table-warning">Iqbal Mabruri</td>
-          <td class="table-warning">Papan tulis</td>
-          <td class="table-warning">12/03/2018</td>
-          <td class="table-warning">18/03/2018</td>
-          <td class="table-warning">Kurang Baik</td>
-        </tr>
-        <tr class="databarang" nama="Prana Cahya" barang="Spidol" tanggalp="19/04/2018" tanggalb="21/06/2018" kondisi="Sangat Baik">
-          <td class="table-success">Prana Cahya</td>
-          <td class="table-success">Spidol</td>
-          <td class="table-success">19/04/2018</td>
-          <td class="table-success">21/06/2018</td>
-          <td class="table-success" style="color: green">Sangat Baik</td>
-        </tr>
-        <tr class="databarang" nama="Naufal PF" barang="Infocus" tanggalp="19/04/2018" tanggalb="01/05/2018"
-        kondisi="Rusak">
-          <td class="table-danger">Naufal PF</td>
-          <td class="table-danger">Infocus</td>
-          <td class="table-danger">19/04/2018</td>
-          <td class="table-danger">01/05/2018</td>
-          <td class="table-danger" style="color: red">Rusak</td>
-        </tr>
-        <tr class="databarang" nama="Rezky Alamsyah" barang="Spidol" tanggalp="19/04/2018" tanggalb="01/05/2018"
-        kondisi="Rusak">
-          <td class="table-danger">Rezky Alamsyah</td>
-          <td class="table-danger">Spidol</td>
-          <td class="table-danger">19/04/2018</td>
-          <td class="table-danger">01/05/2018</td>
-          <td class="table-danger" style="color: red">Rusak</td>
-        </tr>
-      </tbody>
-      </table>
+      <!-- End Search Bar -->
+      <div class="container mt-lg-2 py-2 px-4 bg-light">
+        <div class="container mt-lg-2 py-2 px-4 bg-light">
+         <div class="container">
+           <div class="row">
+             <select class="col-lg-3 col-sm-8 form-control" id="sortFilter"> 
+              <option value="namap">Nama</option> 
+              <option value="namab">Nama Barang</option> 
+              <option value="tanggalpb">Tanggal Pinjam berdasarkan terbaru</option> 
+              <option value="tanggalpl">Tanggal Pinjam berdasarkan terlama</option> 
+              <option value="tanggalkb">Tanggal Kembalikan berdasarkan terbaru</option> 
+              <option value="tanggalkl">Tanggal Kembalikan berdasarkan terbaru</option> 
+              <option value="kondisi">Kondisi Barang</option> 
+             </select> 
+             <button style="margin-left: 5px;" class="btn color1" onclick="sortTable()">Sort</button>
+            </div>
+         </div>
+      </div>
+
+      <div id="notfound" class="row hidden">
+        <div class="container jumbotron">
+          <h3 style="text-align: center">Data tidak ditemukan</h3>
+        </div>
+      </div>
+      <div class="container mt-lg-2 py-2 px-4 bg-light" style="overflow: auto;">
+        <table class="table" id="tables" >
+        <thead class="thead-cust">
+          <tr>
+            <th scope="col">Nama Peminjam</th>
+            <th scope="col">Nama Barang</th>
+            <th scope="col">Tanggal Pinjam</th>
+            <th scope="col">Tanggal Kembalikan</th>
+            <th scope="col">Kondisi Barang</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="databarang" nama="Rezky Alamsyah" barang="Infocus" tanggalp="21/02/2018" tanggalb="28/02/2018" kondisi="Sangat Baik">
+            <td class="table-success">Rezky Alamsyah</td>
+            <td class="table-success">Infocus</td>
+            <td class="table-success">21/02/2018</td>
+            <td class="table-success">17/04/2018</td>
+            <td class="table-success" style="color: green">Sangat Baik</td>
+          </tr>
+          <tr class="databarang" nama="Iqbal Mabruri" barang="Papan tulis" tanggalp="12/03/2018" tanggalb="18/03/2018" kondisi="Kurang Baik">
+            <td class="table-warning">Iqbal Mabruri</td>
+            <td class="table-warning">Papan tulis</td>
+            <td class="table-warning">12/03/2018</td>
+            <td class="table-warning">18/03/2018</td>
+            <td class="table-warning">Kurang Baik</td>
+          </tr>
+          <tr class="databarang" nama="Prana Cahya" barang="Spidol" tanggalp="19/04/2018" tanggalb="21/06/2018" kondisi="Sangat Baik">
+            <td class="table-success">Prana Cahya</td>
+            <td class="table-success">Spidol</td>
+            <td class="table-success">19/04/2018</td>
+            <td class="table-success">21/06/2018</td>
+            <td class="table-success" style="color: green">Sangat Baik</td>
+          </tr>
+          <tr class="databarang" nama="Prana Cahya" barang="Spidol" tanggalp="19/04/2018" tanggalb="21/06/2018" kondisi="Sangat Baik">
+            <td class="table-success">Prana Cahya</td>
+            <td class="table-success">Spidol</td>
+            <td class="table-success">19/04/2018</td>
+            <td class="table-success">21/06/2018</td>
+            <td class="table-success" style="color: green">Sangat Baik</td>
+          </tr>
+          <tr class="databarang" nama="Prana Cahya" barang="Spidol" tanggalp="19/04/2018" tanggalb="21/06/2018" kondisi="Sangat Baik">
+            <td class="table-success">Prana Cahya</td>
+            <td class="table-success">Spidol</td>
+            <td class="table-success">19/04/2018</td>
+            <td class="table-success">21/06/2018</td>
+            <td class="table-success" style="color: green">Sangat Baik</td>
+          </tr>
+          <tr class="databarang" nama="Prana Cahya" barang="Spidol" tanggalp="19/04/2018" tanggalb="21/06/2018" kondisi="Sangat Baik">
+            <td class="table-success">Prana Cahya</td>
+            <td class="table-success">Spidol</td>
+            <td class="table-success">19/04/2018</td>
+            <td class="table-success">21/06/2018</td>
+            <td class="table-success" style="color: green">Sangat Baik</td>
+          </tr>
+          <tr class="databarang" nama="Naufal PF" barang="Infocus" tanggalp="19/04/2018" tanggalb="01/05/2018"
+          kondisi="Rusak">
+            <td class="table-danger">Naufal PF</td>
+            <td class="table-danger">Infocus</td>
+            <td class="table-danger">19/04/2018</td>
+            <td class="table-danger">01/05/2018</td>
+            <td class="table-danger" style="color: red">Rusak</td>
+          </tr>
+          <tr class="databarang" nama="Rezky Alamsyah" barang="Spidol" tanggalp="19/04/2018" tanggalb="01/05/2018"
+          kondisi="Rusak">
+            <td class="table-danger">Rezky Alamsyah</td>
+            <td class="table-danger">Spidol</td>
+            <td class="table-danger">19/04/2018</td>
+            <td class="table-danger">01/05/2018</td>
+            <td class="table-danger" style="color: red">Rusak</td>
+          </tr>
+        </tbody>
+        </table>
+        <div>
+          <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              <li class="page-item"><a class="page-cust" href="#">Previous</a></li>
+              <li class="page-item active"><a class="page-cust" href="#">1</a></li>
+              <li class="page-item"><a class="page-cust" href="#">2</a></li>
+              <li class="page-item"><a class="page-cust" href="#">3</a></li>
+              <li class="page-item"><a class="page-cust" href="#">Next</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

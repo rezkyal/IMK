@@ -30,8 +30,3 @@ nohp2.addEventListener("input",function(event){
     nohp2.setCustomValidity('');
   }
 },false);
-
-var semua = document.getElementsByTagName("input");
-for (var i=0;i<semua.length-1;i++){
-	semua[i].setCustomValidity('Field tidak boleh kosong');
-}
