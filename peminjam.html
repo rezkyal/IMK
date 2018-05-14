@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="open-iconic/font/css/open-iconic-bootstrap.css" rel="stylesheet">
     <link href="ionicons-2.0.1/css/ionicons.css" rel="stylesheet">
-    <title>SI HMTC</title>
+    <title>Anggota</title>
     <script src="script.js"></script> 
   </head>
   <body>
@@ -205,19 +205,12 @@
       <div class="collapse navbar-collapse pr-4" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link active color2" href="anggota.html">Anggota<span class="sr-only"></span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link color2" href="barang.html"><b>Barang</b></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link color2" href="transaksi.html">Transaksi</a>
+            <a class="nav-link active color2" href="anggota.html"><span class="sr-only"></span></a>
           </li>
         </ul>
         <div class="nav-item dropdown my-2 my-lg-0 mr-2 not-arrow">
-          <a class="btn bgcolor2 dropdown-toggle" href="#" role="button" id="notifDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <span class="oi oi-bell white"></span>
-            <span class="badge badge-light">6</span>
+          <a class="oi oi-folder" href="#" role="button" id="notifDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class=""></span>
           </a>
           <div class="dropdown-menu dropdown-menu-right notif" aria-labelledby="navbarDropdown">
             <div class="dropdown-item">
@@ -282,7 +275,7 @@
           </div>
         </div>
         <div class="nav-item dropdown my-2 my-sm-0" style="margin-left: 12px">
-          <a class="btn bgcolor2 dropdown-toggle" href="#" role="button" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="oi oi-account-logout" href="logout.html" role="button" id="navbarDropdown">
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="#" data-toggle="modal" data-target="#gantipass">Ganti Password</a>
@@ -330,7 +323,7 @@
          <div class="row align-items-center my-lg-3">
           <div class=" white col-lg-10 bg-dark rectangle">
             <div class=" white col-lg-3 bg-dark" style="align-content: center;float: left;">
-              <img src="Picture/infocus.jpg" class="imageresponse imagestandart imageresponseif" id="gambar1" onmouseover="mouseover1()" onmouseout="mouseout1()">
+              <img src="Picture/infocus.jpg" class="imageresponse imagestandart imageresponseif" id="gambar1">
             </div>
             <div class="mid-sm">
               <font class="barangs barangskecil"><pre><b>NAMA</b>         : Infocus IN222</font><br><br></pre>
@@ -361,8 +354,7 @@
             </table>
             </div>
            <div class="col-lg-2 justify-content-center align-items-center">
-             <button class=" btn btn-info my-2" data-toggle="modal" data-target="#editBarang"><span class="oi oi-pencil"></span></button>
-             <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteAnggota"><span class="oi oi-circle-x"></span></button>
+              <button type="submit" class="btn btn-success white">Pinjam Barang</button>
            </div>
          </div>
        </div>  
@@ -373,7 +365,7 @@
          <div class="row align-items-center my-lg-3">
           <div class=" white col-lg-10 bg-dark rectangle">
             <div class=" white col-lg-3 bg-dark" style="align-content: center;float: left;">
-              <img src="Picture/Voly.jpg" class="imageresponse imagestandart imageresponseif" id="gambar2" onmouseover="mouseover1()" onmouseout="mouseout2()">  
+              <img src="Picture/Voly.jpg" class="imageresponse imagestandart imageresponseif" id="gambar2">  
             </div>
             <div class="mid-sm">
               <font class="barangs barangskecil"><pre><b>NAMA</b>         : Bola Voly</font><br><br></pre>
@@ -418,8 +410,7 @@
                 </table>
               </div>
            <div class="col-lg-2 justify-content-center align-items-center">
-             <button class=" btn btn-info my-2" data-toggle="modal" data-target="#editBarang"><span class="oi oi-pencil"></span></button>
-             <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteAnggota"><span class="oi oi-circle-x"></span></button>
+              <button type="submit" class="btn btn-success white">Pinjam Barang</button>
            </div>
          </div>
        </div>  
@@ -429,11 +420,7 @@
         <div class="container container-barang col align-items-center">
          <div class="row align-items-center my-lg-3">
           <div class=" white col-lg-10 bg-dark rectangle">
-            <div class=" white col-lg-3 bg-dark kotak" style="align-content: center;float: left;" onmouseover="mouseover3()" onmouseout="mouseout3()">
-              <div id="newpage" style="padding-top: 70px">
-                <span class="ion-android-arrow-dropleft-circle" onclick="display()" cursor="pointer" style="z-index: 11;" ></span>
-                <span class="ion-android-arrow-dropright-circle" onclick="display2()" cursor="pointer" style="z-index: 11; margin-left: 100px"></span>
-              </div>
+            <div class=" white col-lg-3 bg-dark kotak" style="align-content: center;float: left;">
               <img src="Picture/spidol.jpg" class="imageresponse imagestandart imageresponseif" id="gambar3">
             </div>
             <div class="mid-sm">
@@ -499,8 +486,7 @@
                 </table>
               </div>
             <div class="col-lg-2 justify-content-center align-items-center">
-             <button class=" btn btn-info my-2" data-toggle="modal" data-target="#editBarang"><span class="oi oi-pencil"></span></button>
-             <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteAnggota"><span class="oi oi-circle-x"></span></button>
+              <button type="submit" class="btn btn-success white">Pinjam Barang</button>
            </div>
          </div>
        </div>  
@@ -511,7 +497,7 @@
          <div class="row align-items-center my-lg-3">
           <div class=" white col-lg-10 bg-danger rectangle">
             <div class=" white col-lg-3 bg-danger" style="align-content: center;float: left;">
-              <img src="Picture/papantulis.jpg" class="imageresponse imagestandart imageresponseif" id="gambar4" onmouseover="mouseover4()" onmouseout="mouseout4()">  
+              <img src="Picture/papantulis.jpg" class="imageresponse imagestandart imageresponseif" id="gambar4">  
             </div>
             <div class="mid-sm">
               <font class="barangs barangskecil"><pre><b>NAMA</b>         : Papan tulis</font><br><br></pre>
@@ -549,8 +535,7 @@
                 </table>
               </div>
             <div class="col-lg-2 justify-content-center align-items-center">
-             <button class=" btn btn-info my-2" data-toggle="modal" data-target="#editBarang"><span class="oi oi-pencil"></span></button>
-             <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteAnggota"><span class="oi oi-circle-x"></span></button>
+             <button type="submit" class="btn btn-success white">Pinjam Barang</button>
            </div>
          </div>
        </div>  
@@ -561,7 +546,7 @@
          <div class="row align-items-center my-lg-3">
           <div class=" white col-lg-10 bg-dark rectangle">
             <div class=" white col-lg-3 bg-dark" style="align-content: center;float: left;">
-              <img src="Picture/penghapus.jpg" class="imageresponse imagestandart imageresponseif" id="gambar5" onmouseover="mouseover5()" onmouseout="mouseout5()">  
+              <img src="Picture/penghapus.jpg" class="imageresponse imagestandart imageresponseif" id="gambar5">  
             </div>
             <div class="mid-sm">
               <font class="barangs barangskecil"><pre><b>NAMA</b>         : Penghapus Papan Tulis</font><br><br></pre>
@@ -573,8 +558,7 @@
               <p style="font-size: 30px; color: green; transform: rotate(18deg); padding-top: 40px">BARANG SEDANG TIDAK DIPINJAM</p>
               </div>
             <div class="col-lg-2 justify-content-center align-items-center">
-             <button class=" btn btn-info my-2" data-toggle="modal" data-target="#editBarang"><span class="oi oi-pencil"></span></button>
-             <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteAnggota"><span class="oi oi-circle-x"></span></button>
+              <button type="submit" class="btn btn-success white">Pinjam Barang</button>
            </div>
          </div>
        </div>  
