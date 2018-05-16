@@ -486,7 +486,7 @@ function validateLogin(){
 	if(userName.value=='admin'&&userPassword.value=='admin'){
 			document.location.href='anggota.html';
 			return false;
-	}else if(userName.value!="" && userPassword.value!=""){
+	}else if(userName.value=="5115100000" && userPassword.value=="5115100000"){
 		var execbutton = document.getElementById('execbutton');
 		execbutton.setAttribute('data-toggle','modal');
 		execbutton.setAttribute('data-target','#gantipass');
@@ -499,9 +499,12 @@ function validateLogin(){
 		// div.classList.add("modal-backdrop fade show");
 		// document.body.appendChild(div);
 		return false;
-	}else{
+	}else if(userName.value!="" && userPassword.value!=""){
+    window.alert('Kombinasi username dan password tidak ditemukan!');
+    return false;
+  }else{
 		return true;
-	}
+  }
 }
 
 function newPassword(){
