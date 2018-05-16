@@ -55,3 +55,26 @@ btnEditAnggota.addEventListener("click", function(event){
         alert("Anggota berhasil diubah");
     }
 },false);
+
+var lockIconAnggota1 = document.getElementById("lockiconanggota1");
+var lockIconAnggota2 = document.getElementById("lockiconanggota2");
+
+var btnnonaktif = document.getElementById("btnnonaktif");
+var btnaktif = document.getElementById("btnaktif");
+
+btnnonaktif.addEventListener("click", function(event){
+  var modal = document.getElementById("nonaktifAnggota");
+  // if(modal ==null){
+  //   alert("no modal");
+  // }
+  // modal.classname.replace("show","fade");
+  // modal.className.replace( /(?:^|\s)show(?!\S)/g , '' );
+
+  lockiconanggota1.className.replace( /(?:^|\s)oi-lock-locked(?!\S)/g , 'oi-lock-unlocked' )
+
+},false);
+
+btnaktif.addEventListener("click", function(event){
+  // alert("sesuatu");
+    lockiconanggota2 = lockIconAnggota1;
+},false);
