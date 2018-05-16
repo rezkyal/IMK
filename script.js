@@ -1,6 +1,10 @@
 
 // imageZoom("myimage", "myresult");
 
+function confirmPinjam(){
+  alert("Pemintaan berhasil disubmit");
+}
+
 function mySearch(){
 	var total=0;
 	var param=document.getElementById('search').value;
