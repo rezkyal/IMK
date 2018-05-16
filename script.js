@@ -123,7 +123,8 @@ function editalert(){
 }
 
 function hapusalert(){
-    confirm("apakah data ini akan dihapus?");
+    // confirm("apakah data ini akan dihapus?");
+    alert("Barang berhasil dihapus");
 }
 
 function mouseclick4(){
