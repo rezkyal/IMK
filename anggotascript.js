@@ -30,3 +30,28 @@ nohp2.addEventListener("input",function(event){
     nohp2.setCustomValidity('');
   }
 },false);
+
+var nama = document.getElementById("Nama");
+var angkatan = document.getElementById("Angkatan");
+var idline = document.getElementById("IDLine");
+var alamat = document.getElementById("Alamat");
+
+var submitanggota = document.getElementById("submitanggota");
+submitanggota.addEventListener("click", function(event){
+    if (nrp1.validity.valid && nohp1.validity.valid && nama.validity.valid && angkatan.validity.valid && idline.validity.valid && alamat.validity.valid){
+        alert("Anggota berhasil ditambahkan");
+    }
+},false);
+
+var nama2 = document.getElementById("Nama2");
+var angkatan2 = document.getElementById("Angkatan2");
+var idline2 = document.getElementById("IDLine2");
+var alamat2 = document.getElementById("Alamat2");
+
+var btnEditAnggota = document.getElementById("btnEditAnggota");
+btnEditAnggota.addEventListener("click", function(event){
+  // alert("sesuatu");
+    if (nrp2.validity.valid && nohp2.validity.valid && nama2.validity.valid && angkatan2.validity.valid && idline2.validity.valid && alamat2.validity.valid){
+        alert("Anggota berhasil diubah");
+    }
+},false);

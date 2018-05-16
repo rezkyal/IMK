@@ -1,6 +1,10 @@
 
 // imageZoom("myimage", "myresult");
 
+function confirmTambahAnggota(){
+  alert("Anggota berhasil ditambahkan");
+}
+
 function confirmPinjam(){
   alert("Pemintaan berhasil disubmit");
 }
