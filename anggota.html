@@ -25,7 +25,7 @@
             </button>
           </div>
           <div class="modal-body">
-            <form class="needs-validation">
+            <form action="#" onsubmit="return tambahAnggota()" class="needs-validation" id="tambang">
               <div class="form-group">
                 <label for="NRP">NRP</label>
                 <input type="text" class="form-control NRP" id="NRP1" aria-describedby="NRPHelp" placeholder="Masukkan NRP" required pattern="\d*">
@@ -41,17 +41,17 @@
                 </div>
               </div>
               <div class="form-group">
-                <label for="NRP">Angkatan</label>
-                <input type="text" class="form-control" id="Angkatan" aria-describedby="AngkatanHelp" placeholder="Masukkan Angkatan" required>
-                <div class="invalid-feedback">
-                  Angkatan Tidak boleh kosong!
-                </div>
-              </div>
-              <div class="form-group">
                 <label for="NRP">No. HP</label>
                 <input type="text" class="form-control" id="nohp1" aria-describedby="noHPHelp" placeholder="Masukkan No. HP" required pattern="\d*">
                 <div class="invalid-feedback">
                   No. HP Tidak boleh kosong!
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="NRP">Angkatan</label>
+                <input type="text" class="form-control" id="Angkatan" aria-describedby="AngkatanHelp" placeholder="Masukkan Angkatan" required>
+                <div class="invalid-feedback">
+                  Angkatan Tidak boleh kosong!
                 </div>
               </div>
               <div class="form-group">
@@ -70,7 +70,7 @@
               </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" id="closeanggota">Close</button>
             <button type="submit" class="btn btn-primary" id="submitanggota">Submit</button>
           </div>
           </form>
@@ -517,7 +517,45 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-warning white">Reset</button>
+            <button type="submit" class="btn btn-warning white" data-dismiss="modal" onclick="window.alert('Password berhasil direset!')">Reset</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="resetAnggota2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Reset password</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Reset password milik <strong>Prana Cahya (05111540000103)?</strong>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-warning white" data-dismiss="modal" onclick="window.alert('Password berhasil direset!')">Reset</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="resetAnggota3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Reset password</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Reset password milik <strong>Iqbal Mabruri (05111540000120)?</strong>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-warning white" data-dismiss="modal" onclick="window.alert('Password berhasil direset!')">Reset</button>
           </div>
         </div>
       </div>
@@ -705,8 +743,8 @@
               <td class="table-success">
                 <button class=" btn btn-info my-2" data-toggle="modal" data-target="#editAnggota1"><span class="oi oi-pencil"></span></button>
                 <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteAnggota1"><span class="oi oi-circle-x"></span></button>
-                <button class="white btn btn-warning my-2" data-toggle="modal" data-target="#resetAnggota">Reset</button>
                 <button class="white btn btn-secondary my-2" data-toggle="modal" data-target="#nonaktifAnggota1"><span id="lockanggota1" class="oi oi-lock-locked"></span></button>
+                <button class="white btn btn-warning my-2" data-toggle="modal" data-target="#resetAnggota2">Reset</button>
               </td>
             </tr>
             <tr class="dataanggota" id="data2" nama="Rezky Alamsyah" nrp="05111540000109" nohp="085718246369" status="Nonaktif">
@@ -720,8 +758,8 @@
               <td class="table-warning">
                 <button class=" btn btn-info my-2" data-toggle="modal" data-target="#editAnggota2"><span class="oi oi-pencil"></span></button>
                 <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteAnggota2"><span class="oi oi-circle-x"></span></button>
-                <button class="white btn btn-warning my-2" data-toggle="modal" data-target="#resetAnggota">Reset</button>
                 <button class="white btn btn-secondary my-2" data-toggle="modal" data-target="#aktifAnggota2"><span id="lockanggota2" class="oi oi-lock-unlocked"></span></button>
+                <button class="white btn btn-warning my-2" data-toggle="modal" data-target="#resetAnggota1">Reset</button>
               </td>
             </tr>
             <tr class="dataanggota" id="data3" nama="Iqbal Mabruri" nrp="05111540000120" nohp="088888888888" status="Aktif">
@@ -735,8 +773,8 @@
               <td class="table-success">
                 <button class=" btn btn-info my-2" data-toggle="modal" data-target="#editAnggota3"><span class="oi oi-pencil"></span></button>
                 <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteAnggota3"><span class="oi oi-circle-x"></span></button>
-                <button class="white btn btn-warning my-2" data-toggle="modal" data-target="#resetAnggota">Reset</button>
                 <button class="white btn btn-secondary my-2" data-toggle="modal" data-target="#nonaktifAnggota3"><span class="oi oi-lock-locked" id="lockanggota3"></span></button>
+                <button class="white btn btn-warning my-2" data-toggle="modal" data-target="#resetAnggota3">Reset</button>
               </td>
             </tr>
           </tbody>
@@ -744,11 +782,11 @@
           <div>
             <nav aria-label="Page navigation example">
               <ul class="pagination">
-                <li class="page-item"><a class="page-cust" href="#">Previous</a></li>
-                <li class="page-item active"><a class="page-cust" href="#">1</a></li>
-                <li class="page-item"><a class="page-cust" href="#">2</a></li>
-                <li class="page-item"><a class="page-cust" href="#">3</a></li>
-                <li class="page-item"><a class="page-cust" href="#">Next</a></li>
+                <li class="page-item disabled"><a class="page-cust" id="prev" onclick="goprev()">Previous</a></li>
+                <li class="page-item active act"><a class="page-cust pages" onclick="go(this)" page="1">1</a></li>
+                <li class="page-item"><a class="page-cust pages" onclick="go(this)" page="2">2</a></li>
+                <li class="page-item"><a class="page-cust pages" onclick="go(this)" page="3">3</a></li>
+                <li class="page-item"><a class="page-cust" id="next" onclick="gonext()">Next</a></li>
               </ul>
             </nav>
           </div>

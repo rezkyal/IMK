@@ -1,6 +1,16 @@
 
 // imageZoom("myimage", "myresult");
 
+function eventFire(el, etype){
+  if (el.fireEvent) {
+    el.fireEvent('on' + etype);
+  } else {
+    var evObj = document.createEvent('Events');
+    evObj.initEvent(etype, true, false);
+    el.dispatchEvent(evObj);
+  }
+}
+
 function confirmTambahAnggota(){
   alert("Anggota berhasil ditambahkan");
 }
@@ -138,31 +148,55 @@ function mouseclick4(){
 }
 
 function display(){
-  document.getElementsByClassName('real')[0].style.visibility = "visible";
-  document.getElementsByClassName('real')[1].style.visibility = "visible";
-  document.getElementsByClassName('real')[2].style.visibility = "visible";
-  document.getElementsByClassName('real')[3].style.visibility = "visible";
-  document.getElementsByClassName('unreal')[0].style.visibility = "collapse";
-  document.getElementsByClassName('unreal')[1].style.visibility = "collapse";
+  document.getElementsByClassName('real')[0].style.display = "";
+  document.getElementsByClassName('real')[1].style.display = "";
+  document.getElementsByClassName('real')[2].style.display = "";
+  document.getElementsByClassName('real')[3].style.display = "";
+  document.getElementsByClassName('unreal')[0].style.display = "none";
+  document.getElementsByClassName('unreal')[1].style.display = "none";
 }
 
 function display2(){
-  document.getElementsByClassName('real')[0].style.visibility = "collapse";
-  document.getElementsByClassName('real')[0].style.whiteSpace = "nowrap";
-  document.getElementsByClassName('real')[1].style.visibility = "collapse";
-  document.getElementsByClassName('real')[1].style.whiteSpace = "nowrap";
-  document.getElementsByClassName('real')[2].style.visibility = "collapse";
-  document.getElementsByClassName('real')[2].style.whiteSpace = "nowrap";
-  document.getElementsByClassName('real')[3].style.visibility = "collapse";
-  document.getElementsByClassName('real')[3].style.whiteSpace = "nowrap";
-  document.getElementsByClassName('unreal')[0].style.visibility = "visible";
-  document.getElementsByClassName('unreal')[1].style.visibility = "visible";
+  document.getElementsByClassName('real')[0].style.display="none";
+  document.getElementsByClassName('real')[1].style.display="none";
+  document.getElementsByClassName('real')[2].style.display="none";
+  document.getElementsByClassName('real')[3].style.display="none";
+  document.getElementsByClassName('unreal')[0].style.display="";
+  document.getElementsByClassName('unreal')[1].style.display="";
 }
+
+function tambahAnggota(){
+  var temp;
+  var table=document.getElementById('tables');
+  var row=table.insertRow(tables.children[1].children.length+1);
+  var elements=document.forms.tambang.getElementsByTagName('input');
+  for (var i=0;i<elements.length;i++){
+    temp=row.insertCell(i);
+    temp.innerHTML=elements[i].value;
+    temp.classList.add('table-success');
+  }
+  var text="<button class=' btn btn-info my-2' data-toggle='modal' data-target='#editAnggota3'><span class='oi oi-pencil'></span></button><button class=' btn btn-danger my-2' data-toggle='modal' data-target='#deleteAnggota3'><span class='oi oi-circle-x'></span></button><button class='white btn btn-secondary my-2' data-toggle='modal' data-target='#nonaktifAnggota3'><span class='oi oi-lock-locked' id='lockanggota3'></span></button><button class='white btn btn-warning my-2' data-toggle='modal' data-target='#resetAnggota3'>Reset</button>";
+  temp=row.insertCell(elements.length);
+  temp.innerHTML=text;
+  temp.classList.add('table-success');
+  temp=row.insertCell(elements.length);
+  temp.innerHTML="aktif";
+  temp.classList.add('table-success');
+  eventFire(document.getElementById('closeanggota'), 'click');
+  return false;
+}
+
+
 
 function hapusAnggota(nama){
 	var trnya=document.getElementById(nama);
 	trnya.classList.add("hidden");
 	return false;
+}
+
+function hapusBarang(ini){
+  var barang=document.getElementById(ini);
+  barang.style.display="none";
 }
 
 function anggotaSearch(){
@@ -200,6 +234,76 @@ function anggotaSearch(){
 		tables.classList.remove("hidden");
 	}
 	return false;	
+}
+
+function go(ini){
+  semua=document.getElementsByClassName('pages');
+  for(var i=0;i<semua.length;i++){
+    semua[i].parentElement.classList.remove('active');
+    semua[i].parentElement.classList.remove('act');
+  }
+  ini.parentElement.classList.add('active');
+  ini.parentElement.classList.add('act');
+  dimana=ini.getAttribute('page');
+  if(dimana=="1"){
+    prev=document.getElementById('prev');
+    prev.parentElement.classList.add('disabled');
+    next=document.getElementById('next');
+    next.parentElement.classList.remove('disabled');
+  }else if(dimana=="3"){
+    prev=document.getElementById('prev');
+    prev.parentElement.classList.remove('disabled');
+    next=document.getElementById('next');
+    next.parentElement.classList.add('disabled');
+  }else{
+    prev=document.getElementById('prev');
+    prev.parentElement.classList.remove('disabled');
+    next=document.getElementById('next');
+    next.parentElement.classList.remove('disabled');
+  }
+}
+
+function goprev(){
+  sekarang=document.getElementsByClassName('act');
+  page=sekarang[0].children[0].getAttribute('page');
+  document.getElementById('next').parentElement.classList.remove('disabled');
+  if(page==2){
+      ke=document.querySelectorAll('[page="1"]');
+      sekarang[0].classList.remove('active');
+      sekarang[0].classList.remove('act');
+      ke[0].parentElement.classList.add('active');
+      ke[0].parentElement.classList.add('act');
+      disable=document.getElementById('prev');
+      disable.parentElement.classList.add('disabled');
+  }else if(page==3){
+      ke=document.querySelectorAll('[page="2"]');
+      sekarang[0].classList.remove('active');
+      sekarang[0].classList.remove('act');
+      ke[0].parentElement.classList.add('active');
+      ke[0].parentElement.classList.add('act');
+  } 
+}
+
+function gonext(){
+  sekarang=document.getElementsByClassName('act');
+  page=sekarang[0].children[0].getAttribute('page');
+  document.getElementById('prev').parentElement.classList.remove('disabled');
+  console.log(page);
+  if(page==2){
+      ke=document.querySelectorAll('[page="3"]');
+      sekarang[0].classList.remove('active');
+      sekarang[0].classList.remove('act');
+      ke[0].parentElement.classList.add('active');
+      ke[0].parentElement.classList.add('act');
+      disable=document.getElementById('next');
+      disable.parentElement.classList.add('disabled');
+  }else if(page==1){
+      ke=document.querySelectorAll('[page="2"]');
+      sekarang[0].classList.remove('active');
+      sekarang[0].classList.remove('act');
+      ke[0].parentElement.classList.add('active');
+      ke[0].parentElement.classList.add('act');
+  }
 }
 
 function barangSearch(){
