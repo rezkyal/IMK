@@ -52,7 +52,7 @@ var btnEditAnggota = document.getElementById("btnEditAnggota");
 btnEditAnggota.addEventListener("click", function(event){
   // alert("sesuatu");
     if (nrp2.validity.valid && nohp2.validity.valid && nama2.validity.valid && angkatan2.validity.valid && idline2.validity.valid && alamat2.validity.valid){
-        alert("Anggota berhasil diubah");
+      alert("Anggota berhasil diubah");
     }
 },false);
 

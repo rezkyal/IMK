@@ -131,7 +131,134 @@
       </div>
     </div>
 
-    <div class="modal fade" id="editAnggota" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="editAnggota1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Edit Anggota</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="NRP">NRP</label>
+                <input value="05111540000103" type="text" class="form-control" id="NRP2" aria-describedby="NRPHelp" placeholder="Masukkan NRP" required pattern="\d*">
+                <div class="invalid-feedback">
+                  NRP Tidak boleh kosong!
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="Nama">Nama</label>
+                <input value="Prana Cahya" type="text" class="form-control" id="Nama2" aria-describedby="NamaHelp" placeholder="Masukkan Nama"required>
+                <div class="invalid-feedback">
+                  Nama Tidak boleh kosong!
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="No.HP">No. HP</label>
+                <input value="088888887777" type="text" class="form-control" id="nohp2" aria-describedby="noHPHelp" placeholder="Masukkan No. HP" required pattern="\d*">
+                <div class="invalid-feedback">
+                  No. HP Tidak boleh kosong!
+                </div>
+              </div>
+               <div class="form-group">
+                <label for="Angkatan">Angkatan</label>
+                <input value="2015" type="text" class="form-control" id="Angkatan2" aria-describedby="AngkatanHelp" placeholder="Masukkan Angkatan" required>
+                <div class="invalid-feedback">
+                  Angkatan Tidak boleh kosong!
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="IDLine">ID Line</label>
+                <input value="prans" type="text" class="form-control" id="IDLine2" aria-describedby="IDLineHelp" placeholder="Masukkan ID Line" required>
+                <div class="invalid-feedback">
+                  ID Line Tidak boleh kosong!
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="Alamat">Alamat</label>
+                <input value="Jl. Sukadamai 218" type="text" class="form-control" id="Alamat2" aria-describedby="AlamatHelp" placeholder="Masukkan Alamat" required>
+                <div class="invalid-feedback">
+                  Alamat Tidak boleh kosong!
+                </div>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary" id="btnEditAnggota">Submit</button>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+     <div class="modal fade" id="editAnggota2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Edit Anggota</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="form2" method="post" onsubmit="return editdata('data2','form2')">
+              <div class="form-group">
+                <label for="NRP">NRP</label>
+                <input value="05111540000109" type="text" class="form-control" id="NRP2" aria-describedby="NRPHelp" placeholder="Masukkan NRP" required pattern="\d*">
+                <div class="invalid-feedback">
+                  NRP Tidak boleh kosong!
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="Nama">Nama</label>
+                <input value="Rezky Alamsyah" type="text" class="form-control" id="Nama2" aria-describedby="NamaHelp" placeholder="Masukkan Nama"required>
+                <div class="invalid-feedback">
+                  Nama Tidak boleh kosong!
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="Angkatan">Angkatan</label>
+                <input value="2015" type="text" class="form-control" id="Angkatan2" aria-describedby="AngkatanHelp" placeholder="Masukkan Angkatan" required>
+                <div class="invalid-feedback">
+                  Angkatan Tidak boleh kosong!
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="No.HP">No. HP</label>
+                <input value="085718246369" type="text" class="form-control" id="nohp2" aria-describedby="noHPHelp" placeholder="Masukkan No. HP" required pattern="\d*">
+                <div class="invalid-feedback">
+                  No. HP Tidak boleh kosong!
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="IDLine">ID Line</label>
+                <input value="rezkyal97" type="text" class="form-control" id="IDLine2" aria-describedby="IDLineHelp" placeholder="Masukkan ID Line" required>
+                <div class="invalid-feedback">
+                  ID Line Tidak boleh kosong!
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="Alamat">Alamat</label>
+                <input value="Jl. Sumber Rejo 1 RT 35 No. 06" type="text" class="form-control" id="Alamat2" aria-describedby="AlamatHelp" placeholder="Masukkan Alamat" required>
+                <div class="invalid-feedback">
+                  Alamat Tidak boleh kosong!
+                </div>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary" id="btnEditAnggota">Submit</button>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+ <div class="modal fade" id="editAnggota3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -194,6 +321,7 @@
       </div>
     </div>
 
+
     <div class="modal fade" id="deleteAnggota1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -228,7 +356,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-danger" onclick="return hapusAnggota('data2')">Hapus</button>
+            <button type="submit" class="btn btn-danger" data-dismiss="modal" onclick="return hapusAnggota('data2')">Hapus</button>
           </div>
         </div>
       </div>
@@ -248,7 +376,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" onclick="return hapusAnggota('data3')" class="btn btn-danger">Hapus</button>
+            <button type="submit" data-dismiss="modal" onclick="return hapusAnggota('data3')" class="btn btn-danger">Hapus</button>
           </div>
         </div>
       </div>
@@ -558,18 +686,24 @@
               <th scope="col">NRP</th>
               <th scope="col">Nama</th>
               <th scope="col">No.HP</th>
+              <th scope="col">Angkatan</th>
+              <th scope="col">ID Line</th>
+              <th scope="col">Alamat</th>
               <th scope="col">Status</th>
               <th scope="col">Menu</th>
             </tr>
           </thead>
           <tbody>
-            <tr class="dataanggota" id="data1" nama="Prana Cahya" nrp="05111540000103" nohp="088888888888" status="Aktif">
+            <tr class="dataanggota" id="data1" nama="Prana Cahya" nrp="05111540000103" nohp="088888888888" angkatan="2015" idline="prans" alamat="Jl. Sukadamai 218" status="Aktif">
               <td class="table-success">05111540000103</td>
               <td class="table-success">Prana Cahya</td>            
               <td class="table-success">088888887777</td>
+              <td class="table-success">2015</td>
+              <td class="table-success">prans</td>
+              <td class="table-success">Jl. Sukadamai 218</td>
               <td class="table-success">Aktif</td>
               <td class="table-success">
-                <button class=" btn btn-info my-2" data-toggle="modal" data-target="#editAnggota"><span class="oi oi-pencil"></span></button>
+                <button class=" btn btn-info my-2" data-toggle="modal" data-target="#editAnggota1"><span class="oi oi-pencil"></span></button>
                 <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteAnggota1"><span class="oi oi-circle-x"></span></button>
                 <button class="white btn btn-warning my-2" data-toggle="modal" data-target="#resetAnggota">Reset</button>
                 <button class="white btn btn-secondary my-2" data-toggle="modal" data-target="#nonaktifAnggota1"><span id="lockanggota1" class="oi oi-lock-locked"></span></button>
@@ -579,9 +713,12 @@
               <td class="table-warning">05111540000109</td>
               <td class="table-warning">Rezky Alamsyah</td>
               <td class="table-warning">085718246369</td>
-              <td class="table-warning">Non-aktif</td>
+              <td class="table-warning">2015</td>
+              <td class="table-warning">rezkyal97</td>
+              <td class="table-warning">Jl. Sumber Rejo 1 RT 35 No. 06</td>
+              <td class="table-warning">Nonaktif</td>
               <td class="table-warning">
-                <button class=" btn btn-info my-2" data-toggle="modal" data-target="#editAnggota"><span class="oi oi-pencil"></span></button>
+                <button class=" btn btn-info my-2" data-toggle="modal" data-target="#editAnggota2"><span class="oi oi-pencil"></span></button>
                 <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteAnggota2"><span class="oi oi-circle-x"></span></button>
                 <button class="white btn btn-warning my-2" data-toggle="modal" data-target="#resetAnggota">Reset</button>
                 <button class="white btn btn-secondary my-2" data-toggle="modal" data-target="#aktifAnggota2"><span id="lockanggota2" class="oi oi-lock-unlocked"></span></button>
@@ -591,9 +728,12 @@
               <td class="table-success">05111540000120</td>
               <td class="table-success">Iqbal Mabruri</td>            
               <td class="table-success">088888888888</td>
+              <td class="table-success">2015</td>
+              <td class="table-success">Iqbal21</td>
+              <td class="table-success">Sumberejo 1</td>
               <td class="table-success">Aktif</td>
               <td class="table-success">
-                <button class=" btn btn-info my-2" data-toggle="modal" data-target="#editAnggota"><span class="oi oi-pencil"></span></button>
+                <button class=" btn btn-info my-2" data-toggle="modal" data-target="#editAnggota3"><span class="oi oi-pencil"></span></button>
                 <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteAnggota3"><span class="oi oi-circle-x"></span></button>
                 <button class="white btn btn-warning my-2" data-toggle="modal" data-target="#resetAnggota">Reset</button>
                 <button class="white btn btn-secondary my-2" data-toggle="modal" data-target="#nonaktifAnggota3"><span class="oi oi-lock-locked" id="lockanggota3"></span></button>

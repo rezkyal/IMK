@@ -125,11 +125,6 @@ function mouseout5(){
   document.getElementById('peminjam5').style.opacity = "0";
 }
 
-function editalert(){
-    alert("Data Sudah di Edit!");
-    return false;
-}
-
 function hapusalert(){
     // confirm("apakah data ini akan dihapus?");
     alert("Barang berhasil dihapus");
@@ -461,8 +456,8 @@ function sortTableAnggota() {
       	  break;
       	}
       }else if(sort=="status"){
-      	x = rows[i].getElementsByTagName("TD")[3];
-      	y = rows[i + 1].getElementsByTagName("TD")[3];
+      	x = rows[i].getElementsByTagName("TD")[6];
+      	y = rows[i + 1].getElementsByTagName("TD")[6];
       	if(x.innerHTML=='Aktif'){
       		var x1=1;
       	}else{
@@ -487,6 +482,18 @@ function sortTableAnggota() {
       switching = true;
     }
   }
+}
+
+function editdata(data, form){
+    var data = document.getElementById(data);
+    var form = document.getElementById(form);
+    
+    for(var i = 0 ;i < data.children.length - 1; i++){
+      console.log(form.children[i].children[1].value);
+      console.log(data.children[i].innerHTML);
+    }
+    alert("Data berhasil diedit!");
+    return false;
 }
 
 function validateLogin(){
@@ -646,7 +653,7 @@ function kunciAkun(id, target, table){
   for(var i = 0; i < table.children.length ; i++){
     table.children[i].className = "table-warning";
   }
-  table.children[3].innerHTML = "Non-aktif"
+  table.children[6].innerHTML = "Non-aktif"
   return false;
 }
 
@@ -657,6 +664,6 @@ function bukaAkun(id, target, table){
   for(var i = 0; i < table.children.length ; i++){
     table.children[i].className = "table-success";
   }
-  table.children[3].innerHTML = "Aktif"
+  table.children[6].innerHTML = "Aktif"
   return false;
 }
