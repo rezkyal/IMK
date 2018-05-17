@@ -412,9 +412,6 @@ td, th, tr{
 	opacity: 0;
 }
 
-.unreal{
-	visibility: collapse;
-}
 span{
 	cursor: pointer;
 }

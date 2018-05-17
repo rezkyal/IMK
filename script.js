@@ -138,31 +138,43 @@ function mouseclick4(){
 }
 
 function display(){
-  document.getElementsByClassName('real')[0].style.visibility = "visible";
-  document.getElementsByClassName('real')[1].style.visibility = "visible";
-  document.getElementsByClassName('real')[2].style.visibility = "visible";
-  document.getElementsByClassName('real')[3].style.visibility = "visible";
-  document.getElementsByClassName('unreal')[0].style.visibility = "collapse";
-  document.getElementsByClassName('unreal')[1].style.visibility = "collapse";
+  document.getElementsByClassName('real')[0].style.display = "";
+  document.getElementsByClassName('real')[1].style.display = "";
+  document.getElementsByClassName('real')[2].style.display = "";
+  document.getElementsByClassName('real')[3].style.display = "";
+  document.getElementsByClassName('unreal')[0].style.display = "none";
+  document.getElementsByClassName('unreal')[1].style.display = "none";
 }
 
 function display2(){
-  document.getElementsByClassName('real')[0].style.visibility = "collapse";
-  document.getElementsByClassName('real')[0].style.whiteSpace = "nowrap";
-  document.getElementsByClassName('real')[1].style.visibility = "collapse";
-  document.getElementsByClassName('real')[1].style.whiteSpace = "nowrap";
-  document.getElementsByClassName('real')[2].style.visibility = "collapse";
-  document.getElementsByClassName('real')[2].style.whiteSpace = "nowrap";
-  document.getElementsByClassName('real')[3].style.visibility = "collapse";
-  document.getElementsByClassName('real')[3].style.whiteSpace = "nowrap";
-  document.getElementsByClassName('unreal')[0].style.visibility = "visible";
-  document.getElementsByClassName('unreal')[1].style.visibility = "visible";
+  document.getElementsByClassName('real')[0].style.display="none";
+  document.getElementsByClassName('real')[1].style.display="none";
+  document.getElementsByClassName('real')[2].style.display="none";
+  document.getElementsByClassName('real')[3].style.display="none";
+  document.getElementsByClassName('unreal')[0].style.display="";
+  document.getElementsByClassName('unreal')[1].style.display="";
+}
+
+function tambahAnggota(){
+  var table=document.getElementById('tables');
+  var row=table.insertRow(0);
+  var elements=document.forms.tambang.getElementsByTagName('input');
+  for (var i=0;i<elements.length;i++){
+    row.insertCell(i).innerHTML=elements[i];
+  }
+  row.insertCell(elements.length).innerHTML="coba";
+  return false;
 }
 
 function hapusAnggota(nama){
 	var trnya=document.getElementById(nama);
 	trnya.classList.add("hidden");
 	return false;
+}
+
+function hapusBarang(ini){
+  var barang=document.getElementById(ini);
+  barang.style.display="none";
 }
 
 function anggotaSearch(){
@@ -206,8 +218,10 @@ function go(ini){
   semua=document.getElementsByClassName('pages');
   for(var i=0;i<semua.length;i++){
     semua[i].parentElement.classList.remove('active');
+    semua[i].parentElement.classList.remove('act');
   }
   ini.parentElement.classList.add('active');
+  ini.parentElement.classList.add('act');
   dimana=ini.getAttribute('page');
   if(dimana=="1"){
     prev=document.getElementById('prev');
@@ -229,35 +243,44 @@ function go(ini){
 
 function goprev(){
   sekarang=document.getElementsByClassName('act');
-  page=sekarang[1].children[0].getAttribute('page');
+  page=sekarang[0].children[0].getAttribute('page');
+  document.getElementById('next').parentElement.classList.remove('disabled');
   if(page==2){
       ke=document.querySelectorAll('[page="1"]');
-      sekarang[1].classList.remove('active');
+      sekarang[0].classList.remove('active');
+      sekarang[0].classList.remove('act');
       ke[0].parentElement.classList.add('active');
       ke[0].parentElement.classList.add('act');
       disable=document.getElementById('prev');
       disable.parentElement.classList.add('disabled');
   }else if(page==3){
       ke=document.querySelectorAll('[page="2"]');
-      sekarang[1].classList.remove('active');
+      sekarang[0].classList.remove('active');
+      sekarang[0].classList.remove('act');
       ke[0].parentElement.classList.add('active');
       ke[0].parentElement.classList.add('act');
-  }
+  } 
 }
 
 function gonext(){
-  sekarang=document.getElementsByClassName('active');
-  page=sekarang[1].children[0].getAttribute('page');
+  sekarang=document.getElementsByClassName('act');
+  page=sekarang[0].children[0].getAttribute('page');
+  document.getElementById('prev').parentElement.classList.remove('disabled');
+  console.log(page);
   if(page==2){
-      ke=document.querySelectorAll('[page="1"]');
-      sekarang[1].classList.remove('active');
+      ke=document.querySelectorAll('[page="3"]');
+      sekarang[0].classList.remove('active');
+      sekarang[0].classList.remove('act');
       ke[0].parentElement.classList.add('active');
-      disable=document.getElementById('prev');
+      ke[0].parentElement.classList.add('act');
+      disable=document.getElementById('next');
       disable.parentElement.classList.add('disabled');
-  }else if(page==3){
+  }else if(page==1){
       ke=document.querySelectorAll('[page="2"]');
-      sekarang[1].classList.remove('active');
+      sekarang[0].classList.remove('active');
+      sekarang[0].classList.remove('act');
       ke[0].parentElement.classList.add('active');
+      ke[0].parentElement.classList.add('act');
   }
 }
 
