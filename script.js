@@ -639,15 +639,24 @@ for (var i=0;i<semua.length;i++){
 }
 
 
-function kunciAkun(id, target){
+function kunciAkun(id, target, table){
+  var table = document.getElementById(table);
   document.getElementById(id).className = "oi oi-lock-unlocked";
   document.getElementById(id).parentElement.setAttribute("data-target",target);
+  for(var i = 0; i < table.children.length ; i++){
+    table.children[i].className = "table-warning";
+  }
+  table.children[3].innerHTML = "Non-aktif"
   return false;
 }
 
-function bukaAkun(id, target){
-  console.log(id);
+function bukaAkun(id, target, table){
+  var table = document.getElementById(table);
   document.getElementById(id).className = "oi oi-lock-locked";
   document.getElementById(id).parentElement.setAttribute("data-target",target);
+  for(var i = 0; i < table.children.length ; i++){
+    table.children[i].className = "table-success";
+  }
+  table.children[3].innerHTML = "Aktif"
   return false;
 }
