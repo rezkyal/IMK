@@ -161,13 +161,18 @@ function display2(){
 }
 
 function tambahAnggota(){
+  var temp;
   var table=document.getElementById('tables');
-  var row=table.insertRow(0);
+  var row=table.insertRow(tables.children[1].children.length+1);
   var elements=document.forms.tambang.getElementsByTagName('input');
   for (var i=0;i<elements.length;i++){
-    row.insertCell(i).innerHTML=elements[i];
+    temp=row.insertCell(i);
+    temp.innerHTML=elements[i].value;
+    temp.classList.add('table-success');
   }
-  row.insertCell(elements.length).innerHTML="coba";
+  temp=row.insertCell(elements.length);
+  temp.innerHTML="coba";
+  temp.classList.add('table-success');
   return false;
 }
 
