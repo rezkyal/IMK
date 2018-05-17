@@ -171,7 +171,7 @@
       </div>
     </div>
 
-    <div class="modal fade" id="deleteAnggota" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="deleteBarang1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -185,7 +185,87 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-danger" onclick="hapusalert()" data-dismiss="modal">Hapus</button>
+            <button type="submit" class="btn btn-danger" onclick="hapusBarang('barang1')" data-dismiss="modal">Hapus</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="deleteBarang2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Hapus data Barang</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Hapus data barang <strong>Bola Voly</strong>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-danger" onclick="hapusBarang('barang2')" data-dismiss="modal">Hapus</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="deleteBarang3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Hapus data Barang</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Hapus data barang <strong>Spidol</strong>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-danger" onclick="hapusBarang('barang3')" data-dismiss="modal">Hapus</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="deleteBarang4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Papan Tulis</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Hapus data barang <strong>Papan Tulis</strong>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-danger" onclick="hapusBarang('barang4')" data-dismiss="modal">Hapus</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="deleteBarang5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Hapus data Barang</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Hapus data barang <strong>Penghapus Papan Tulis</strong>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-danger" onclick="hapusBarang('barang5')" data-dismiss="modal">Hapus</button>
           </div>
         </div>
       </div>
@@ -343,10 +423,10 @@
         </div>
       </div>
     </div>
-    <div nama="Infocus IN222"  class="container mt-lg-2 py-2 px-4 bg-light barangL">
+    <div nama="Infocus IN222" id="barang1" class="container mt-lg-2 py-2 px-4 bg-light barangL">
       <div class="container container-barang col align-items-center">
          <div class="row align-items-center my-lg-3">
-          <div class="container white col-lg-10 bg-dark rectangle" style="display: table;">
+          <div class="white col-lg-10 bg-dark rectangle" style="display: table;">
 
             <div class=" white col-lg-3 bg-dark" style="align-content: center;float: left;">
               <img src="Picture/infocus.jpg" class="imageresponse imagestandart imageresponseif" id="gambar1" onmouseover="mouseover1()" onmouseout="mouseout1()">
@@ -381,16 +461,20 @@
             </div>
            <div class="col-lg-2 justify-content-center align-items-center">
              <button class=" btn btn-info my-2" data-toggle="modal" data-target="#editBarang"><span class="oi oi-pencil"></span></button>
-             <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteAnggota"><span class="oi oi-circle-x"></span></button>
+             <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteBarang1"><span class="oi oi-circle-x"></span></button>
            </div>
          </div>
-       </div>  
+       </div>
+       <div class="row">
+          <div class="col">
+              <hr class="hr-small">
+          </div>
+       </div> 
      </div>
-      <hr class="hr-small">
-      <div nama="Bola Voly" class="container mt-lg-2 py-2 px-4 bg-light barangL">
+      <div nama="Bola Voly" id="barang2" class="container mt-lg-2 py-2 px-4 bg-light barangL">
         <div class="container container-barang col align-items-center">
          <div class="row align-items-center my-lg-3">
-          <div class=" white col-10 bg-dark rectangle container " style="display: table;">
+          <div class=" white col-10 bg-dark rectangle " style="display: table;">
             <div class=" white col-3 bg-dark" style="align-content: center;float: left;">
               <img src="Picture/Voly.jpg" class="imageresponse imagestandart imageresponseif" id="gambar2" onmouseover="mouseover2()" onmouseout="mouseout2()">  
             </div>
@@ -438,13 +522,17 @@
               </div>
            <div class="col-lg-2 justify-content-center align-items-center">
              <button class=" btn btn-info my-2" data-toggle="modal" data-target="#editBarang"><span class="oi oi-pencil"></span></button>
-             <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteAnggota"><span class="oi oi-circle-x"></span></button>
+             <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteBarang2"><span class="oi oi-circle-x"></span></button>
            </div>
          </div>
-       </div>  
+       </div>
+       <div class="row">
+          <div class="col">
+              <hr class="hr-small">
+          </div>
+       </div>   
      </div>
-      <hr class="hr-small">
-     <div nama="Spidol" class="container mt-lg-2 py-2 px-4 bg-light barangL">
+     <div nama="Spidol" id="barang3" class="container mt-lg-2 py-2 px-4 bg-light barangL">
         <div class="container container-barang col align-items-center">
          <div class="row align-items-center my-lg-3">
           <div class=" white col-lg-10 bg-dark rectangle" style="display: table;">
@@ -501,14 +589,14 @@
                      <td>Sangat Baik</td>
                      <td>26-05-2018</td>
                    </tr>
-                   <tr class="unreal">
+                   <tr class="unreal" style="display: none;">
                      <td>5</td>
                      <td>Mabruri</td>
                      <td>KTM</td>
                      <td>Sangat Baik</td>
                      <td>26-05-2018</td>
                    </tr>
-                   <tr class="unreal">
+                   <tr class="unreal" style="display: none;">
                      <td>6</td>
                      <td>Mabruri</td>
                      <td>KTM</td>
@@ -519,13 +607,17 @@
               </div>
             <div class="col-lg-2 justify-content-center align-items-center">
              <button class=" btn btn-info my-2" data-toggle="modal" data-target="#editBarang"><span class="oi oi-pencil"></span></button>
-             <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteAnggota"><span class="oi oi-circle-x"></span></button>
+             <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteBarang3"><span class="oi oi-circle-x"></span></button>
            </div>
          </div>
-       </div>  
+       </div>
+       <div class="row">
+          <div class="col">
+              <hr class="hr-small">
+          </div>
+       </div>   
      </div>
-      <hr class="hr-small">
-       <div nama="Papan tulis" class="container mt-lg-2 py-2 px-4 bg-light barangL">
+       <div nama="Papan tulis" id="barang4" class="container mt-lg-2 py-2 px-4 bg-light barangL">
         <div class="container container-barang col align-items-center">
          <div class="row align-items-center my-lg-3">
           <div class="white col-lg-10 bg-danger rectangle" style="display: table;">
@@ -569,13 +661,17 @@
               </div>
             <div class="col-lg-2 justify-content-center align-items-center">
              <button class=" btn btn-info my-2" data-toggle="modal" data-target="#editBarang"><span class="oi oi-pencil"></span></button>
-             <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteAnggota"><span class="oi oi-circle-x"></span></button>
+             <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteBarang4"><span class="oi oi-circle-x"></span></button>
            </div>
          </div>
-       </div>  
+       </div>
+       <div class="row">
+          <div class="col">
+              <hr class="hr-small">
+          </div>
+       </div>   
      </div>
-      <hr class="hr-small">
-      <div nama="Penghapus Papan" class="container mt-lg-2 py-2 px-4 bg-light barangL">
+      <div nama="Penghapus Papan" id="barang5" class="container mt-lg-2 py-2 px-4 bg-light barangL">
         <div class="container container-barang col align-items-center">
          <div class="row align-items-center my-lg-3">
           <div class=" white col-lg-10 bg-dark rectangle" style="display: table;">
@@ -586,18 +682,23 @@
               <font class="barangs barangskecil"><pre><b>NAMA</b>         : Penghapus Papan Tulis</font><br><br></pre>
               <font class="barangs barangskecil"><pre><b>SISA STOCK</b>   : 3/3</font></pre>
             </div>
+          </div>
+          <div class="mid-sm" id="peminjam5">
+            <p>Daftar Barang Terpinjam</p>
+            <p style="font-size: 30px; color: green; transform: rotate(18deg); padding-top: 40px">BARANG SEDANG TIDAK DIPINJAM</p>
+          </div>
+          <div class="col-lg-2 justify-content-center align-items-center">
+           <button class=" btn btn-info my-2" data-toggle="modal" data-target="#editBarang"><span class="oi oi-pencil"></span></button>
+           <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteBarang5"><span class="oi oi-circle-x"></span></button>
+          </div>
+          </div>
+        </div>
+        <div class="row">
+           <div class="col">
+               <hr class="hr-small">
            </div>
-            <div class="mid-sm" id="peminjam5">
-              <p>Daftar Barang Terpinjam</p>
-              <p style="font-size: 30px; color: green; transform: rotate(18deg); padding-top: 40px">BARANG SEDANG TIDAK DIPINJAM</p>
-              </div>
-            <div class="col-lg-2 justify-content-center align-items-center">
-             <button class=" btn btn-info my-2" data-toggle="modal" data-target="#editBarang"><span class="oi oi-pencil"></span></button>
-             <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteAnggota"><span class="oi oi-circle-x"></span></button>
-           </div>
-         </div>
-       </div>  
-     </div>
+        </div>   
+      </div>
     </div>
     </div>
     <!-- Optional JavaScript -->
