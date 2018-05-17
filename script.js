@@ -207,6 +207,65 @@ function anggotaSearch(){
 	return false;	
 }
 
+function go(ini){
+  semua=document.getElementsByClassName('pages');
+  for(var i=0;i<semua.length;i++){
+    semua[i].parentElement.classList.remove('active');
+  }
+  ini.parentElement.classList.add('active');
+  dimana=ini.getAttribute('page');
+  if(dimana=="1"){
+    prev=document.getElementById('prev');
+    prev.parentElement.classList.add('disabled');
+    next=document.getElementById('next');
+    next.parentElement.classList.remove('disabled');
+  }else if(dimana=="3"){
+    prev=document.getElementById('prev');
+    prev.parentElement.classList.remove('disabled');
+    next=document.getElementById('next');
+    next.parentElement.classList.add('disabled');
+  }else{
+    prev=document.getElementById('prev');
+    prev.parentElement.classList.remove('disabled');
+    next=document.getElementById('next');
+    next.parentElement.classList.remove('disabled');
+  }
+}
+
+function goprev(){
+  sekarang=document.getElementsByClassName('act');
+  page=sekarang[1].children[0].getAttribute('page');
+  if(page==2){
+      ke=document.querySelectorAll('[page="1"]');
+      sekarang[1].classList.remove('active');
+      ke[0].parentElement.classList.add('active');
+      ke[0].parentElement.classList.add('act');
+      disable=document.getElementById('prev');
+      disable.parentElement.classList.add('disabled');
+  }else if(page==3){
+      ke=document.querySelectorAll('[page="2"]');
+      sekarang[1].classList.remove('active');
+      ke[0].parentElement.classList.add('active');
+      ke[0].parentElement.classList.add('act');
+  }
+}
+
+function gonext(){
+  sekarang=document.getElementsByClassName('active');
+  page=sekarang[1].children[0].getAttribute('page');
+  if(page==2){
+      ke=document.querySelectorAll('[page="1"]');
+      sekarang[1].classList.remove('active');
+      ke[0].parentElement.classList.add('active');
+      disable=document.getElementById('prev');
+      disable.parentElement.classList.add('disabled');
+  }else if(page==3){
+      ke=document.querySelectorAll('[page="2"]');
+      sekarang[1].classList.remove('active');
+      ke[0].parentElement.classList.add('active');
+  }
+}
+
 function barangSearch(){
 	var total=0;
 	var param=document.getElementById('search').value;
