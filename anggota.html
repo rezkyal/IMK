@@ -141,7 +141,7 @@
             </button>
           </div>
           <div class="modal-body">
-            <form>
+            <form id="form1" action="#" onsubmit="return editdata('data1','form1')">
               <div class="form-group">
                 <label for="NRP">NRP</label>
                 <input value="05111540000103" type="text" class="form-control" id="NRP2" aria-describedby="NRPHelp" placeholder="Masukkan NRP" required pattern="\d*">
@@ -204,7 +204,7 @@
             </button>
           </div>
           <div class="modal-body">
-            <form id="form2" method="post" onsubmit="return editdata('data2','form2')">
+            <form id="form2" action="#" onsubmit="return editdata('data2','form2')">
               <div class="form-group">
                 <label for="NRP">NRP</label>
                 <input value="05111540000109" type="text" class="form-control" id="NRP2" aria-describedby="NRPHelp" placeholder="Masukkan NRP" required pattern="\d*">
@@ -268,7 +268,7 @@
             </button>
           </div>
           <div class="modal-body">
-            <form>
+            <form id="form3" action="#" onsubmit="return editdata('data3','form3')">
               <div class="form-group">
                 <label for="NRP">NRP</label>
                 <input value="05111540000109" type="text" class="form-control" id="NRP2" aria-describedby="NRPHelp" placeholder="Masukkan NRP" required pattern="\d*">
@@ -685,8 +685,8 @@
             <tr>
               <th scope="col">NRP</th>
               <th scope="col">Nama</th>
-              <th scope="col">No.HP</th>
               <th scope="col">Angkatan</th>
+              <th scope="col">No.HP</th>
               <th scope="col">ID Line</th>
               <th scope="col">Alamat</th>
               <th scope="col">Status</th>
@@ -697,8 +697,8 @@
             <tr class="dataanggota" id="data1" nama="Prana Cahya" nrp="05111540000103" nohp="088888888888" angkatan="2015" idline="prans" alamat="Jl. Sukadamai 218" status="Aktif">
               <td class="table-success">05111540000103</td>
               <td class="table-success">Prana Cahya</td>            
-              <td class="table-success">088888887777</td>
               <td class="table-success">2015</td>
+              <td class="table-success">088888887777</td>
               <td class="table-success">prans</td>
               <td class="table-success">Jl. Sukadamai 218</td>
               <td class="table-success">Aktif</td>
@@ -712,8 +712,8 @@
             <tr class="dataanggota" id="data2" nama="Rezky Alamsyah" nrp="05111540000109" nohp="085718246369" status="Nonaktif">
               <td class="table-warning">05111540000109</td>
               <td class="table-warning">Rezky Alamsyah</td>
-              <td class="table-warning">085718246369</td>
               <td class="table-warning">2015</td>
+              <td class="table-warning">085718246369</td>
               <td class="table-warning">rezkyal97</td>
               <td class="table-warning">Jl. Sumber Rejo 1 RT 35 No. 06</td>
               <td class="table-warning">Nonaktif</td>
@@ -726,9 +726,9 @@
             </tr>
             <tr class="dataanggota" id="data3" nama="Iqbal Mabruri" nrp="05111540000120" nohp="088888888888" status="Aktif">
               <td class="table-success">05111540000120</td>
-              <td class="table-success">Iqbal Mabruri</td>            
+              <td class="table-success">Iqbal Mabruri</td> 
+              <td class="table-success">2015</td>           
               <td class="table-success">088888888888</td>
-              <td class="table-success">2015</td>
               <td class="table-success">Iqbal21</td>
               <td class="table-success">Sumberejo 1</td>
               <td class="table-success">Aktif</td>

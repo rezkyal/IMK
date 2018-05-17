@@ -448,8 +448,8 @@ function sortTableAnggota() {
       	  break;
       	}
       }else if(sort=="nohp"){
-      	x = rows[i].getElementsByTagName("TD")[2];
-      	y = rows[i + 1].getElementsByTagName("TD")[2];
+      	x = rows[i].getElementsByTagName("TD")[3];
+      	y = rows[i + 1].getElementsByTagName("TD")[3];
       	if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
       	  // I so, mark as a switch and break the loop:
       	  shouldSwitch= true;
@@ -488,9 +488,10 @@ function editdata(data, form){
     var data = document.getElementById(data);
     var form = document.getElementById(form);
     
-    for(var i = 0 ;i < data.children.length - 1; i++){
+    for(var i = 0 ;i < data.children.length - 2; i++){
       console.log(form.children[i].children[1].value);
       console.log(data.children[i].innerHTML);
+      data.children[i].innerHTML = form.children[i].children[1].value;
     }
     alert("Data berhasil diedit!");
     return false;
