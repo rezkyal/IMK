@@ -782,11 +782,11 @@
           <div>
             <nav aria-label="Page navigation example">
               <ul class="pagination">
-                <li class="page-item"><a class="page-cust" href="#">Previous</a></li>
-                <li class="page-item active"><a class="page-cust" href="#">1</a></li>
-                <li class="page-item"><a class="page-cust" href="#">2</a></li>
-                <li class="page-item"><a class="page-cust" href="#">3</a></li>
-                <li class="page-item"><a class="page-cust" href="#">Next</a></li>
+                <li class="page-item disabled"><a class="page-cust" id="prev" onclick="goprev()">Previous</a></li>
+                <li class="page-item active act"><a class="page-cust pages" onclick="go(this)" page="1">1</a></li>
+                <li class="page-item"><a class="page-cust pages" onclick="go(this)" page="2">2</a></li>
+                <li class="page-item"><a class="page-cust pages" onclick="go(this)" page="3">3</a></li>
+                <li class="page-item"><a class="page-cust" id="next" onclick="gonext()">Next</a></li>
               </ul>
             </nav>
           </div>

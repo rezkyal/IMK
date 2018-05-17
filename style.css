@@ -60,6 +60,7 @@
 }
 
 .page-cust{
+	cursor: pointer;
 	position: relative;
 	display: block;
 	padding: .5rem .75rem;
@@ -176,6 +177,14 @@ pre{
 	.image-sm{
 		text-align: center;
 	}
+}
+
+.page-item.disabled .page-cust {
+    color: #6c757d;
+    pointer-events: none;
+    cursor: auto;
+    background-color: #fff;
+    border-color: #dee2e6;
 }
 
 @media only screen and (min-width: 1000px){
