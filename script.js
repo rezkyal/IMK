@@ -1,6 +1,16 @@
 
 // imageZoom("myimage", "myresult");
 
+function eventFire(el, etype){
+  if (el.fireEvent) {
+    el.fireEvent('on' + etype);
+  } else {
+    var evObj = document.createEvent('Events');
+    evObj.initEvent(etype, true, false);
+    el.dispatchEvent(evObj);
+  }
+}
+
 function confirmTambahAnggota(){
   alert("Anggota berhasil ditambahkan");
 }
@@ -165,11 +175,18 @@ function tambahAnggota(){
     temp.innerHTML=elements[i].value;
     temp.classList.add('table-success');
   }
+  var text="<button class=' btn btn-info my-2' data-toggle='modal' data-target='#editAnggota3'><span class='oi oi-pencil'></span></button><button class=' btn btn-danger my-2' data-toggle='modal' data-target='#deleteAnggota3'><span class='oi oi-circle-x'></span></button><button class='white btn btn-secondary my-2' data-toggle='modal' data-target='#nonaktifAnggota3'><span class='oi oi-lock-locked' id='lockanggota3'></span></button><button class='white btn btn-warning my-2' data-toggle='modal' data-target='#resetAnggota3'>Reset</button>";
   temp=row.insertCell(elements.length);
-  temp.innerHTML="coba";
+  temp.innerHTML=text;
   temp.classList.add('table-success');
+  temp=row.insertCell(elements.length);
+  temp.innerHTML="aktif";
+  temp.classList.add('table-success');
+  eventFire(document.getElementById('closeanggota'), 'click');
   return false;
 }
+
+
 
 function hapusAnggota(nama){
 	var trnya=document.getElementById(nama);
