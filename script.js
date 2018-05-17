@@ -637,3 +637,17 @@ for (var i=0;i<semua.length;i++){
     }
   }
 }
+
+
+function kunciAkun(id, target){
+  document.getElementById(id).className = "oi oi-lock-unlocked";
+  document.getElementById(id).parentElement.setAttribute("data-target",target);
+  return false;
+}
+
+function bukaAkun(id, target){
+  console.log(id);
+  document.getElementById(id).className = "oi oi-lock-locked";
+  document.getElementById(id).parentElement.setAttribute("data-target",target);
+  return false;
+}

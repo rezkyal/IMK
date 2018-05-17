@@ -254,7 +254,7 @@
       </div>
     </div>
 
-    <div class="modal fade" id="nonaktifAnggota" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="nonaktifAnggota1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -264,18 +264,57 @@
             </button>
           </div>
           <div class="modal-body">
-            Nonaktifkan data milik <strong>Rezky Alamsyah (05111540000109)?</strong>
+            Nonaktifkan data milik <strong>Prana Cahya (05111540000103)?</strong>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-danger" id="btnnonaktif" data-dismiss="modal">Nonaktifkan</button>
+            <button type="submit" onclick="return kunciAkun('lockanggota1','#aktifAnggota1')" class="btn btn-danger" id="btnnonaktif" data-dismiss="modal">Nonaktifkan</button>
           </div>
         </div>
       </div>
     </div>
 
+     <div class="modal fade" id="aktifAnggota1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Aktifkan data Anggota</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Aktifkan data milik <strong>Prana Cahya (05111540000103)?</strong>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" onclick="bukaAkun('lockanggota1','#nonaktifAnggota1')" class="btn btn-primary" id="btnaktif" data-dismiss="modal">Aktifkan</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <div class="modal fade" id="aktifAnggota" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="nonaktifAnggota2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Nonaktikan data Anggota</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Nonaktifkan data milik <strong>Rezky Alamsyah(05111540000109)?</strong>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" onclick="return kunciAkun('lockanggota2','#aktifAnggota2')" class="btn btn-danger" id="btnnonaktif" data-dismiss="modal">Nonaktifkan</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="aktifAnggota2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -289,7 +328,48 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary" id="btnaktif">Aktifkan</button>
+            <button type="submit" onclick="bukaAkun('lockanggota2','#nonaktifAnggota2')" class="btn btn-primary" id="btnaktif" data-dismiss="modal">Aktifkan</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="modal fade" id="nonaktifAnggota3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Nonaktikan data Anggota</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Nonaktifkan data milik <strong>Iqbal Mabruri(05111540000120)?</strong>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" onclick="return kunciAkun('lockanggota3','#aktifAnggota3')" class="btn btn-danger" id="btnnonaktif" data-dismiss="modal">Nonaktifkan</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="aktifAnggota3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Aktifkan data Anggota</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Aktifkan data milik <strong>Iqbal Mabruri (05111540000120)?</strong>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" onclick="bukaAkun('lockanggota3','#nonaktifAnggota3')" class="btn btn-primary" id="btnaktif" data-dismiss="modal">Aktifkan</button>
           </div>
         </div>
       </div>
@@ -492,7 +572,7 @@
                 <button class=" btn btn-info my-2" data-toggle="modal" data-target="#editAnggota"><span class="oi oi-pencil"></span></button>
                 <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteAnggota1"><span class="oi oi-circle-x"></span></button>
                 <button class="white btn btn-warning my-2" data-toggle="modal" data-target="#resetAnggota">Reset</button>
-                <button class="white btn btn-info my-2" data-toggle="modal" data-target="#nonaktifAnggota" id="btnlockanggota"><span class="oi oi-lock-locked"></span></button>
+                <button class="white btn btn-secondary my-2" data-toggle="modal" data-target="#nonaktifAnggota1"><span id="lockanggota1" class="oi oi-lock-locked"></span></button>
               </td>
             </tr>
             <tr class="dataanggota" id="data2" nama="Rezky Alamsyah" nrp="05111540000109" nohp="085718246369" status="Nonaktif">
@@ -504,7 +584,7 @@
                 <button class=" btn btn-info my-2" data-toggle="modal" data-target="#editAnggota"><span class="oi oi-pencil"></span></button>
                 <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteAnggota2"><span class="oi oi-circle-x"></span></button>
                 <button class="white btn btn-warning my-2" data-toggle="modal" data-target="#resetAnggota">Reset</button>
-                <button class="white btn btn-info my-2" data-toggle="modal" data-target="#aktifAnggota"><span class="oi oi-lock-unlocked"></span></button>
+                <button class="white btn btn-secondary my-2" data-toggle="modal" data-target="#aktifAnggota2"><span id="lockanggota2" class="oi oi-lock-unlocked"></span></button>
               </td>
             </tr>
             <tr class="dataanggota" id="data3" nama="Iqbal Mabruri" nrp="05111540000120" nohp="088888888888" status="Aktif">
@@ -516,7 +596,7 @@
                 <button class=" btn btn-info my-2" data-toggle="modal" data-target="#editAnggota"><span class="oi oi-pencil"></span></button>
                 <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteAnggota3"><span class="oi oi-circle-x"></span></button>
                 <button class="white btn btn-warning my-2" data-toggle="modal" data-target="#resetAnggota">Reset</button>
-                <button class="white btn btn-info my-2" data-toggle="modal" data-target="#aktifAnggota" id="lockiconanggota2"><span class="oi oi-lock-locked"></span></button>
+                <button class="white btn btn-secondary my-2" data-toggle="modal" data-target="#nonaktifAnggota3"><span class="oi oi-lock-locked" id="lockanggota3"></span></button>
               </td>
             </tr>
           </tbody>

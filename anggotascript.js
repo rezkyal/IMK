@@ -69,9 +69,6 @@ btnnonaktif.addEventListener("click", function(event){
   // }
   // modal.classname.replace("show","fade");
   // modal.className.replace( /(?:^|\s)show(?!\S)/g , '' );
-
-  lockiconanggota1.className.replace( /(?:^|\s)oi-lock-locked(?!\S)/g , 'oi-lock-unlocked' )
-
 },false);
 
 btnaktif.addEventListener("click", function(event){
