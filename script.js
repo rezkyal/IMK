@@ -801,5 +801,20 @@ password.addEventListener('input', function() {
 });
 
 function visible(){
-  
+  var icon = document.getElementById('visible');
+  var pass = document.getElementById('passlama');
+  pass.type = "";
+  if(icon.className == "ion-ios-eye")
+  {
+    icon.className = "ion-eye-disabled";
+    pass.type = "";
+  }
+  else
+  {
+    icon.className = "ion-ios-eye";
+    pass.type = "password";
+  }
+ 
 }
+
+console.log(document.getElementById('passlama').type);

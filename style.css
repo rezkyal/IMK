@@ -444,3 +444,7 @@ meter[value="4"]::-webkit-meter-optimum-value { background: green; }
 .ion-ios-eye{
 	font-size: 32px;
 }
+
+.ion-eye-disabled{
+	font-size: 32px;
+}
