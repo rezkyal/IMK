@@ -428,3 +428,19 @@ span{
 	height: 80px;
 	text-align: center;
 }
+
+meter {
+  width: 50%;
+  height: 1em;
+  padding-top: 10px;
+}
+
+
+meter[value="1"]::-webkit-meter-optimum-value { background: red; }
+meter[value="2"]::-webkit-meter-optimum-value { background: yellow; }
+meter[value="3"]::-webkit-meter-optimum-value { background: orange; }
+meter[value="4"]::-webkit-meter-optimum-value { background: green; }
+
+.ion-ios-eye{
+	font-size: 32px;
+}

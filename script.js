@@ -772,3 +772,34 @@ function bukaAkun(id, target, table){
   table.children[6].innerHTML = "Aktif"
   return false;
 }
+
+var strength = {
+  0: "Jelek",
+  1: "Lemah",
+  2: "Bagus",
+  3: "Sangat Bagus",
+  4: "Kuat"
+}
+
+var password = document.getElementById('passlama');
+var meter = document.getElementById('password-strength-meter');
+var text = document.getElementById('password-strength-text');
+
+password.addEventListener('input', function() {
+  var val = password.value;
+  var result = zxcvbn(val);
+
+  // Update the password strength meter
+  meter.value = result.score;
+
+  // Update the text indicator
+  if (val !== "") {
+    text.innerHTML = strength[result.score]; 
+  } else {
+    text.innerHTML = "";
+  }
+});
+
+function visible(){
+  
+}
