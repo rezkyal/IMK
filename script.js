@@ -588,7 +588,7 @@ function sortTableAnggota() {
   }
 }
 
-function editdata(data, form){
+function editdata(data, form,close){
     var data = document.getElementById(data);
     var form = document.getElementById(form);
     
@@ -598,6 +598,7 @@ function editdata(data, form){
       data.children[i].innerHTML = form.children[i].children[1].value;
     }
     alert("Data berhasil diedit!");
+    eventFire(document.getElementById(close),'click');
     return false;
 }
 
@@ -626,6 +627,36 @@ function validateLogin(){
   }else{
 		return true;
   }
+}
+
+function tambahbarang(){
+  var elements=document.forms.tambang.getElementsByTagName('input');
+  // var path='Picture/infocus.jpg';
+  var files = document.getElementById('fileToUploadT').webkitRelativePath;
+  console.log(files);
+  // var path = files[0].webkitRelativePath;
+  // var Folder = path.split("/");
+  var text='<div nama="Penghapus Papan" id="barang5" class="container mt-lg-2 py-2 px-4 bg-light barangL"><div class="container container-barang col align-items-center"><div class="row align-items-center my-lg-3"><div class=" white col-lg-10 bg-dark rectangle" style="display: table;"><div class=" white col-lg-3 bg-dark" style="align-content: center;float: left;"><img src="'+files+'" class="imageresponse imagestandart imageresponseif" id="gambar5" onmouseover="mouseover5()" onmouseout="mouseout5()">  </div><div class="mid-sm"><font class="barangs barangskecil"><pre><b>NAMA</b>         : '+elements[0].value+'</font><br><br></pre><font class="barangs barangskecil"><pre><b>SISA STOCK</b>   : '+elements[1].value+'/'+elements[1].value+'</font></pre></div></div><div class="mid-sm" id="peminjam5">  <p>Daftar Barang Terpinjam</p>  <p style="font-size: 30px; color: green; transform: rotate(18deg); padding-top: 40px">BARANG SEDANG TIDAK DIPINJAM</p></div><div class="col-lg-2 justify-content-center align-items-center"> <button class=" btn btn-info my-2" data-toggle="modal" data-target="#editBarang"><span class="oi oi-pencil"></span></button> <button class=" btn btn-danger my-2" data-toggle="modal" data-target="#deleteBarang5"><span class="oi oi-circle-x"></span></button></div>  </div></div><div class="row">   <div class="col">       <hr class="hr-small">   </div></div>   </div>'
+  var bar=document.getElementById('bar');
+  var para=document.createElement('template');
+  para.innerHTML= text;
+  bar.appendChild(para.content);
+  eventFire(document.getElementById('closeTambah'),'click');
+  return false;
+}
+
+function editbarang(id,form,close,nama,jumlah){
+  var form=document.getElementById(form);
+  var nama=document.getElementById(nama);
+  var jumlah=document.getElementById(jumlah);
+  var text=jumlah.children[0].innerHTML.split('');
+  text[24]=form.children[1].children[1].value;
+  var text1="<b>NAMA</b>         : "+form.children[0].children[1].value;
+  nama.children[0].innerHTML=text1;
+  jumlah.children[0].innerHTML=text.join("");
+  window.alert('Data berhasil diedit');
+  eventFire(document.getElementById(close),'click');
+  return false;
 }
 
 function newPassword(){
